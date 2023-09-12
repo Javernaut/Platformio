@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 namespace Platformio.Environment.Tile
 {
     [CreateAssetMenu]
-    public class ThemedTile : RuleTile
+    public class ThemedTile : TileBase
     {
         [SerializeField] private Type type;
 

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 2091548986660618593}
   - component: {fileID: 1332411004925180419}
   - component: {fileID: 5452145815016627878}
+  - component: {fileID: 3926764593563189132}
   m_Layer: 0
   m_Name: Layer1
   m_TagString: Untagged
@@ -437,6 +438,19 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &3926764593563189132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6899580542761099993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca60a59e266747ddaaaf12482b83b2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentThemeConfiguration: {fileID: 11400000, guid: 8859ad89a85134a0f8bd6f32e64a6289, type: 2}
 --- !u!114 &820900851794706527
 MonoBehaviour:
   m_ObjectHideFlags: 0
