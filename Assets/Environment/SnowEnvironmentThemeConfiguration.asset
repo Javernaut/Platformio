@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf00fb54c8e4b02b820d5de6bbc9404, type: 3}
   m_Name: SnowEnvironmentThemeConfiguration
   m_EditorClassIdentifier: 
-  thinPlatformTile: {fileID: 11400000, guid: 63205005cb6e644848098ea99c4cefff, type: 2}
+  thinPlatformTile: {fileID: -2467133146084711103, guid: 63205005cb6e644848098ea99c4cefff, type: 2}
