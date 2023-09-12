@@ -13,26 +13,28 @@ namespace Platformio.Environment.Tile
 
         private IProvider<EnvironmentThemeConfiguration> _themeConfigurationProvider;
 
-        public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go)
-        {
-            _themeConfigurationProvider = tilemap.GetComponent<IProvider<EnvironmentThemeConfiguration>>();
-            return true;
-        }
-
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
         {
+            EnsureConfigurationProviderAvailability(tilemap);
             GetTileDelegate().GetTileData(position, tilemap, ref tileData);
         }
 
         public override bool GetTileAnimationData(Vector3Int position, ITilemap tilemap,
             ref TileAnimationData tileAnimationData)
         {
+            EnsureConfigurationProviderAvailability(tilemap);
+            // TODO Consider just returning false and skipping the rule matching step
             return GetTileDelegate().GetTileAnimationData(position, tilemap, ref tileAnimationData);
         }
 
+        private void EnsureConfigurationProviderAvailability(ITilemap tilemap)
+        {
+            _themeConfigurationProvider ??= tilemap.GetComponent<IProvider<EnvironmentThemeConfiguration>>();
+        }
+        
         private TileBase GetTileDelegate()
         {
-            var configuration = _themeConfigurationProvider.GetCurrentValue();
+            var configuration = _themeConfigurationProvider?.GetCurrentValue();
             return type switch
             {
                 Type.ThinPlatform => configuration.thinPlatformTile,
