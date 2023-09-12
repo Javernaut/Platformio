@@ -29,7 +29,7 @@ namespace Platformio.Environment.Tile
 
         private void Update()
         {
-            if (!Application.IsPlaying(gameObject))
+            if (!Application.isPlaying)
             {
                 EnsureTileMapAvailability();
                 _tilemap.RefreshAllTiles();
