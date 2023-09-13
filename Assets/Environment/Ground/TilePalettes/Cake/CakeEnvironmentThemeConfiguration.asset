@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: CakeEnvironmentThemeConfiguration
   m_EditorClassIdentifier: 
   thinPlatformTile: {fileID: 11400000, guid: 8372dd42b18bf437fae478f70bb740f1, type: 2}
+  thickPlatformTile: {fileID: 11400000, guid: a542a025fc1714443a90aab7e3bbeb56, type: 2}
+  roundedPlatformTile: {fileID: 11400000, guid: 86c2c5fdf570442b58737d7b62f86783, type: 2}
+  cutPlatformTile: {fileID: 11400000, guid: d806432493d784151bc31cb5818da397, type: 2}
