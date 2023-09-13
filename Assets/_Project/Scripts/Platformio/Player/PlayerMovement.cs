@@ -19,6 +19,7 @@ namespace Platformio.Player
         private void Update()
         {
             Run();
+            FlipSprite();
         }
 
         private void Run()
@@ -30,6 +31,16 @@ namespace Platformio.Player
         private void OnMove(InputValue inputValue)
         {
             moveInput = inputValue.Get<Vector2>();
+        }
+
+        private void FlipSprite()
+        {
+            var playerHasHorizontalSpeed = Mathf.Abs((_myRigidbody).velocity.x) > Mathf.Epsilon;
+
+            if (playerHasHorizontalSpeed)
+            {
+                transform.localScale = new Vector2 (Mathf.Sign(_myRigidbody.velocity.x), 1f);
+            }
         }
     }
 }
