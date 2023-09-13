@@ -42,6 +42,9 @@ namespace Platformio.Environment.Tile
             return type switch
             {
                 Type.ThinPlatform => configuration.thinPlatformTile,
+                Type.ThickPlatform => configuration.thickPlatformTile,
+                Type.RoundedPlatform => configuration.roundedPlatformTile,
+                Type.CutPlatform => configuration.cutPlatformTile,
                 // TODO Consider another fallback
                 _ => configuration.thinPlatformTile
             };
@@ -51,7 +54,10 @@ namespace Platformio.Environment.Tile
         // https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
         enum Type
         {
-            ThinPlatform
+            ThinPlatform,
+            ThickPlatform,
+            RoundedPlatform,
+            CutPlatform,
         }
 
         // TODO Make a cache of sort. Same Theme tile may be used in multiple Tilemaps, so the cache has to be done on a per-tilemap basis

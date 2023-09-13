@@ -8,5 +8,8 @@ namespace Platformio.Environment
     public class EnvironmentThemeConfiguration : ScriptableObject
     {
         public TileBase thinPlatformTile;
+        public TileBase thickPlatformTile;
+        public TileBase roundedPlatformTile;
+        public TileBase cutPlatformTile;
     }
 }

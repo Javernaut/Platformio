@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: SnowEnvironmentThemeConfiguration
   m_EditorClassIdentifier: 
   thinPlatformTile: {fileID: -2467133146084711103, guid: 63205005cb6e644848098ea99c4cefff, type: 2}
+  thickPlatformTile: {fileID: 11400000, guid: ba4d585f51c784b959afe374f2f07e61, type: 2}
+  roundedPlatformTile: {fileID: 11400000, guid: 34f15c52461a44a2db887b0719731065, type: 2}
+  cutPlatformTile: {fileID: 11400000, guid: 0a1038912309a4a67bb544a80f527677, type: 2}

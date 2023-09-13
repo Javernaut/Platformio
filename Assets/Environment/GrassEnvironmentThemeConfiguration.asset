@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: GrassEnvironmentThemeConfiguration
   m_EditorClassIdentifier: 
   thinPlatformTile: {fileID: 11400000, guid: 2f261e4bd0c2c488d84806e13e93a951, type: 2}
+  thickPlatformTile: {fileID: 11400000, guid: 03e4b467b09074ac999df90b2bf7edf0, type: 2}
+  roundedPlatformTile: {fileID: 11400000, guid: e93c1f1081afc4f4c96dbb03d2869ab7, type: 2}
+  cutPlatformTile: {fileID: 11400000, guid: c8a0813b2e77a4a528fcf451cd6396d0, type: 2}
