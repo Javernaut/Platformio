@@ -14,6 +14,8 @@ namespace Platformio.Player
         private Rigidbody2D _myRigidbody;
         private Animator _myAnimator;
         private CapsuleCollider2D _myCapsuleCollider;
+        
+        private float _gravityScaleAtStart;
 
         private void Awake()
         {
@@ -21,6 +23,8 @@ namespace Platformio.Player
             _myRigidbody = GetComponent<Rigidbody2D>();
             _myAnimator = GetComponent<Animator>();
             _myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+            
+            _gravityScaleAtStart = _myRigidbody.gravityScale;
         }
 
         private void Update()
@@ -41,13 +45,21 @@ namespace Platformio.Player
 
         private void ClimbLadder()
         {
-            if (!_myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
-            {
+            if (!_myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
+            { 
+                _myRigidbody.gravityScale = _gravityScaleAtStart;
+                _myAnimator.SetBool("isClimbing", false);
                 return;
             }
 
-            Vector2 climbVelocity = new Vector2(_myRigidbody.velocity.x, moveInput.y * climbSpeed);
+
+            var climbVelocity = new Vector2(_myRigidbody.velocity.x, moveInput.y * climbSpeed);
             _myRigidbody.velocity = climbVelocity;
+            _myRigidbody.gravityScale = 0f;
+            
+            var playerHasVerticalSpeed = Mathf.Abs(_myRigidbody.velocity.y) > Mathf.Epsilon;
+            _myAnimator.SetBool("isClimbing", playerHasVerticalSpeed);
+
         }
 
 
@@ -58,10 +70,10 @@ namespace Platformio.Player
 
         void OnJump(InputValue value)
         {
-            if (!_myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            {
-                return;
-            }
+            bool isTouchingGround = _myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+            bool isTouchingLadder = _myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+            if (!isTouchingGround && !isTouchingLadder) { return;}
+
 
             if (value.isPressed)
             {
