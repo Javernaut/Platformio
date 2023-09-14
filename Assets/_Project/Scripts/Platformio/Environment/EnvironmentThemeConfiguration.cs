@@ -11,5 +11,6 @@ namespace Platformio.Environment
         public TileBase thickPlatformTile;
         public TileBase roundedPlatformTile;
         public TileBase cutPlatformTile;
+        public TileBase blockPlatformTile;
     }
 }
