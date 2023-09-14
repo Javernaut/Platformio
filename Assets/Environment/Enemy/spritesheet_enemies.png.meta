@@ -1,0 +1,1394 @@
+fileFormatVersion: 2
+guid: f76a8bc0730a940e4bbba7c122905b95
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barnacle.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 620
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18637c92642a0bcc0800000000000000
+      internalID: -3697276871838845311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barnacle_attack.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 750
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3509da089974696f0800000000000000
+      internalID: -678275969258254253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barnacle_dead.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 880
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a6ebce501df2cc0800000000000000
+      internalID: -3733535742689908078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bee.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1010
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5055dc66772036f0800000000000000
+      internalID: -707021751911624613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bee_dead.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1140
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca38e3409f958110800000000000000
+      internalID: 1262590712510692041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bee_move.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1270
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819c4cea8456cd350800000000000000
+      internalID: 6042816162868545816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishBlue.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1400
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38b1a18222bfde40800000000000000
+      internalID: 5683457116038346815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishBlue_dead.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1530
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74126a51bb3122820800000000000000
+      internalID: 2891895604968300871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishBlue_fall.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1660
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923579bea5c8d60e0800000000000000
+      internalID: -2275007914624724183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishGreen.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1790
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe86286d1081c6fa0800000000000000
+      internalID: -5806239423414507281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishGreen_dead.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5e3acd3a5ffec30800000000000000
+      internalID: 4390998245839726028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishGreen_move.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 100
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9889b17b2995c3b0800000000000000
+      internalID: -5492815758637823842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishPink.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 230
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26ee5cdd018451a0800000000000000
+      internalID: -6821685639027694034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishPink_dead.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 360
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d838007e6aadf34f0800000000000000
+      internalID: -846717794547367027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fishPink_move.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 490
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f0fb00007278f30800000000000000
+      internalID: 4577670427211403054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 620
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a626371dd0e0721c0800000000000000
+      internalID: -4528635447786380694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_dead.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 750
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4332ca0fe842d1950800000000000000
+      internalID: 6421328840041964340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fly_move.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 880
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b06dd665a749d630800000000000000
+      internalID: 3952268923715281078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1010
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9ddad64beaae420800000000000000
+      internalID: 2660130619873155582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_dead.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1140
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e8cc433a9d34f20800000000000000
+      internalID: 3405805038210944594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_move.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1270
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbafcff84abeafce0800000000000000
+      internalID: -1370524044558009668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladybug.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1400
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f5f376f63e2ef50800000000000000
+      internalID: 6909334845952843548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladybug_fly.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1530
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6575651dcde645ab0800000000000000
+      internalID: -5020265789927303338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladybug_move.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1660
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f481ea37ffad74010800000000000000
+      internalID: 1173147018645608527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1790
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a383a611e80c460800000000000000
+      internalID: 7259958804768897625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse_dead.png
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a96c993a3b7c7b0800000000000000
+      internalID: -5203993329162347949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse_move.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 100
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4721508c9ef179730800000000000000
+      internalID: 4005705482512962164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saw.png
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 490
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65fde13c77196d780800000000000000
+      internalID: -8658573290012483754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sawHalf.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 620
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe8f9e51b08ed100800000000000000
+      internalID: 134686538152775417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sawHalf_dead.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 750
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466f1181ca79ede00800000000000000
+      internalID: 1071460526754756196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sawHalf_move.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 880
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ddeba65de7301c50800000000000000
+      internalID: 6633863743617625561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saw_dead.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 360
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed2f1fa6a8c871910800000000000000
+      internalID: 1808068301540160222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saw_move.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 490
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4d35a5c81b82dc0800000000000000
+      internalID: -3663483080496917287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlock.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1010
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1ee6be00296cd70800000000000000
+      internalID: 9063091832777269722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlock_dead.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1140
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb5d43773a0c46a0800000000000000
+      internalID: -6463780131909575698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlock_move.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1270
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784a191b03b3c8530800000000000000
+      internalID: 3858524061073253511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlue.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1400
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06384f47afb80c100800000000000000
+      internalID: 126254697386640224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlue_dead.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1530
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6f6b91368799640800000000000000
+      internalID: 5087229621120202458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlue_hit.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1660
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef01041b7780bea0800000000000000
+      internalID: -5859034152522674204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeBlue_move.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1790
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a9c4754386a6700800000000000000
+      internalID: 534354079809051213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeGreen.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1a3f39f513119f0800000000000000
+      internalID: -499563797087542866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeGreen_dead.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25526b6a07882ac40800000000000000
+      internalID: 5522126110524319058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeGreen_hit.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ae9d2fe1829c500800000000000000
+      internalID: 416908553896978983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimeGreen_move.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42274979e19dd830800000000000000
+      internalID: 4097591667925131851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimePurple.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 490
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 061a49fcb1bd53ec0800000000000000
+      internalID: -3587720615637507744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimePurple_dead.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 620
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91882237980d68250800000000000000
+      internalID: 5946669646750058521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimePurple_hit.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 750
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a769ebf33093eb230800000000000000
+      internalID: 3656422633588561530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimePurple_move.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0ecec9bc528ce20800000000000000
+      internalID: 3370985877528174844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snail.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1010
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54bf5ff4c5e4eaf0800000000000000
+      internalID: -367916635276725156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snail_move.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1140
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48ae75d18d247430800000000000000
+      internalID: 3779696022926567503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snail_shell.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1270
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f9d7aaf5955a230800000000000000
+      internalID: 3649421340470779701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wormGreen.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be5485ef5c82b560800000000000000
+      internalID: 7328073887185657524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wormGreen_dead.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1530
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f675632a2b99855c0800000000000000
+      internalID: -4226459257782511761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wormGreen_move.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1660
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a4b2ae15842fc20800000000000000
+      internalID: 3238730598691064419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wormPink.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1790
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f64001c21eb42230800000000000000
+      internalID: 3613221788814690034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wormPink_dead.png
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abdc079889661020800000000000000
+      internalID: 2312151494071999395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wormPink_move.png
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 230
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a216f6479c31650800000000000000
+      internalID: 6202522613741333039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      barnacle.png: -3697276871838845311
+      barnacle_attack.png: -678275969258254253
+      barnacle_dead.png: -3733535742689908078
+      bee.png: -707021751911624613
+      bee_dead.png: 1262590712510692041
+      bee_move.png: 6042816162868545816
+      fishBlue.png: 5683457116038346815
+      fishBlue_dead.png: 2891895604968300871
+      fishBlue_fall.png: -2275007914624724183
+      fishGreen.png: -5806239423414507281
+      fishGreen_dead.png: 4390998245839726028
+      fishGreen_move.png: -5492815758637823842
+      fishPink.png: -6821685639027694034
+      fishPink_dead.png: -846717794547367027
+      fishPink_move.png: 4577670427211403054
+      fly.png: -4528635447786380694
+      fly_dead.png: 6421328840041964340
+      fly_move.png: 3952268923715281078
+      frog.png: 2660130619873155582
+      frog_dead.png: 3405805038210944594
+      frog_move.png: -1370524044558009668
+      ladybug.png: 6909334845952843548
+      ladybug_fly.png: -5020265789927303338
+      ladybug_move.png: 1173147018645608527
+      mouse.png: 7259958804768897625
+      mouse_dead.png: -5203993329162347949
+      mouse_move.png: 4005705482512962164
+      saw.png: -8658573290012483754
+      sawHalf.png: 134686538152775417
+      sawHalf_dead.png: 1071460526754756196
+      sawHalf_move.png: 6633863743617625561
+      saw_dead.png: 1808068301540160222
+      saw_move.png: -3663483080496917287
+      slimeBlock.png: 9063091832777269722
+      slimeBlock_dead.png: -6463780131909575698
+      slimeBlock_move.png: 3858524061073253511
+      slimeBlue.png: 126254697386640224
+      slimeBlue_dead.png: 5087229621120202458
+      slimeBlue_hit.png: -5859034152522674204
+      slimeBlue_move.png: 534354079809051213
+      slimeGreen.png: -499563797087542866
+      slimeGreen_dead.png: 5522126110524319058
+      slimeGreen_hit.png: 416908553896978983
+      slimeGreen_move.png: 4097591667925131851
+      slimePurple.png: -3587720615637507744
+      slimePurple_dead.png: 5946669646750058521
+      slimePurple_hit.png: 3656422633588561530
+      slimePurple_move.png: 3370985877528174844
+      snail.png: -367916635276725156
+      snail_move.png: 3779696022926567503
+      snail_shell.png: 3649421340470779701
+      wormGreen.png: 7328073887185657524
+      wormGreen_dead.png: -4226459257782511761
+      wormGreen_move.png: 3238730598691064419
+      wormPink.png: 3613221788814690034
+      wormPink_dead.png: 2312151494071999395
+      wormPink_move.png: 6202522613741333039
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
