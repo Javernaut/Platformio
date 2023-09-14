@@ -9,6 +9,7 @@ namespace Platformio.Player
         [SerializeField] private float runSpeed = 10f;
         [SerializeField] float jumpSpeed = 5f;
         [SerializeField] float climbSpeed = 5f;
+        [SerializeField] Vector2 deathKick = new Vector2 (10f, 10f);
 
         private Vector2 moveInput;
         private Rigidbody2D _myRigidbody;
@@ -16,7 +17,7 @@ namespace Platformio.Player
         private CapsuleCollider2D _myBodyCollider;
         private BoxCollider2D _myFeetCollider;
 
-        
+        private bool _isAlive = true;
         private float _gravityScaleAtStart;
 
         private void Awake()
@@ -32,9 +33,11 @@ namespace Platformio.Player
 
         private void Update()
         {
+            if (!_isAlive) { return; }
             Run();
             FlipSprite();
             ClimbLadder();
+            Die();
         }
 
         private void Run()
@@ -68,11 +71,13 @@ namespace Platformio.Player
 
         private void OnMove(InputValue inputValue)
         {
+            if (!_isAlive) { return; }
             moveInput = inputValue.Get<Vector2>();
         }
 
         private void OnJump(InputValue value)
         {
+            if (!_isAlive) { return; }
             var isTouchingGround = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
             var isTouchingLadder = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
             if (!isTouchingGround && !isTouchingLadder) { return;}
@@ -95,5 +100,17 @@ namespace Platformio.Player
                 transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.velocity.x), 1f);
             }
         }
+        
+        private void Die()
+        {
+            if (_myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+            {
+                _isAlive = false;
+                _myAnimator.SetTrigger("Dying");
+                _myRigidbody.velocity = deathKick;
+            }
+
+        }
+
     }
 }
