@@ -13,7 +13,9 @@ namespace Platformio.Player
         private Vector2 moveInput;
         private Rigidbody2D _myRigidbody;
         private Animator _myAnimator;
-        private CapsuleCollider2D _myCapsuleCollider;
+        private CapsuleCollider2D _myBodyCollider;
+        private BoxCollider2D _myFeetCollider;
+
         
         private float _gravityScaleAtStart;
 
@@ -22,7 +24,8 @@ namespace Platformio.Player
             _myRigidbody = GetComponent<Rigidbody2D>();
             _myRigidbody = GetComponent<Rigidbody2D>();
             _myAnimator = GetComponent<Animator>();
-            _myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+            _myBodyCollider = GetComponent<CapsuleCollider2D>();
+             _myFeetCollider = GetComponent<BoxCollider2D>();
             
             _gravityScaleAtStart = _myRigidbody.gravityScale;
         }
@@ -45,7 +48,7 @@ namespace Platformio.Player
 
         private void ClimbLadder()
         {
-            if (!_myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
+            if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
             { 
                 _myRigidbody.gravityScale = _gravityScaleAtStart;
                 _myAnimator.SetBool("isClimbing", false);
@@ -68,10 +71,10 @@ namespace Platformio.Player
             moveInput = inputValue.Get<Vector2>();
         }
 
-        void OnJump(InputValue value)
+        private void OnJump(InputValue value)
         {
-            bool isTouchingGround = _myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
-            bool isTouchingLadder = _myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+            var isTouchingGround = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+            var isTouchingLadder = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
             if (!isTouchingGround && !isTouchingLadder) { return;}
 
 
