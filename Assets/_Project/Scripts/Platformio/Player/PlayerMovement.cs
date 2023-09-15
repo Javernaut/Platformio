@@ -9,7 +9,9 @@ namespace Platformio.Player
         [SerializeField] private float runSpeed = 10f;
         [SerializeField] float jumpSpeed = 5f;
         [SerializeField] float climbSpeed = 5f;
-        [SerializeField] Vector2 deathKick = new Vector2 (10f, 10f);
+        [SerializeField] private Vector2 deathKick = new Vector2 (10f, 10f);
+        [SerializeField] private GameObject bullet;
+        [SerializeField] private Transform gun;
 
         private Vector2 moveInput;
         private Rigidbody2D _myRigidbody;
@@ -74,6 +76,13 @@ namespace Platformio.Player
             if (!_isAlive) { return; }
             moveInput = inputValue.Get<Vector2>();
         }
+
+        private void OnFire(InputValue value)
+        {
+            if (!_isAlive) { return; }
+            Instantiate(bullet, gun.position, transform.rotation);
+        }
+
 
         private void OnJump(InputValue value)
         {
