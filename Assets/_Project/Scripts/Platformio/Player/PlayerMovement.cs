@@ -117,6 +117,7 @@ namespace Platformio.Player
                 _isAlive = false;
                 _myAnimator.SetTrigger("Dying");
                 _myRigidbody.velocity = deathKick;
+                FindObjectOfType<GameSession>().ProcessPlayerDeath();
             }
 
         }

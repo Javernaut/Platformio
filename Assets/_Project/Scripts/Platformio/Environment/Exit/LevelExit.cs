@@ -10,7 +10,11 @@ namespace Platformio.Environment.Exit
     
         void OnTriggerEnter2D(Collider2D other) 
         {
-            StartCoroutine(LoadNextLevel());
+            if (other.CompareTag("Player"))
+            {
+                StartCoroutine(LoadNextLevel());
+            }
+
         }
 
         IEnumerator LoadNextLevel()
