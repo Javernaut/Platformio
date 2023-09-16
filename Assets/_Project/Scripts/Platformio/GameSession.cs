@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +7,11 @@ namespace Platformio
     public class GameSession : MonoBehaviour
     {
         [SerializeField] int playerLives = 3;
-    
+        [SerializeField] int score = 0;
+
+        [SerializeField] TextMeshProUGUI livesText;
+        [SerializeField] TextMeshProUGUI scoreText;
+        
         void Awake()
         {
             int numGameSessions = FindObjectsOfType<GameSession>().Length;
@@ -18,6 +23,12 @@ namespace Platformio
             {
                 DontDestroyOnLoad(gameObject);
             }
+        }
+        
+        void Start() 
+        {
+            livesText.text = playerLives.ToString();
+            scoreText.text = score.ToString();    
         }
 
         public void ProcessPlayerDeath()
@@ -37,6 +48,7 @@ namespace Platformio
             playerLives--;
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
+            livesText.text = playerLives.ToString();
         }
 
         void ResetGameSession()
@@ -44,6 +56,11 @@ namespace Platformio
             SceneManager.LoadScene(0);
             Destroy(gameObject);
         }
-
+        
+        public void AddToScore(int pointsToAdd)
+        {
+            score += pointsToAdd;
+            scoreText.text = score.ToString(); 
+        }
     }
 }
