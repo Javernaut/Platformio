@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3335331894001166689}
   - component: {fileID: 4979267084217388383}
   - component: {fileID: 5968224267589617167}
-  m_Layer: 0
+  - component: {fileID: 131146125164506773}
+  m_Layer: 14
   m_Name: ExitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1604631805
-  m_SortingLayer: 5
+  m_SortingLayerID: 857222751
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8715c38a4f1043798452c51b436b61b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  torque: 50
   doughRenderer: {fileID: 4425962865897301238}
   creamRenderer: {fileID: 6769899249856565490}
   toppingRenderer: {fileID: 919801968713536385}
@@ -190,6 +192,19 @@ CircleCollider2D:
   m_Offset: {x: 0.009232521, y: 0}
   serializedVersion: 2
   m_Radius: 1.3401709
+--- !u!114 &131146125164506773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753065082111640316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cc92e7f4e446bcb370e163ae96ff09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelLoadDelay: 1
 --- !u!1 &4067899435860067971
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670808043688609442}
   - component: {fileID: 919801968713536385}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Topping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1670460383931780144, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+  m_Sprite: {fileID: -1317604801264229276, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6445443277890153215}
   - component: {fileID: 6769899249856565490}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +362,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6571051677122192310, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+  m_Sprite: {fileID: -2622150809105586375, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -368,7 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2395499194863163791}
   - component: {fileID: 4425962865897301238}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Dough
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +446,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7215729604588931793, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+  m_Sprite: {fileID: 6495102853364872312, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
