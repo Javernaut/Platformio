@@ -6,18 +6,17 @@ namespace Platformio.Environment.Exit
 {
     public class LevelExit : MonoBehaviour
     {
-        [SerializeField] float levelLoadDelay = 1f;
-    
-        void OnTriggerEnter2D(Collider2D other) 
+        [SerializeField] private float levelLoadDelay = 1f;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
                 StartCoroutine(LoadNextLevel());
             }
-
         }
 
-        IEnumerator LoadNextLevel()
+        private IEnumerator LoadNextLevel()
         {
             yield return new WaitForSecondsRealtime(levelLoadDelay);
             var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -28,8 +27,8 @@ namespace Platformio.Environment.Exit
                 nextSceneIndex = 0;
             }
 
+            FindObjectOfType<ScenePersist>().ResetScenePersist();
             SceneManager.LoadScene(nextSceneIndex);
         }
-
     }
 }

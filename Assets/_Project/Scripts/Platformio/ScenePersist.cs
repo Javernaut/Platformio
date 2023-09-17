@@ -20,6 +20,5 @@ namespace Platformio
         {
             Destroy(gameObject);
         }
-
     }
 }
