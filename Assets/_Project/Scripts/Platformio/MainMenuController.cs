@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Platformio
@@ -5,10 +6,12 @@ namespace Platformio
     public class MainMenuController : MonoBehaviour
     {
         [SerializeField] private GameSession gameSessionPrefab;
+        [SerializeField] private TextMeshProUGUI highestScoreText;
         
         void Start()
         {
-            // TODO Setup the Highest Score label        
+            // TODO Setup the Highest Score label
+            // highestScoreText.enabled = false;
         }
 
         public void OnStartNewGameClicked()

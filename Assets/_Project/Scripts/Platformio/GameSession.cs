@@ -56,7 +56,8 @@ namespace Platformio
         {
             // TODO Clear all references, reset to default. Or just respawn the whole prefab
             FindObjectOfType<ScenePersist>().ResetScenePersist();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
+            Destroy(gameObject);
         }
         
         public void AddToScore(int pointsToAdd)
