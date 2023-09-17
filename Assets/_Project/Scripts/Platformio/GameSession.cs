@@ -28,7 +28,8 @@ namespace Platformio
         void Start() 
         {
             livesText.text = playerLives.ToString();
-            scoreText.text = score.ToString();    
+            scoreText.text = score.ToString();
+            SceneManager.LoadScene(1);
         }
 
         public void ProcessPlayerDeath()
@@ -53,9 +54,9 @@ namespace Platformio
 
         void ResetGameSession()
         {
+            // TODO Clear all references, reset to default. Or just respawn the whole prefab
             FindObjectOfType<ScenePersist>().ResetScenePersist();
-            SceneManager.LoadScene(0);
-            Destroy(gameObject);
+            SceneManager.LoadScene(1);
         }
         
         public void AddToScore(int pointsToAdd)

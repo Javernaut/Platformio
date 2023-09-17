@@ -24,7 +24,7 @@ namespace Platformio.Environment.Exit
 
             if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
             {
-                nextSceneIndex = 0;
+                nextSceneIndex = 1;
             }
 
             FindObjectOfType<ScenePersist>().ResetScenePersist();

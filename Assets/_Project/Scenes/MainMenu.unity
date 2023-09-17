@@ -687,7 +687,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2017719143}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2044448786}
+        m_TargetAssemblyTypeName: Platformio.MainMenuController, Assembly-CSharp
+        m_MethodName: OnStartNewGameClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2017719143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +751,7 @@ GameObject:
   - component: {fileID: 2044448782}
   - component: {fileID: 2044448781}
   - component: {fileID: 2044448785}
+  - component: {fileID: 2044448786}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -857,6 +870,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2044448786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044448780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac405a5c28aec4392b93644703ea7b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSessionPrefab: {fileID: 1775151619227655083, guid: de8fa09dc9caf4616bfc86db5059723e, type: 3}
 --- !u!1 &2115503294
 GameObject:
   m_ObjectHideFlags: 0
