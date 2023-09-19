@@ -243,6 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be30bdf2661ba4e1ab07baaac1e28789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPrefab: {fileID: 7097984118094302337, guid: 5f99edb359b614994958bbb7564cfc17, type: 3}
+  levelRoot: {fileID: 233239270}
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 216926811937929932, guid: 5abb609a5f6d844cd909be3b3ac5d3fc, type: 3}

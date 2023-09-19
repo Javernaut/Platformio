@@ -1,5 +1,6 @@
 using Cinemachine;
 using UnityEngine;
+using Zenject;
 
 namespace Platformio.Level
 {
@@ -23,6 +24,20 @@ namespace Platformio.Level
             foreach (var cinemachineVirtualCamera in cinemachineVirtualCameras)
             {
                 cinemachineVirtualCamera.Follow = cameraFollowTarget;
+            }
+        }
+
+        public class Factory : PlaceholderFactory<Settings, Level>
+        {
+        }
+
+        public class Settings
+        {
+            public int number;
+
+            public Settings(int number)
+            {
+                this.number = number;
             }
         }
     }

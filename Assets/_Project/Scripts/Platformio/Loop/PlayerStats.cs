@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Zenject;
 
-namespace Platformio
+namespace Platformio.Loop
 {
     public class PlayerStats
     {

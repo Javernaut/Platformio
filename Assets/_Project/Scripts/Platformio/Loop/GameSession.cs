@@ -11,7 +11,6 @@ namespace Platformio.Loop
         [SerializeField] TextMeshProUGUI livesText;
         [SerializeField] TextMeshProUGUI scoreText;
 
-        [SerializeField] private Level.Level levelPrefab;
         [SerializeField] private Transform levelRoot;
 
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
@@ -19,11 +18,13 @@ namespace Platformio.Loop
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
         private PlayerStats _playerStats;
+        private Level.Level.Factory _levelFactory;
 
         [Inject]
-        public void Construct(PlayerStats playerStats)
+        public void Construct(PlayerStats playerStats, Level.Level.Factory levelFactory) 
         {
             _playerStats = playerStats;
+            _levelFactory = levelFactory;
         }
 
         void Start()
@@ -31,7 +32,7 @@ namespace Platformio.Loop
             livesText.text = _playerStats.PlayerLives.ToString();
             scoreText.text = _playerStats.Score.ToString();
 
-            var level = Instantiate(levelPrefab, levelRoot);
+            var level = _levelFactory.Create(new Level.Level.Settings(1));
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
 
@@ -74,7 +75,7 @@ namespace Platformio.Loop
                 Destroy(child.gameObject);
             }
 
-            var level = Instantiate(levelPrefab, levelRoot);
+            var level = _levelFactory.Create(new Level.Level.Settings(1));
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
 
@@ -92,7 +93,7 @@ namespace Platformio.Loop
                 Destroy(child.gameObject);
             }
 
-            var level = Instantiate(levelPrefab, levelRoot);
+            var level = _levelFactory.Create(new Level.Level.Settings(1));
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
     }

@@ -79,8 +79,7 @@ namespace Platformio.Player
             _myAnimator.SetBool("isClimbing", playerHasVerticalSpeed);
 
         }
-
-
+        
         private void OnMove(InputValue inputValue)
         {
             if (!_isAlive) { return; }
