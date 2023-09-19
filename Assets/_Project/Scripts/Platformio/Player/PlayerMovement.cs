@@ -119,7 +119,6 @@ namespace Platformio.Player
                 _myRigidbody.velocity = deathKick;
                 FindObjectOfType<GameSession>().ProcessPlayerDeath();
             }
-
         }
 
     }

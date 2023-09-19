@@ -56,7 +56,9 @@ namespace Platformio
 
         public void QuitGame()
         {
-            // TODO Go to main menu and clean up all game session related objects
+            Time.timeScale = 1f;
+            // TODO Use injection here
+            FindObjectOfType<GameSession>().QuitToMainMenu();
         }
     }
 }

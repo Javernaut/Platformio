@@ -37,30 +37,45 @@ namespace Platformio
             }
             else
             {
-                ResetGameSession();
+                // TODO Show modal Game over UI instead
+                QuitToMainMenu();
             }
         }
 
         void TakeLife()
         {
             playerLives--;
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
             livesText.text = playerLives.ToString();
+
+            foreach (Transform child in levelRoot)
+            {
+                Destroy(child.gameObject);
+            }
+            var level = Instantiate(levelPrefab, levelRoot);
+            level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
 
-        void ResetGameSession()
+        public void QuitToMainMenu()
         {
-            // TODO Clear all references, reset to default. Or just respawn the whole prefab
+            SceneManager.LoadScene(0);
+            // TODO Cleanup
             // FindObjectOfType<ScenePersist>().ResetScenePersist();
-            // SceneManager.LoadScene(0);
-            // Destroy(gameObject);
         }
         
         public void AddToScore(int pointsToAdd)
         {
             score += pointsToAdd;
             scoreText.text = score.ToString(); 
+        }
+
+        public void LoadNextLevel()
+        {
+            foreach (Transform child in levelRoot)
+            {
+                Destroy(child.gameObject);
+            }
+            var level = Instantiate(levelPrefab, levelRoot);
+            level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
     }
 }

@@ -19,16 +19,9 @@ namespace Platformio.Environment.Exit
         private IEnumerator LoadNextLevel()
         {
             yield return new WaitForSecondsRealtime(levelLoadDelay);
-            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            var nextSceneIndex = currentSceneIndex + 1;
-
-            if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
-            {
-                nextSceneIndex = 1;
-            }
-
-            FindObjectOfType<ScenePersist>().ResetScenePersist();
-            SceneManager.LoadScene(nextSceneIndex);
+            // FindObjectOfType<ScenePersist>().ResetScenePersist();
+            // TODO Use injection instead
+            FindObjectOfType<GameSession>().LoadNextLevel();
         }
     }
 }

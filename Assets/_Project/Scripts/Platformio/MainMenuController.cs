@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Platformio
 {
     public class MainMenuController : MonoBehaviour
     {
-        [SerializeField] private GameSession gameSessionPrefab;
         [SerializeField] private TextMeshProUGUI highestScoreText;
         
         void Start()
@@ -17,8 +17,7 @@ namespace Platformio
         public void OnStartNewGameClicked()
         {
             // TODO Pick the player appearance
-            // TODO Spawn the global game-state object
-            var gameSessionInstance = Instantiate(gameSessionPrefab);
+            SceneManager.LoadScene(1);
         }
     }
 }

@@ -9,15 +9,6 @@ namespace Platformio.Level
         [SerializeField] private Transform cameraFollowTarget;
         [SerializeField] private Animator cameraAnimatorTarget;
 
-        void Start()
-        {
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        }
-
         public void InitWith(
             CinemachineVirtualCamera[] cinemachineVirtualCameras,
             CinemachineConfiner2D[] cameraConfiners,
