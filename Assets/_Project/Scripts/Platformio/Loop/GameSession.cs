@@ -8,9 +8,6 @@ namespace Platformio.Loop
 {
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI livesText;
-        [SerializeField] TextMeshProUGUI scoreText;
-
         [SerializeField] private Transform levelRoot;
 
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
@@ -29,34 +26,22 @@ namespace Platformio.Loop
 
         void Start()
         {
-            livesText.text = _playerStats.PlayerLives.ToString();
-            scoreText.text = _playerStats.Score.ToString();
-
             var level = _levelFactory.Create(new Level.Level.Settings(1));
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
 
         private void OnEnable()
         {
-            // TODO Move all this into a separate MonoBehaviour. And Extract this UI GameObjects out of GameSession prefab
             _playerStats.OnLivesNumberChanged += ProcessPlayerDeath;
-            _playerStats.OnScoreChanged += OnScoreChanged;
         }
 
         private void OnDisable()
         {
             _playerStats.OnLivesNumberChanged -= ProcessPlayerDeath;
-            _playerStats.OnScoreChanged -= OnScoreChanged;
-        }
-
-        private void OnScoreChanged(int newScore)
-        {
-            scoreText.text = newScore.ToString();
         }
 
         private void ProcessPlayerDeath(int newLives)
         {
-            livesText.text = _playerStats.PlayerLives.ToString();
             if (newLives > 0)
             {
                 ResetLevelOnceLifeIsTaken();
