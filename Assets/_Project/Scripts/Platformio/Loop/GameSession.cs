@@ -1,48 +1,64 @@
-using System;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Platformio
+namespace Platformio.Loop
 {
     public class GameSession : MonoBehaviour
     {
-        private int _playerLives;
-        private int _score;
-        
         [SerializeField] TextMeshProUGUI livesText;
         [SerializeField] TextMeshProUGUI scoreText;
 
-        [SerializeField] private Level.Level levelPrefab; 
+        [SerializeField] private Level.Level levelPrefab;
         [SerializeField] private Transform levelRoot;
 
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
         [SerializeField] private CinemachineVirtualCamera[] cameras;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
+        private PlayerStats _playerStats;
+
         [Inject]
-        public void Construct(Settings settings)
+        public void Construct(PlayerStats playerStats)
         {
-            _playerLives = settings.initialLives;
-            _score = settings.initialScore;
+            _playerStats = playerStats;
         }
-        
-        void Start() 
+
+        void Start()
         {
-            livesText.text = _playerLives.ToString();
-            scoreText.text = _score.ToString();
+            livesText.text = _playerStats.PlayerLives.ToString();
+            scoreText.text = _playerStats.Score.ToString();
 
             var level = Instantiate(levelPrefab, levelRoot);
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
 
-        public void ProcessPlayerDeath()
+        private void OnEnable()
         {
-            if (_playerLives > 1)
+            // TODO Move all this into a separate MonoBehaviour. And Extract this UI GameObjects out of GameSession prefab
+            _playerStats.OnLivesNumberChanged += ProcessPlayerDeath;
+            _playerStats.OnScoreChanged += OnScoreChanged;
+        }
+
+        private void OnDisable()
+        {
+            _playerStats.OnLivesNumberChanged -= ProcessPlayerDeath;
+            _playerStats.OnScoreChanged -= OnScoreChanged;
+        }
+
+        private void OnScoreChanged(int newScore)
+        {
+            scoreText.text = newScore.ToString();
+        }
+
+        private void ProcessPlayerDeath(int newLives)
+        {
+            livesText.text = _playerStats.PlayerLives.ToString();
+            if (newLives > 0)
             {
-                TakeLife();
+                ResetLevelOnceLifeIsTaken();
             }
             else
             {
@@ -51,15 +67,13 @@ namespace Platformio
             }
         }
 
-        void TakeLife()
+        private void ResetLevelOnceLifeIsTaken()
         {
-            _playerLives--;
-            livesText.text = _playerLives.ToString();
-
             foreach (Transform child in levelRoot)
             {
                 Destroy(child.gameObject);
             }
+
             var level = Instantiate(levelPrefab, levelRoot);
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
@@ -71,29 +85,15 @@ namespace Platformio
             // FindObjectOfType<ScenePersist>().ResetScenePersist();
         }
         
-        public void AddToScore(int pointsToAdd)
-        {
-            _score += pointsToAdd;
-            scoreText.text = _score.ToString(); 
-        }
-
         public void LoadNextLevel()
         {
             foreach (Transform child in levelRoot)
             {
                 Destroy(child.gameObject);
             }
+
             var level = Instantiate(levelPrefab, levelRoot);
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
-        }
-
-        [Serializable]
-        public class Settings
-        {
-            [Min(0)]
-            public int initialLives;
-            [Min(0)]
-            public int initialScore;
         }
     }
 }

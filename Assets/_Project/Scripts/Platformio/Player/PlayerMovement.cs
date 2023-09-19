@@ -1,6 +1,8 @@
 using System;
+using Platformio.Loop;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace Platformio.Player
 {
@@ -21,6 +23,14 @@ namespace Platformio.Player
 
         private bool _isAlive = true;
         private float _gravityScaleAtStart;
+
+        private PlayerStats _playerStats;
+
+        [Inject]
+        public void Construct(PlayerStats playerStats)
+        {
+            _playerStats = playerStats;
+        }
 
         private void Awake()
         {
@@ -117,7 +127,7 @@ namespace Platformio.Player
                 _isAlive = false;
                 _myAnimator.SetTrigger("Dying");
                 _myRigidbody.velocity = deathKick;
-                FindObjectOfType<GameSession>().ProcessPlayerDeath();
+                _playerStats.TakeLife();
             }
         }
 

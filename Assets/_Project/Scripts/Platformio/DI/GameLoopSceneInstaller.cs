@@ -6,6 +6,7 @@ namespace Platformio.DI
     {
         public override void InstallBindings()
         {
+            Container.Bind<PlayerStats>().AsSingle();
         }
     }
 }

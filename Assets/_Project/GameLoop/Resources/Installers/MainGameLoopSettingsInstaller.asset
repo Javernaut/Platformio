@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24cc3f145a44b8384fe9e4e5a221805, type: 3}
   m_Name: MainGameLoopSettingsInstaller
   m_EditorClassIdentifier: 
-  gameSessionSettings:
-    initialLives: 5
-    initialScore: 0
+  playerStatsSettings:
+    initialLives: 3
+    initialScore: 100

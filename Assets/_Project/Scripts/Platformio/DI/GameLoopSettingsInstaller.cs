@@ -1,3 +1,4 @@
+using Platformio.Loop;
 using UnityEngine;
 using Zenject;
 
@@ -6,11 +7,11 @@ namespace Platformio.DI
     [CreateAssetMenu]
     public class GameLoopSettingsInstaller : ScriptableObjectInstaller<GameLoopSettingsInstaller>
     {
-        public GameSession.Settings gameSessionSettings;
+        public PlayerStats.Settings playerStatsSettings;
 
         public override void InstallBindings()
         {
-            Container.BindInstance(gameSessionSettings);
+            Container.BindInstance(playerStatsSettings);
         }
     }
 }
