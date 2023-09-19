@@ -1,3 +1,4 @@
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,25 +12,21 @@ namespace Platformio
 
         [SerializeField] TextMeshProUGUI livesText;
         [SerializeField] TextMeshProUGUI scoreText;
-        
-        void Awake()
-        {
-            int numGameSessions = FindObjectsOfType<GameSession>().Length;
-            if (numGameSessions > 1)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                DontDestroyOnLoad(gameObject);
-            }
-        }
+
+        [SerializeField] private Level.Level levelPrefab; 
+        [SerializeField] private Transform levelRoot;
+
+        [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
+        [SerializeField] private CinemachineVirtualCamera[] cameras;
+        [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
         
         void Start() 
         {
             livesText.text = playerLives.ToString();
             scoreText.text = score.ToString();
-            SceneManager.LoadScene(1);
+
+            var level = Instantiate(levelPrefab, levelRoot);
+            level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
         }
 
         public void ProcessPlayerDeath()
@@ -55,9 +52,9 @@ namespace Platformio
         void ResetGameSession()
         {
             // TODO Clear all references, reset to default. Or just respawn the whole prefab
-            FindObjectOfType<ScenePersist>().ResetScenePersist();
-            SceneManager.LoadScene(0);
-            Destroy(gameObject);
+            // FindObjectOfType<ScenePersist>().ResetScenePersist();
+            // SceneManager.LoadScene(0);
+            // Destroy(gameObject);
         }
         
         public void AddToScore(int pointsToAdd)
