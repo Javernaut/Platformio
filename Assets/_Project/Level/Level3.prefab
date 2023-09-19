@@ -716,9 +716,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125648261976827558}
+  - component: {fileID: 9179889307704461006}
   - component: {fileID: 4553486167275491611}
   - component: {fileID: 4984643018087596927}
-  - component: {fileID: 9179889307704461006}
   - component: {fileID: 158451800648593872}
   - component: {fileID: 7511267579936738862}
   - component: {fileID: 6833845344019429529}
@@ -744,6 +744,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2085027073939991571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9179889307704461006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820436219171542331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca60a59e266747ddaaaf12482b83b2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1839735485 &4553486167275491611
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3947,19 +3959,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &9179889307704461006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5820436219171542331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca60a59e266747ddaaaf12482b83b2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  environmentThemeConfiguration: {fileID: 11400000, guid: 374f19155769a4b429a3ea5bbb26cc7b, type: 2}
 --- !u!19719996 &158451800648593872
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4322,6 +4321,7 @@ GameObject:
   - component: {fileID: 1077701591458718082}
   - component: {fileID: 266085080541555449}
   - component: {fileID: 4176746668221413242}
+  - component: {fileID: 2114322959039344932}
   m_Layer: 0
   m_Name: Level3
   m_TagString: Untagged
@@ -4362,7 +4362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 2114322959039344932}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -4399,6 +4400,18 @@ MonoBehaviour:
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
+--- !u!114 &2114322959039344932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415457823756996695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f577bd54f74426a5aa238f4e92bc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6740733519263515470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,6 +4718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScenePersist
       objectReference: {fileID: 0}
+    - target: {fileID: 858570513237932157, guid: 48d860670388b42c1b351f946a1a6ff1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2120530295367495548, guid: 48d860670388b42c1b351f946a1a6ff1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -878.2701
@@ -4828,7 +4845,7 @@ PrefabInstance:
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1178295426643572817, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: 805300897711346969, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 1753065082111640316, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Name
       value: ExitPoint
@@ -4836,7 +4853,7 @@ PrefabInstance:
     - target: {fileID: 4425962865897301238, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6495102853364872312, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -7215729604588931793, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 4754127135458069237, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -946.87
@@ -4880,7 +4897,7 @@ PrefabInstance:
     - target: {fileID: 6769899249856565490, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -8490410936375674778, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: 2569439597660113546, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

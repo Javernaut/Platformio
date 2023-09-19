@@ -1,4 +1,6 @@
 using Cinemachine;
+using Platformio.DI;
+using Platformio.Environment;
 using UnityEngine;
 using Zenject;
 
@@ -33,11 +35,11 @@ namespace Platformio.Level
 
         public class Settings
         {
-            public int number;
+            public EnvironmentThemeConfiguration theme;
 
-            public Settings(int number)
+            public Settings(EnvironmentThemeConfiguration theme)
             {
-                this.number = number;
+                this.theme = theme;
             }
         }
     }

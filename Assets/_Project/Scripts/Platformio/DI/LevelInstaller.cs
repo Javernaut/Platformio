@@ -1,3 +1,5 @@
+using Platformio.Environment.Tile;
+using UnityEngine;
 using Zenject;
 
 namespace Platformio.DI
@@ -9,7 +11,7 @@ namespace Platformio.DI
         
         public override void InstallBindings()
         {
-            Container.BindInstance(_levelSettings).WhenInjectedInto<Level.Level>();
+            Container.BindInstance(_levelSettings.theme);
         }
     }
 }

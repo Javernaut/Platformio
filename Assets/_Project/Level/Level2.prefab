@@ -238,9 +238,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2829511062980814521}
+  - component: {fileID: 5121592090640367326}
   - component: {fileID: 698355556972069106}
   - component: {fileID: 5798302908451006175}
-  - component: {fileID: 5121592090640367326}
   - component: {fileID: 1307729992577335610}
   - component: {fileID: 4511573486686825069}
   - component: {fileID: 8212939089611459586}
@@ -266,6 +266,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7257810119036378844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5121592090640367326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081816073404966583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca60a59e266747ddaaaf12482b83b2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1839735485 &698355556972069106
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3461,19 +3473,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &5121592090640367326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081816073404966583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca60a59e266747ddaaaf12482b83b2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  environmentThemeConfiguration: {fileID: 11400000, guid: 96e9fbd7b37ba4306ad7e5ed3b14ec30, type: 2}
 --- !u!19719996 &1307729992577335610
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4008,6 +4007,7 @@ GameObject:
   - component: {fileID: 6809636924379138307}
   - component: {fileID: 7111816922944252855}
   - component: {fileID: 4642314551276590658}
+  - component: {fileID: 5851615419743911493}
   m_Layer: 0
   m_Name: Level2
   m_TagString: Untagged
@@ -4048,7 +4048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 5851615419743911493}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -4085,6 +4086,18 @@ MonoBehaviour:
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
+--- !u!114 &5851615419743911493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905664978488614571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f577bd54f74426a5aa238f4e92bc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5420500578734732612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,6 +4588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScenePersist
       objectReference: {fileID: 0}
+    - target: {fileID: 858570513237932157, guid: 48d860670388b42c1b351f946a1a6ff1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2120530295367495548, guid: 48d860670388b42c1b351f946a1a6ff1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 81.7299
@@ -4773,7 +4790,7 @@ PrefabInstance:
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -5231467362661914987, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: 9009132279534518907, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 1753065082111640316, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Name
       value: ExitPoint
@@ -4825,7 +4842,7 @@ PrefabInstance:
     - target: {fileID: 6769899249856565490, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2569439597660113546, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: 3736556275541277850, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

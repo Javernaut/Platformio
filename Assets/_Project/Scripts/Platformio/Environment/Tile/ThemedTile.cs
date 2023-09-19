@@ -39,6 +39,11 @@ namespace Platformio.Environment.Tile
             }
 
             var configuration = themeConfigurationProvider.GetCurrentValue();
+            if (configuration == null)
+            {
+                // TODO In Editor tiles want to be rendered even before TilemapThemeProvider.Awake.
+                return null;
+            }
             return type switch
             {
                 Type.ThinPlatform => configuration.thinPlatformTile,

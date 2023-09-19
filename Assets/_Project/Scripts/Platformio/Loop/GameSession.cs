@@ -1,4 +1,5 @@
 using Cinemachine;
+using Platformio.DI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,18 +17,22 @@ namespace Platformio.Loop
 
         private PlayerStats _playerStats;
         private Level.Level.Factory _levelFactory;
+        private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
+
+        private int _currentThemeIndex;
 
         [Inject]
-        public void Construct(PlayerStats playerStats, Level.Level.Factory levelFactory) 
+        public void Construct(PlayerStats playerStats, Level.Level.Factory levelFactory,
+            GameLoopSettingsInstaller.ThemeConfiguration themeConfiguration)
         {
             _playerStats = playerStats;
             _levelFactory = levelFactory;
+            _themeConfiguration = themeConfiguration;
         }
 
         void Start()
         {
-            var level = _levelFactory.Create(new Level.Level.Settings(1));
-            level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
+            SpawnNewLevel();
         }
 
         private void OnEnable()
@@ -60,8 +65,8 @@ namespace Platformio.Loop
                 Destroy(child.gameObject);
             }
 
-            var level = _levelFactory.Create(new Level.Level.Settings(1));
-            level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
+            // TODO Restart the SAME level
+            SpawnNewLevel();
         }
 
         public void QuitToMainMenu()
@@ -70,7 +75,7 @@ namespace Platformio.Loop
             // TODO Cleanup
             // FindObjectOfType<ScenePersist>().ResetScenePersist();
         }
-        
+
         public void LoadNextLevel()
         {
             foreach (Transform child in levelRoot)
@@ -78,8 +83,21 @@ namespace Platformio.Loop
                 Destroy(child.gameObject);
             }
 
-            var level = _levelFactory.Create(new Level.Level.Settings(1));
+            SpawnNewLevel();
+        }
+
+        private void SpawnNewLevel()
+        {
+            var level = _levelFactory.Create(
+                new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex])
+            );
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
+            
+            _currentThemeIndex++;
+            if (_currentThemeIndex == _themeConfiguration.themes.Length)
+            {
+                _currentThemeIndex = 0;
+            }
         }
     }
 }
