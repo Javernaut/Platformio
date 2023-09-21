@@ -88,9 +88,8 @@ namespace Platformio.Loop
 
         private void SpawnNewLevel()
         {
-            var level = _levelFactory.Create(
-                new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex])
-            );
+            var settings = new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex]);
+            var level = _levelFactory.Create(settings);
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
             
             _currentThemeIndex++;

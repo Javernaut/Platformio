@@ -1,4 +1,3 @@
-using System;
 using Platformio.DI;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -9,6 +8,8 @@ namespace Platformio.Environment.Tile
     [ExecuteAlways]
     public class TilemapThemeProvider : MonoBehaviour, IProvider<EnvironmentThemeConfiguration>
     {
+        [SerializeField] private EnvironmentThemeConfiguration fallbackEnvironmentThemeConfiguration;
+
         private EnvironmentThemeConfiguration _environmentThemeConfiguration;
 
         private Tilemap _tilemap;
@@ -16,40 +17,26 @@ namespace Platformio.Environment.Tile
         [Inject]
         public void Construct(EnvironmentThemeConfiguration environmentThemeConfiguration)
         {
-            Debug.Log("E name " + environmentThemeConfiguration.name);
             _environmentThemeConfiguration = environmentThemeConfiguration;
         }
 
         private void Awake()
         {
-            Debug.Log("E name Awake");
-            EnsureTileMapAvailability();
-            _tilemap.RefreshAllTiles();
-        }
-
-        private void Start()
-        {
-            Debug.Log("E name Start");
-        }
-
-        private void EnsureTileMapAvailability()
-        {
-            _tilemap ??= GetComponent<Tilemap>();
+            _tilemap = GetComponent<Tilemap>();
         }
 
         public EnvironmentThemeConfiguration GetCurrentValue()
         {
-            Debug.Log("GetCurrentValue");
-            return _environmentThemeConfiguration;
+            return Application.IsPlaying(gameObject)
+                ? _environmentThemeConfiguration
+                : fallbackEnvironmentThemeConfiguration;
         }
 
         private void Update()
         {
-            if (!Application.isPlaying)
+            if (!Application.IsPlaying(gameObject))
             {
-                EnsureTileMapAvailability();
-                // TODO WTF should be here?
-                // _tilemap.RefreshAllTiles();
+                _tilemap.RefreshAllTiles();
             }
         }
     }
