@@ -1,6 +1,5 @@
 using Cinemachine;
 using Platformio.DI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -15,20 +14,14 @@ namespace Platformio.Loop
         [SerializeField] private CinemachineVirtualCamera[] cameras;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
+        [Inject]
         private PlayerStats _playerStats;
+        [Inject]
         private Level.Level.Factory _levelFactory;
+        [Inject]
         private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
 
         private int _currentThemeIndex;
-
-        [Inject]
-        public void Construct(PlayerStats playerStats, Level.Level.Factory levelFactory,
-            GameLoopSettingsInstaller.ThemeConfiguration themeConfiguration)
-        {
-            _playerStats = playerStats;
-            _levelFactory = levelFactory;
-            _themeConfiguration = themeConfiguration;
-        }
 
         void Start()
         {

@@ -6,31 +6,25 @@ using Zenject;
 namespace Platformio.Environment.Tile
 {
     [ExecuteAlways]
+    [RequireComponent(typeof(Tilemap))]
     public class TilemapThemeProvider : MonoBehaviour, IProvider<EnvironmentThemeConfiguration>
     {
-        [SerializeField] private EnvironmentThemeConfiguration fallbackEnvironmentThemeConfiguration;
-
-        private EnvironmentThemeConfiguration _environmentThemeConfiguration;
-
+        [InjectOptional]
+        [SerializeField] private EnvironmentThemeConfiguration environmentThemeConfiguration;
+        
         private Tilemap _tilemap;
-
-        [Inject]
-        public void Construct(EnvironmentThemeConfiguration environmentThemeConfiguration)
-        {
-            _environmentThemeConfiguration = environmentThemeConfiguration;
-        }
 
         private void Awake()
         {
             _tilemap = GetComponent<Tilemap>();
         }
 
-        public EnvironmentThemeConfiguration GetCurrentValue()
+        private void Start()
         {
-            return Application.IsPlaying(gameObject)
-                ? _environmentThemeConfiguration
-                : fallbackEnvironmentThemeConfiguration;
+            _tilemap.RefreshAllTiles();
         }
+
+        public EnvironmentThemeConfiguration GetCurrentValue() => environmentThemeConfiguration;
 
         private void Update()
         {

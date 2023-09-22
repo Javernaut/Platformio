@@ -13,12 +13,11 @@ namespace Platformio.DI
         {
             Container.Bind<PlayerStats>().AsSingle();
             
-            Container.DefaultParent = levelRoot;
-            
             // TODO Wtf with imports here?
             Container.BindFactory<Level.Level.Settings, Level.Level, Level.Level.Factory>()
                 .FromSubContainerResolve()
-                .ByNewContextPrefab<LevelInstaller>(levelPrefab);
+                .ByNewContextPrefab<LevelInstaller>(levelPrefab)
+                .UnderTransform(levelRoot);
         }
     }
 }

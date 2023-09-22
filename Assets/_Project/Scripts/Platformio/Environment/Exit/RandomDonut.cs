@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Platformio.Environment.Exit
 {
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class RandomDonut : MonoBehaviour
     {
         [Range(0, 100)] [SerializeField] private float torque = 50f;
@@ -31,7 +29,10 @@ namespace Platformio.Environment.Exit
 
         private void Start()
         {
-            _rigidbody.AddTorque(torque);
+            if (Application.IsPlaying(gameObject))
+            {
+                _rigidbody.AddTorque(torque);
+            }
         }
 
         private void SetRandomSprite(SpriteRenderer renderer, Sprite[] sprites)
