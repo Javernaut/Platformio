@@ -1,4 +1,3 @@
-using System;
 using Platformio.Loop;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,7 +10,7 @@ namespace Platformio.Player
         [SerializeField] private float runSpeed = 10f;
         [SerializeField] float jumpSpeed = 5f;
         [SerializeField] float climbSpeed = 5f;
-        [SerializeField] private Vector2 deathKick = new Vector2 (10f, 10f);
+        [SerializeField] private Vector2 deathKick = new Vector2(10f, 10f);
         [SerializeField] private GameObject bullet;
         [SerializeField] private Transform gun;
 
@@ -24,13 +23,7 @@ namespace Platformio.Player
         private bool _isAlive = true;
         private float _gravityScaleAtStart;
 
-        private PlayerStats _playerStats;
-
-        [Inject]
-        public void Construct(PlayerStats playerStats)
-        {
-            _playerStats = playerStats;
-        }
+        [Inject] private PlayerStats _playerStats;
 
         private void Awake()
         {
@@ -38,14 +31,18 @@ namespace Platformio.Player
             _myRigidbody = GetComponent<Rigidbody2D>();
             _myAnimator = GetComponent<Animator>();
             _myBodyCollider = GetComponent<CapsuleCollider2D>();
-             _myFeetCollider = GetComponent<BoxCollider2D>();
-            
+            _myFeetCollider = GetComponent<BoxCollider2D>();
+
             _gravityScaleAtStart = _myRigidbody.gravityScale;
         }
 
         private void Update()
         {
-            if (!_isAlive) { return; }
+            if (!_isAlive)
+            {
+                return;
+            }
+
             Run();
             FlipSprite();
             ClimbLadder();
@@ -63,8 +60,8 @@ namespace Platformio.Player
 
         private void ClimbLadder()
         {
-            if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
-            { 
+            if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+            {
                 _myRigidbody.gravityScale = _gravityScaleAtStart;
                 _myAnimator.SetBool("isClimbing", false);
                 return;
@@ -74,31 +71,45 @@ namespace Platformio.Player
             var climbVelocity = new Vector2(_myRigidbody.velocity.x, moveInput.y * climbSpeed);
             _myRigidbody.velocity = climbVelocity;
             _myRigidbody.gravityScale = 0f;
-            
+
             var playerHasVerticalSpeed = Mathf.Abs(_myRigidbody.velocity.y) > Mathf.Epsilon;
             _myAnimator.SetBool("isClimbing", playerHasVerticalSpeed);
-
         }
-        
+
         private void OnMove(InputValue inputValue)
         {
-            if (!_isAlive) { return; }
+            if (!_isAlive)
+            {
+                return;
+            }
+
             moveInput = inputValue.Get<Vector2>();
         }
 
         private void OnFire(InputValue value)
         {
-            if (!_isAlive) { return; }
+            if (!_isAlive)
+            {
+                return;
+            }
+
             Instantiate(bullet, gun.position, transform.rotation);
         }
 
 
         private void OnJump(InputValue value)
         {
-            if (!_isAlive) { return; }
+            if (!_isAlive)
+            {
+                return;
+            }
+
             var isTouchingGround = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
             var isTouchingLadder = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
-            if (!isTouchingGround && !isTouchingLadder) { return;}
+            if (!isTouchingGround && !isTouchingLadder)
+            {
+                return;
+            }
 
 
             if (value.isPressed)
@@ -118,7 +129,7 @@ namespace Platformio.Player
                 transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.velocity.x), 1f);
             }
         }
-        
+
         private void Die()
         {
             if (_myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
@@ -129,6 +140,5 @@ namespace Platformio.Player
                 _playerStats.TakeLife();
             }
         }
-
     }
 }

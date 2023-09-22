@@ -24,8 +24,6 @@ namespace Platformio.Environment.Tile
             _tilemap.RefreshAllTiles();
         }
 
-        public EnvironmentThemeConfiguration GetCurrentValue() => environmentThemeConfiguration;
-
         private void Update()
         {
             if (!Application.IsPlaying(gameObject))
@@ -33,5 +31,7 @@ namespace Platformio.Environment.Tile
                 _tilemap.RefreshAllTiles();
             }
         }
+
+        public EnvironmentThemeConfiguration GetCurrentValue() => environmentThemeConfiguration;
     }
 }

@@ -14,12 +14,9 @@ namespace Platformio.Loop
         [SerializeField] private CinemachineVirtualCamera[] cameras;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
-        [Inject]
-        private PlayerStats _playerStats;
-        [Inject]
-        private Level.Level.Factory _levelFactory;
-        [Inject]
-        private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
+        [Inject] private PlayerStats _playerStats;
+        [Inject] private Level.Level.Factory _levelFactory;
+        [Inject] private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
 
         private int _currentThemeIndex;
 
@@ -84,7 +81,7 @@ namespace Platformio.Loop
             var settings = new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex]);
             var level = _levelFactory.Create(settings);
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
-            
+
             _currentThemeIndex++;
             if (_currentThemeIndex == _themeConfiguration.themes.Length)
             {

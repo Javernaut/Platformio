@@ -9,13 +9,7 @@ namespace Platformio.Pickup
         [SerializeField] private AudioClip coinPickupSFX;
         [SerializeField] int pointsForCoinPickup = 100;
 
-        private PlayerStats _playerStats;
-
-        [Inject]
-        public void Construct(PlayerStats playerStats)
-        {
-            _playerStats = playerStats;
-        }
+        [Inject] private PlayerStats _playerStats;
 
         private bool _wasCollected;
 

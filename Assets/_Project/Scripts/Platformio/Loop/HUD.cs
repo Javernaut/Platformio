@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -10,13 +9,7 @@ namespace Platformio.Loop
         [SerializeField] TextMeshProUGUI livesText;
         [SerializeField] TextMeshProUGUI scoreText;
 
-        private PlayerStats _playerStats;
-
-        [Inject]
-        public void Construct(PlayerStats playerStats)
-        {
-            _playerStats = playerStats;
-        }
+        [Inject] private PlayerStats _playerStats;
 
         private void OnEnable()
         {
