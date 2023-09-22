@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 582353578764138705}
   - component: {fileID: 7050422107204610956}
   - component: {fileID: 8015725513677914532}
+  - component: {fileID: 1275978571489294478}
+  - component: {fileID: 8944873421703022795}
+  - component: {fileID: 8514996940383190708}
   m_Layer: 12
   m_Name: HazardsTilemap
   m_TagString: Untagged
@@ -182,6 +185,150 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!50 &1275978571489294478
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972205720604738168}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &8944873421703022795
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972205720604738168}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 8514996940383190708}
+    m_ColliderPaths:
+    - - X: -121406248
+        Y: -57578124
+      - X: -123359376
+        Y: -55859376
+      - X: -126718752
+        Y: -55859376
+      - X: -128203128
+        Y: -57187500
+      - X: -129296872
+        Y: -60000000
+      - X: -120468752
+        Y: -60000000
+    - - X: -111406248
+        Y: -57578124
+      - X: -113359376
+        Y: -55859376
+      - X: -116718752
+        Y: -55859376
+      - X: -118203128
+        Y: -57187500
+      - X: -119296872
+        Y: -60000000
+      - X: -110468752
+        Y: -60000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: -11.046922, y: -6}
+      - {x: -11.14063, y: -5.757808}
+      - {x: -11.335947, y: -5.5859375}
+      - {x: -11.671883, y: -5.585944}
+      - {x: -11.820315, y: -5.718756}
+      - {x: -11.929641, y: -6}
+    - - {x: -12.046922, y: -6}
+      - {x: -12.14063, y: -5.757808}
+      - {x: -12.335947, y: -5.5859375}
+      - {x: -12.671883, y: -5.585944}
+      - {x: -12.820315, y: -5.718756}
+      - {x: -12.929641, y: -6}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 6972205720604738168}
+--- !u!19719996 &8514996940383190708
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972205720604738168}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1001 &2389478554839738730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,11 +340,11 @@ PrefabInstance:
     - target: {fileID: 2262226809438562912, guid: 5f99edb359b614994958bbb7564cfc17, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6561006780711760842, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -6571051677122192310, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 5644491614063765779, guid: 5f99edb359b614994958bbb7564cfc17, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1178295426643572817, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -5231467362661914987, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 7097984118094302337, guid: 5f99edb359b614994958bbb7564cfc17, type: 3}
       propertyPath: m_Name
       value: Level3

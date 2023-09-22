@@ -232,7 +232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be30bdf2661ba4e1ab07baaac1e28789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 7097984118094302337, guid: 5f99edb359b614994958bbb7564cfc17, type: 3}
+  levelPrefabs:
+  - {fileID: 7978774234669139146, guid: c0cb3ae39a7a34770804c13e3f346703, type: 3}
+  - {fileID: 5406986643316267083, guid: 082695a31e795432eb43d52a58c86eca, type: 3}
+  - {fileID: 4875209162352682475, guid: a495f19181e524831a5884982ce9466e, type: 3}
   levelRoot: {fileID: 233239270}
 --- !u!1 &630880443 stripped
 GameObject:

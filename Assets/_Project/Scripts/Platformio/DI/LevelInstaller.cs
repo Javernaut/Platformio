@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Platformio.DI
 {
-    public class LevelInstaller : MonoInstaller<LevelInstaller>
+    public class LevelInstaller : Installer<LevelInstaller>
     {
         [Inject] private Level.Level.Settings _levelSettings;
 

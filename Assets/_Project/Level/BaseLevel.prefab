@@ -3139,9 +3139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9102073428275074841}
   - component: {fileID: 713634836572489379}
-  - component: {fileID: 3880270857069477861}
   - component: {fileID: 9158460847129674567}
-  - component: {fileID: 4268163307403925111}
   m_Layer: 0
   m_Name: BaseLevel
   m_TagString: Untagged
@@ -3183,24 +3181,6 @@ MonoBehaviour:
   cameraBoundingShape: {fileID: 6197161051106745482}
   cameraFollowTarget: {fileID: 5487042118227444983}
   cameraAnimatorTarget: {fileID: 7888341265341215894}
---- !u!114 &3880270857069477861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7097984118094302337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 4268163307403925111}
-  _installerPrefabs: []
-  _autoRun: 1
-  _kernel: {fileID: 0}
 --- !u!114 &9158460847129674567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3219,18 +3199,6 @@ MonoBehaviour:
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
---- !u!114 &4268163307403925111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7097984118094302337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f577bd54f74426a5aa238f4e92bc94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9106335514600379498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,7 +3321,7 @@ PrefabInstance:
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 9009132279534518907, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -1317604801264229276, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -3373,7 +3341,7 @@ PrefabInstance:
     - target: {fileID: 4425962865897301238, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6495102853364872312, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -3486508852453330101, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 4425962865897301238, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -3429,7 +3397,7 @@ PrefabInstance:
     - target: {fileID: 6769899249856565490, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6837592568857025210, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -7309719687116375242, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 6769899249856565490, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
