@@ -1,16 +1,19 @@
 using System;
+using Platformio.Pickup;
 using UnityEngine;
 using Zenject;
 
 namespace Platformio.Loop
 {
-    public class PlayerStats
+    public class PlayerStats : IDisposable
     {
         private int _playerLives;
         private int _score;
 
         public int PlayerLives => _playerLives;
         public int Score => _score;
+
+        [Inject] private ScoreCounter _scoreCounter;
 
         public delegate void LivesNumberChanged(int newLives);
 
@@ -47,6 +50,11 @@ namespace Platformio.Loop
         {
             _score += score;
             OnScoreChanged?.Invoke(_score);
+        }
+
+        public void Dispose()
+        {
+            _scoreCounter.OfferNewMaxScore(_score);
         }
     }
 }

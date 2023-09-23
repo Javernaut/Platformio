@@ -12,7 +12,7 @@ namespace Platformio.DI
 
         public override void InstallBindings()
         {
-            Container.Bind<PlayerStats>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerStats>().AsSingle();
 
             // TODO Wtf with imports here?
             Container.BindFactory<Level.Level.Settings, Level.Level, Level.Level.Factory>()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStatsSettings:
     initialLives: 3
-    initialScore: 100
+    initialScore: 0
   levelConfigurationSettings:
     themes:
     - {fileID: 11400000, guid: 96e9fbd7b37ba4306ad7e5ed3b14ec30, type: 2}

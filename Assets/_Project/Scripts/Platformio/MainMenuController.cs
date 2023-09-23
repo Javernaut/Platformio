@@ -1,4 +1,5 @@
 using System.Collections;
+using Platformio.Pickup;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,13 +12,24 @@ namespace Platformio
         [SerializeField] private TextMeshProUGUI highestScoreText;
 
         [Inject] private Fader _fader;
+        [Inject] private ScoreCounter _scoreCounter;
 
         private IEnumerator Start()
         {
             _fader.FadeOutImmediate();
+            SetupMaxScoreLabel();
             yield return _fader.FadeIn(1);
-            // TODO Setup the Highest Score label
-            // highestScoreText.enabled = false;
+        }
+
+        private void SetupMaxScoreLabel()
+        {
+            var lastMaxScore = _scoreCounter.MaxScore;
+            if (lastMaxScore > 0)
+            {
+                highestScoreText.gameObject.SetActive(true);
+                // TODO Consider basic localization mechanism
+                highestScoreText.text = $"Highest Score:\n{lastMaxScore}";
+            }
         }
 
         public void OnStartNewGameClicked()

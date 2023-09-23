@@ -947,6 +947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HighestScore
       objectReference: {fileID: 0}
+    - target: {fileID: 8420783227783594487, guid: cf135742448d04d75a4f313efb3719f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
