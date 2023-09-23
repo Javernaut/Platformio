@@ -11,18 +11,19 @@ namespace Platformio.DI
     public class GameLoopSettingsInstaller : ScriptableObjectInstaller<GameLoopSettingsInstaller>
     {
         public PlayerStats.Settings playerStatsSettings;
-        public ThemeConfiguration themeConfiguration;
+        public LevelConfigurationSettings levelConfigurationSettings;
 
         public override void InstallBindings()
         {
             Container.BindInstance(playerStatsSettings);
-            Container.BindInstance(themeConfiguration);
+            Container.BindInstance(levelConfigurationSettings);
         }
 
         [Serializable]
-        public class ThemeConfiguration
+        public class LevelConfigurationSettings
         {
             public EnvironmentThemeConfiguration[] themes;
+            public GameObject[] levelPrefabs;
         }
     }
 }

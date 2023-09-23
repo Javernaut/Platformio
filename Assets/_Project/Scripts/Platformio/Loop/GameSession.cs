@@ -17,7 +17,7 @@ namespace Platformio.Loop
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private Level.Level.Factory _levelFactory;
-        [Inject] private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
+        [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _levelConfigurationSettings;
 
         [Inject] private Fader _fader;
 
@@ -94,12 +94,12 @@ namespace Platformio.Loop
                 Destroy(child.gameObject);
             }
 
-            var settings = new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex]);
+            var settings = new Level.Level.Settings(_levelConfigurationSettings.themes[_currentThemeIndex]);
             _currentLevel = _levelFactory.Create(settings);
             _currentLevel.InitWith(cameras, cameraConfiners, stateDrivenCamera);
 
             _currentThemeIndex++;
-            if (_currentThemeIndex == _themeConfiguration.themes.Length)
+            if (_currentThemeIndex == _levelConfigurationSettings.themes.Length)
             {
                 _currentThemeIndex = 0;
             }

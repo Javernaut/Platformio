@@ -15,8 +15,12 @@ MonoBehaviour:
   playerStatsSettings:
     initialLives: 3
     initialScore: 100
-  themeConfiguration:
+  levelConfigurationSettings:
     themes:
-    - {fileID: 11400000, guid: 374f19155769a4b429a3ea5bbb26cc7b, type: 2}
     - {fileID: 11400000, guid: 96e9fbd7b37ba4306ad7e5ed3b14ec30, type: 2}
+    - {fileID: 11400000, guid: 374f19155769a4b429a3ea5bbb26cc7b, type: 2}
     - {fileID: 11400000, guid: 8859ad89a85134a0f8bd6f32e64a6289, type: 2}
+    levelPrefabs:
+    - {fileID: 7978774234669139146, guid: c0cb3ae39a7a34770804c13e3f346703, type: 3}
+    - {fileID: 5406986643316267083, guid: 082695a31e795432eb43d52a58c86eca, type: 3}
+    - {fileID: 4875209162352682475, guid: a495f19181e524831a5884982ce9466e, type: 3}
