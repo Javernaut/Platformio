@@ -6,6 +6,7 @@ using Zenject;
 
 namespace Platformio.DI
 {
+    // TODO Add better menu name and file name
     [CreateAssetMenu]
     public class GameLoopSettingsInstaller : ScriptableObjectInstaller<GameLoopSettingsInstaller>
     {

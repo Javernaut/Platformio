@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 namespace Platformio.Environment.Tile
 {
+    // TODO Add better menu name and file name
     [CreateAssetMenu]
     public class ThemedTile : TileBase
     {

@@ -1,3 +1,4 @@
+using System.Collections;
 using Cinemachine;
 using Platformio.DI;
 using UnityEngine;
@@ -50,11 +51,6 @@ namespace Platformio.Loop
 
         private void ResetLevelOnceLifeIsTaken()
         {
-            foreach (Transform child in levelRoot)
-            {
-                Destroy(child.gameObject);
-            }
-
             // TODO Restart the SAME level
             SpawnNewLevel();
         }
@@ -68,16 +64,22 @@ namespace Platformio.Loop
 
         public void LoadNextLevel()
         {
-            foreach (Transform child in levelRoot)
-            {
-                Destroy(child.gameObject);
-            }
-
             SpawnNewLevel();
         }
 
         private void SpawnNewLevel()
         {
+            StartCoroutine(StartNewLevelAsCoroutine());
+        }
+
+        private IEnumerator StartNewLevelAsCoroutine()
+        {
+            var fader = FindObjectOfType<Fader>();
+            yield return fader.FadeOut(1);
+            foreach (Transform child in levelRoot)
+            {
+                Destroy(child.gameObject);
+            }
             var settings = new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex]);
             var level = _levelFactory.Create(settings);
             level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
@@ -87,6 +89,8 @@ namespace Platformio.Loop
             {
                 _currentThemeIndex = 0;
             }
+
+            yield return fader.FadeIn(1);
         }
     }
 }
