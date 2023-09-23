@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Platformio
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public class Fader : MonoBehaviour
     {
         private CanvasGroup _canvasGroup;

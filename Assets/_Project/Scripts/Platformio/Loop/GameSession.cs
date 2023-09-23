@@ -26,6 +26,7 @@ namespace Platformio.Loop
 
         void Start()
         {
+            _fader.FadeOutImmediate();
             SpawnNewLevel();
         }
 
@@ -60,6 +61,12 @@ namespace Platformio.Loop
 
         public void QuitToMainMenu()
         {
+            StartCoroutine(QuitToMainMenuRoutine());
+        }
+
+        private IEnumerator QuitToMainMenuRoutine()
+        {
+            yield return _fader.FadeOut(1);
             SceneManager.LoadScene(0);
             // TODO Cleanup
             // FindObjectOfType<ScenePersist>().ResetScenePersist();
@@ -77,11 +84,7 @@ namespace Platformio.Loop
 
         private IEnumerator StartNewLevelAsCoroutine()
         {
-            if (_currentLevel == null)
-            {
-                _fader.FadeOutImmediate();
-            }
-            else
+            if (_currentLevel != null)
             {
                 yield return _fader.FadeOut(1);
             }
