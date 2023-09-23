@@ -19,6 +19,8 @@ namespace Platformio.Loop
         [Inject] private Level.Level.Factory _levelFactory;
         [Inject] private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
 
+        [Inject] private Fader _fader;
+        
         private int _currentThemeIndex;
 
         void Start()
@@ -74,8 +76,7 @@ namespace Platformio.Loop
 
         private IEnumerator StartNewLevelAsCoroutine()
         {
-            var fader = FindObjectOfType<Fader>();
-            yield return fader.FadeOut(1);
+            yield return _fader.FadeOut(1);
             foreach (Transform child in levelRoot)
             {
                 Destroy(child.gameObject);
@@ -90,7 +91,7 @@ namespace Platformio.Loop
                 _currentThemeIndex = 0;
             }
 
-            yield return fader.FadeIn(1);
+            yield return _fader.FadeIn(1);
         }
     }
 }
