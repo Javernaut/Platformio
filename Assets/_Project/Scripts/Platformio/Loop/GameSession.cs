@@ -20,7 +20,8 @@ namespace Platformio.Loop
         [Inject] private GameLoopSettingsInstaller.ThemeConfiguration _themeConfiguration;
 
         [Inject] private Fader _fader;
-        
+
+        private Level.Level _currentLevel;
         private int _currentThemeIndex;
 
         void Start()
@@ -76,14 +77,23 @@ namespace Platformio.Loop
 
         private IEnumerator StartNewLevelAsCoroutine()
         {
-            yield return _fader.FadeOut(1);
+            if (_currentLevel == null)
+            {
+                _fader.FadeOutImmediate();
+            }
+            else
+            {
+                yield return _fader.FadeOut(1);
+            }
+
             foreach (Transform child in levelRoot)
             {
                 Destroy(child.gameObject);
             }
+
             var settings = new Level.Level.Settings(_themeConfiguration.themes[_currentThemeIndex]);
-            var level = _levelFactory.Create(settings);
-            level.InitWith(cameras, cameraConfiners, stateDrivenCamera);
+            _currentLevel = _levelFactory.Create(settings);
+            _currentLevel.InitWith(cameras, cameraConfiners, stateDrivenCamera);
 
             _currentThemeIndex++;
             if (_currentThemeIndex == _themeConfiguration.themes.Length)
