@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc49ffae961947e78430d03f199b72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAvatar: {fileID: 4302508092795587967}
   livesText: {fileID: 6486610429890014834}
   scoreText: {fileID: 3394743895138660563}
 --- !u!1001 &2158414107900284157
@@ -296,6 +297,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5230e0fa870b4136a4f5897d4b08d6b, type: 3}
+--- !u!114 &4302508092795587967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2756676185303122306, guid: b5230e0fa870b4136a4f5897d4b08d6b, type: 3}
+  m_PrefabInstance: {fileID: 2158414107900284157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6398865062162448912 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4988141126261100269, guid: b5230e0fa870b4136a4f5897d4b08d6b, type: 3}

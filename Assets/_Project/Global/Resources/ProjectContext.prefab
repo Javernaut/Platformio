@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d5182e8beb4460ac7065afa366f280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availablePlayerAppearances:
+  - {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
 --- !u!1001 &9096621420108450064
 PrefabInstance:
   m_ObjectHideFlags: 0
