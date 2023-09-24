@@ -8,6 +8,7 @@ namespace Platformio.Home.PlayerSelection
     public class PlayerSelectionWindowController : MonoBehaviour
     {
         [Inject] private PlayerAppearance[] _playerAppearances;
+        [Inject] private PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
 
         [SerializeField] private ToggleGroup toggleGroup;
         [SerializeField] private SelectablePlayer selectablePlayerPrefab;
@@ -31,7 +32,9 @@ namespace Platformio.Home.PlayerSelection
         public void OnPlayerSelectedPressed()
         {
             var selectedPlayer = toggleGroup.GetFirstActiveToggle().GetComponent<SelectablePlayer>();
-            Debug.Log(selectedPlayer.PlayerAppearance);
+            _playerAppearanceChoiceKeeper.SetChoice(selectedPlayer.PlayerAppearance);
+            
+            Destroy(gameObject);
         }
     }
 }

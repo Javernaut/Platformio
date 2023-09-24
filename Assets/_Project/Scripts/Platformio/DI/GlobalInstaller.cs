@@ -1,3 +1,4 @@
+using Platformio.Home.PlayerSelection;
 using Platformio.Pickup;
 using Platformio.Player;
 using UnityEngine;
@@ -8,14 +9,15 @@ namespace Platformio.DI
     public class GlobalInstaller : MonoInstaller<GlobalInstaller>
     {
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
-
+        
         public override void InstallBindings()
         {
             Container.Bind<ScoreCounter>().AsSingle();
             Container.BindInstance(availablePlayerAppearances);
-            // TODO properly pick the valid implementation according to the User's choice
-            Container.Bind<PlayerAppearance>().FromMethod(() =>
-                availablePlayerAppearances.GetRandomItem()
+            Container.Bind<PlayerAppearanceChoiceKeeper>().AsSingle();
+            
+            Container.Bind<PlayerAppearance>().FromMethod(ctx =>
+                ctx.Container.Resolve<PlayerAppearanceChoiceKeeper>().GetChoice()
             ).AsTransient();
         }
     }
