@@ -1,4 +1,5 @@
 using System.Collections;
+using Platformio.Home.PlayerSelection;
 using Platformio.Pickup;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Platformio.Home
 
         [Inject] private Fader _fader;
         [Inject] private ScoreCounter _scoreCounter;
+        [Inject] private PlayerSelectionWindowController.Factory _playerSelectionWindowFactory;
 
         private IEnumerator Start()
         {
@@ -34,13 +36,14 @@ namespace Platformio.Home
 
         public void OnStartNewGameClicked()
         {
-            StartCoroutine(StartNewGameRoutine());
+            var playerSelectionWindow = _playerSelectionWindowFactory.Create();
+            playerSelectionWindow.OnSelectionConfirmed +=
+                () => StartCoroutine(StartNewGameRoutine());
         }
 
         private IEnumerator StartNewGameRoutine()
         {
             yield return _fader.FadeOut(1);
-            // TODO Pick the player appearance
             SceneManager.LoadScene(1);
         }
     }

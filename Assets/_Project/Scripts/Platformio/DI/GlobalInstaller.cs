@@ -9,6 +9,8 @@ namespace Platformio.DI
     public class GlobalInstaller : MonoInstaller<GlobalInstaller>
     {
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
+        // TODO Consider moving it into a scene context of the main menu
+        [SerializeField] private PlayerSelectionWindowController _playerSelectionWindowPrefab;
         
         public override void InstallBindings()
         {
@@ -19,6 +21,10 @@ namespace Platformio.DI
             Container.Bind<PlayerAppearance>().FromMethod(ctx =>
                 ctx.Container.Resolve<PlayerAppearanceChoiceKeeper>().GetChoice()
             ).AsTransient();
+            
+            // TODO Consider moving it into a scene context of the main menu
+            Container.BindFactory<PlayerSelectionWindowController, PlayerSelectionWindowController.Factory>()
+                .FromComponentInNewPrefab(_playerSelectionWindowPrefab);
         }
     }
 

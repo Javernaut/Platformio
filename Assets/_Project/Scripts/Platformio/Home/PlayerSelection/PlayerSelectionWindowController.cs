@@ -13,7 +13,10 @@ namespace Platformio.Home.PlayerSelection
         [SerializeField] private ToggleGroup toggleGroup;
         [SerializeField] private SelectablePlayer selectablePlayerPrefab;
 
-        // Start is called before the first frame update
+        public delegate void SelectionConfirmed();
+
+        public event SelectionConfirmed OnSelectionConfirmed;
+        
         private void Start()
         {
             foreach (var playerAppearance in _playerAppearances)
@@ -33,8 +36,13 @@ namespace Platformio.Home.PlayerSelection
         {
             var selectedPlayer = toggleGroup.GetFirstActiveToggle().GetComponent<SelectablePlayer>();
             _playerAppearanceChoiceKeeper.SetChoice(selectedPlayer.PlayerAppearance);
-            
+
+            OnSelectionConfirmed?.Invoke();
             Destroy(gameObject);
+        }
+
+        public class Factory : PlaceholderFactory<PlayerSelectionWindowController>
+        {
         }
     }
 }
