@@ -24,6 +24,7 @@ namespace Platformio.Player
         private float _gravityScaleAtStart;
 
         [Inject] private PlayerStats _playerStats;
+        [Inject] private PlayerAppearance _playerAppearance;
 
         private void Awake()
         {
@@ -34,6 +35,11 @@ namespace Platformio.Player
             _myFeetCollider = GetComponent<BoxCollider2D>();
 
             _gravityScaleAtStart = _myRigidbody.gravityScale;
+        }
+
+        private void Start()
+        {
+            _myAnimator.runtimeAnimatorController = _playerAppearance.AnimatorController;
         }
 
         private void Update()
