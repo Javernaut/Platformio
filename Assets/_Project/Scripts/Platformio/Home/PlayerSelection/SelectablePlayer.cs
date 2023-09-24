@@ -8,12 +8,19 @@ namespace Platformio.Home.PlayerSelection
     {
         [SerializeField] private Image playerImage;
         [SerializeField] private Toggle toggle;
-        
-        public void SetPlayerAppearance(PlayerAppearance playerAppearance)
-        {
-            playerImage.sprite = playerAppearance.Avatar;
-        }
 
+        private PlayerAppearance _playerAppearance;
+
+        public PlayerAppearance PlayerAppearance
+        {
+            get => _playerAppearance;
+            set
+            {
+                _playerAppearance = value;
+                playerImage.sprite = _playerAppearance.Avatar;
+            }
+        }
+        
         public void SetToggleGroup(ToggleGroup toggleGroup)
         {
             toggle.group = toggleGroup;

@@ -13,14 +13,25 @@ namespace Platformio.Home.PlayerSelection
         [SerializeField] private SelectablePlayer selectablePlayerPrefab;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-            for (var pos = 0; pos < _playerAppearances.Length; pos++)
+            foreach (var playerAppearance in _playerAppearances)
             {
                 var selectablePlayer = Instantiate(selectablePlayerPrefab, toggleGroup.transform);
                 selectablePlayer.SetToggleGroup(toggleGroup);
-                selectablePlayer.SetPlayerAppearance(_playerAppearances[pos]);
+                selectablePlayer.PlayerAppearance = playerAppearance;
             }
+        }
+
+        public void OnBackPressed()
+        {
+            Destroy(gameObject);
+        }
+
+        public void OnPlayerSelectedPressed()
+        {
+            var selectedPlayer = toggleGroup.GetFirstActiveToggle().GetComponent<SelectablePlayer>();
+            Debug.Log(selectedPlayer.PlayerAppearance);
         }
     }
 }

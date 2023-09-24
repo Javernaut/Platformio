@@ -175,7 +175,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
@@ -309,12 +309,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 20
+    m_Right: 20
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -471,7 +471,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3902778042737159262, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: BackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5003612918586071992}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBackPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Platformio.Home.PlayerSelection.PlayerSelectionWindowController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5769750936334125979, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
       propertyPath: m_Pivot.x
@@ -552,6 +580,10 @@ PrefabInstance:
     - target: {fileID: 5769750936334125979, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169357701639969765, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_text
+      value: Back
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -573,7 +605,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3902778042737159262, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: ConfirmButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5003612918586071992}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerSelectedPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Platformio.Home.PlayerSelection.PlayerSelectionWindowController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738536676185591186, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5769750936334125979, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
       propertyPath: m_Pivot.x
@@ -654,6 +714,10 @@ PrefabInstance:
     - target: {fileID: 5769750936334125979, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169357701639969765, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+      propertyPath: m_text
+      value: Confirm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
