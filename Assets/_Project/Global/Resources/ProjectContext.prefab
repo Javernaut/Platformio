@@ -77,6 +77,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availablePlayerAppearances:
   - {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
+  - {fileID: 11400000, guid: 9cf92aee6bd8c46239ac3079a5920800, type: 2}
+  - {fileID: 11400000, guid: ad4224772a9b1430aa80fa8c20800b62, type: 2}
+  - {fileID: 11400000, guid: 6ccfc8da55fda4239a997e9d6431f921, type: 2}
+  - {fileID: 11400000, guid: 6f95ae3c3f8734b69bcaa063dcc3aec4, type: 2}
 --- !u!1001 &9096621420108450064
 PrefabInstance:
   m_ObjectHideFlags: 0

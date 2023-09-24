@@ -176,7 +176,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4345461016256108286}
-    m_Position: {x: 497.25867, y: 344.6722, z: 0}
+    m_Position: {x: 480, y: 330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -6729092945644292796}
@@ -185,7 +185,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 190, y: 340, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 860, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -3198713303193256444}
 --- !u!91 &9100000
@@ -194,7 +194,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAnimatorController
+  m_Name: GreenAlienAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isRunning
