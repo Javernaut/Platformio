@@ -12,6 +12,7 @@ namespace Platformio.DI
         public override void InstallBindings()
         {
             Container.Bind<ScoreCounter>().AsSingle();
+            Container.BindInstance(availablePlayerAppearances);
             // TODO properly pick the valid implementation according to the User's choice
             Container.Bind<PlayerAppearance>().FromMethod(() =>
                 availablePlayerAppearances.GetRandomItem()

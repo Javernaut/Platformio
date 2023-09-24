@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Platformio
+namespace Platformio.Home
 {
     public class MainMenuController : MonoBehaviour
     {
