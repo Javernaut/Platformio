@@ -7,19 +7,17 @@ namespace Platformio.DI
 {
     public class MainMenuInstaller : MonoInstaller<MainMenuInstaller>
     {
-        [SerializeField] private PlayerSelectionWindowController _playerSelectionWindowPrefab;
+        [SerializeField] private PlayerSelectionWindowController playerSelectionWindowPrefab;
 
-        [Inject] private MusicManager.Settings musicSettings;
+        [Inject] private MusicManager.Settings _musicSettings;
 
         public override void InstallBindings()
         {
             Container.BindFactory<PlayerSelectionWindowController, PlayerSelectionWindowController.Factory>()
-                .FromComponentInNewPrefab(_playerSelectionWindowPrefab);
+                .FromComponentInNewPrefab(playerSelectionWindowPrefab);
             
-            Container.BindInstance(musicSettings.mainMenuMusic.GetRandomItem())
+            Container.BindInstance(_musicSettings.mainMenuMusic.GetRandomItem())
                 .WhenInjectedInto<MusicManager>();
-
-            Container.BindInterfacesTo<MusicManager>().AsSingle().NonLazy();
         }
     }
 }

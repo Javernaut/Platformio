@@ -30,8 +30,6 @@ namespace Platformio.DI
             
             Container.BindInstance(_musicSettings.gameLoopMusic.GetRandomItem())
                 .WhenInjectedInto<MusicManager>();
-
-            Container.BindInterfacesTo<MusicManager>().AsSingle().NonLazy();
         }
     }
 }

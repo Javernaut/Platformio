@@ -1,22 +1,40 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Zenject;
 
 namespace Platformio.Music
 {
-    public class MusicManager: IInitializable
+    [RequireComponent(typeof(AudioListener))]
+    public class MusicManager : MonoBehaviour
     {
         [Inject] private AudioClip _audioClip;
-        [Inject] private AudioListener _audioListener;
         
-        public void Initialize()
+        private AudioListener _audioListener;
+        private AudioSource _audioSource;
+
+        private void Awake()
         {
-            var parentGameObject = _audioListener.gameObject;
-            var audioSource = parentGameObject.AddComponent<AudioSource>();
-            
-            audioSource.loop = true;
-            audioSource.clip = _audioClip;
-            audioSource.Play();
+            _audioListener = GetComponent<AudioListener>();
+            _audioSource = gameObject.AddComponent<AudioSource>();
+
+            _audioSource.loop = true;
+            _audioSource.clip = _audioClip;
+            _audioSource.Play();
+        }
+
+        public void FadeOut(float time)
+        {
+            // _audioSource
+        }
+
+        private IEnumerator FadeRoutine(float target, float time)
+        {
+            while (!Mathf.Approximately(_audioSource.volume, target))
+            {
+                _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, target, Time.unscaledDeltaTime / time);
+                yield return null;
+            }
         }
 
         [Serializable]
