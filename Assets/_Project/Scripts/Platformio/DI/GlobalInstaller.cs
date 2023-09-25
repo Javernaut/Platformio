@@ -1,4 +1,5 @@
 using Platformio.Home.PlayerSelection;
+using Platformio.Music;
 using Platformio.Pickup;
 using Platformio.Player;
 using UnityEngine;
@@ -9,12 +10,14 @@ namespace Platformio.DI
     public class GlobalInstaller : MonoInstaller<GlobalInstaller>
     {
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
+        [SerializeField] private MusicManager.Settings musicSettings;
         
         public override void InstallBindings()
         {
             Container.Bind<ScoreCounter>().AsSingle();
             Container.Bind<PlayerAppearanceChoiceKeeper>().AsSingle();
             Container.BindInstance(availablePlayerAppearances);
+            Container.BindInstance(musicSettings);
         }
     }
 

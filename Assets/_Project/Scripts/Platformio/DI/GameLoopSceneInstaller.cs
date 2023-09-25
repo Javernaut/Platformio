@@ -1,5 +1,6 @@
 using Platformio.Home.PlayerSelection;
 using Platformio.Loop;
+using Platformio.Music;
 using Platformio.Player;
 using UnityEngine;
 using Zenject;
@@ -10,14 +11,15 @@ namespace Platformio.DI
     {
         [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _settings;
         [Inject] private PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
+        [Inject] private MusicManager.Settings _musicSettings;
         
-        [SerializeField] private PlayerAppearance _fallbackPlayerAppearance;
+        [SerializeField] private PlayerAppearance fallbackPlayerAppearance;
         [SerializeField] private Transform levelRoot;
 
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<PlayerStats>().AsSingle();
-            Container.BindInstance(_playerAppearanceChoiceKeeper.GetChoice() ?? _fallbackPlayerAppearance);
+            Container.BindInstance(_playerAppearanceChoiceKeeper.GetChoice() ?? fallbackPlayerAppearance);
             
             Container.BindFactory<Level.Level.Settings, Level.Level, Level.Level.Factory>()
                 .FromSubContainerResolve()
@@ -25,6 +27,11 @@ namespace Platformio.DI
                     _settings.levelPrefabs.GetRandomItem()
                 )
                 .UnderTransform(levelRoot);
+            
+            Container.BindInstance(_musicSettings.gameLoopMusic.GetRandomItem())
+                .WhenInjectedInto<MusicManager>();
+
+            Container.BindInterfacesTo<MusicManager>().AsSingle().NonLazy();
         }
     }
 }

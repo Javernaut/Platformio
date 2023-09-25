@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be30bdf2661ba4e1ab07baaac1e28789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fallbackPlayerAppearance: {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
+  fallbackPlayerAppearance: {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
   levelRoot: {fileID: 233239270}
 --- !u!1 &630880443 stripped
 GameObject:
@@ -1702,6 +1702,7 @@ GameObject:
   - component: {fileID: 4269216355354717820}
   - component: {fileID: 8715586615383466723}
   - component: {fileID: 51240333591000278}
+  - component: {fileID: 8942790776392778990}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1709,6 +1710,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8942790776392778990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942790776392778989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 8715586615383466723}
+  _identifier: 
+  _useSceneContext: 0
+  _context: {fileID: 0}
+  _bindType: 0
 --- !u!114 &8969347564242129008
 MonoBehaviour:
   m_ObjectHideFlags: 3
