@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
+  m_Name: GrassStepsSounds
+  m_EditorClassIdentifier: 
+  variations:
+  - {fileID: 8300000, guid: 91a5e292352b2453d87b3818b41c1ed9, type: 3}
+  - {fileID: 8300000, guid: 0ea25c7b52c9c40ab97b78c1b7e31ce9, type: 3}
+  - {fileID: 8300000, guid: 3980a091ce8d14681b30c1e389c3515b, type: 3}
+  - {fileID: 8300000, guid: ee7c84ca95cd148748ab8d7799860990, type: 3}
+  - {fileID: 8300000, guid: 817e39e59c1d14019b42e3f82deafb11, type: 3}

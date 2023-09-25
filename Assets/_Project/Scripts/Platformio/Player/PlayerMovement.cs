@@ -1,4 +1,5 @@
 using Platformio.Loop;
+using Platformio.Music;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -25,6 +26,7 @@ namespace Platformio.Player
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private PlayerAppearance _playerAppearance;
+        [Inject] private SoundManager _soundManager;
 
         private void Awake()
         {
@@ -53,6 +55,11 @@ namespace Platformio.Player
             FlipSprite();
             ClimbLadder();
             Die();
+        }
+
+        private void OnStep()
+        {
+            _soundManager.PlayStepSound();
         }
 
         private void Run()

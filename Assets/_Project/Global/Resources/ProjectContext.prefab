@@ -89,7 +89,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 29b8f2348f05646af94f085171e2138c, type: 3}
     - {fileID: 8300000, guid: 677238b20aab44a7d8452bc72e9b38d1, type: 3}
   soundSettings:
-    defaultVolumeScale: 1
+    defaultVolumeScale: 0.5
     coinAcquiredSound: {fileID: 8300000, guid: fa07008e1fda84182a136f194e6c96a4, type: 3}
 --- !u!1001 &9096621420108450064
 PrefabInstance:
