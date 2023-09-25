@@ -1,0 +1,75 @@
+name: Main workflow 🎮
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+#  TODO Read the value from ProjectVersion.txt
+  UNITY_VERSION: 2022.3.10f1
+
+jobs:
+  buildWebGL:
+    name: Build for WebGL 🖥️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v3
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      - name: Restore Library cache
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-build-WebGL
+          restore-keys: |
+            Library-build-
+            Library-
+
+      - uses: game-ci/unity-builder@v3.1.0
+        with:
+          unityVersion: ${{ env.UNITY_VERSION }}
+          targetPlatform: WebGL
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-WebGL
+          path: build/WebGL
+
+  deployPages:
+    needs: buildWebGL
+    name: Deploy to Github Pages 🚀
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-WebGL
+          path: build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build/WebGL
