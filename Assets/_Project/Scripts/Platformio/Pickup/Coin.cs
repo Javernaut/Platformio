@@ -1,4 +1,5 @@
 using Platformio.Loop;
+using Platformio.Music;
 using UnityEngine;
 using Zenject;
 
@@ -6,10 +7,10 @@ namespace Platformio.Pickup
 {
     public class Coin : MonoBehaviour
     {
-        [SerializeField] private AudioClip coinPickupSFX;
         [SerializeField] int pointsForCoinPickup = 100;
 
         [Inject] private PlayerStats _playerStats;
+        [Inject] private SoundManager _soundManager;
 
         private bool _wasCollected;
 
@@ -19,7 +20,7 @@ namespace Platformio.Pickup
             {
                 _wasCollected = true;
                 _playerStats.AddScore(pointsForCoinPickup);
-                AudioSource.PlayClipAtPoint(coinPickupSFX, Camera.main.transform.position);
+                _soundManager.PlayCoinAcquiredSound();
                 gameObject.SetActive(false);
                 Destroy(gameObject);
             }

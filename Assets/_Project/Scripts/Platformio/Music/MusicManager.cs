@@ -5,17 +5,16 @@ using Zenject;
 
 namespace Platformio.Music
 {
+    // Assume the listener is right where we are
     [RequireComponent(typeof(AudioListener))]
     public class MusicManager : MonoBehaviour
     {
         [Inject] private AudioClip _audioClip;
-        
-        private AudioListener _audioListener;
+
         private AudioSource _audioSource;
 
         private void Awake()
         {
-            _audioListener = GetComponent<AudioListener>();
             _audioSource = gameObject.AddComponent<AudioSource>();
 
             _audioSource.loop = true;

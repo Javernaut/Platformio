@@ -11,13 +11,16 @@ namespace Platformio.DI
     {
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
         [SerializeField] private MusicManager.Settings musicSettings;
-        
+        [SerializeField] private SoundManager.Settings soundSettings;
+
         public override void InstallBindings()
         {
             Container.Bind<ScoreCounter>().AsSingle();
             Container.Bind<PlayerAppearanceChoiceKeeper>().AsSingle();
+
             Container.BindInstance(availablePlayerAppearances);
             Container.BindInstance(musicSettings);
+            Container.BindInstance(soundSettings);
         }
     }
 
