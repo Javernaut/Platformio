@@ -25,7 +25,7 @@ namespace Platformio.Music
 
         public void FadeOut(float time)
         {
-            // _audioSource
+            StartCoroutine(FadeRoutine(0, time));
         }
 
         private IEnumerator FadeRoutine(float target, float time)

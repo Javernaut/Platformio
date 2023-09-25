@@ -1,6 +1,7 @@
 using System.Collections;
 using Cinemachine;
 using Platformio.DI;
+using Platformio.Music;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -18,6 +19,7 @@ namespace Platformio.Loop
         [Inject] private PlayerStats _playerStats;
         [Inject] private Level.Level.Factory _levelFactory;
         [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _levelConfigurationSettings;
+        [Inject] private MusicManager _musicManager;
 
         [Inject] private Fader _fader;
 
@@ -66,6 +68,8 @@ namespace Platformio.Loop
 
         private IEnumerator QuitToMainMenuRoutine()
         {
+            // TODO Extract the fade out/in settings
+            _musicManager.FadeOut(1);
             yield return _fader.FadeOut(1);
             SceneManager.LoadScene(0);
             // TODO Cleanup
