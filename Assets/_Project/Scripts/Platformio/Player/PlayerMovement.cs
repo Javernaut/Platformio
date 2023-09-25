@@ -57,9 +57,13 @@ namespace Platformio.Player
             Die();
         }
 
+        // Animation event
         private void OnStep()
         {
-            _soundManager.PlayStepSound();
+            if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                _soundManager.PlayStepSound();    
+            }
         }
 
         private void Run()
