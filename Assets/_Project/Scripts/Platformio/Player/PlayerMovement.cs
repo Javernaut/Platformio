@@ -117,9 +117,7 @@ namespace Platformio.Player
                 return;
             }
 
-            var isTouchingGround = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
-            var isTouchingLadder = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
-            if (!isTouchingGround && !isTouchingLadder)
+            if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 return;
             }
@@ -129,6 +127,7 @@ namespace Platformio.Player
             {
                 // TODO Shouldn't it be applyForce(impulse)?
                 _myRigidbody.velocity += new Vector2(0f, jumpSpeed);
+                _soundManager.PlayJumpSound();
             }
         }
 

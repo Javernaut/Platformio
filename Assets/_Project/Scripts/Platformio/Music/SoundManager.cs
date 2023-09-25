@@ -33,6 +33,11 @@ namespace Platformio.Music
             PlaySound(stepsSounds.variations.GetRandomItem());
         }
 
+        public void PlayJumpSound()
+        {
+            PlaySound(_settings.jumpSound);
+        }
+
         private void PlaySound(AudioClip audioClip)
         {
             _audioSource.PlayOneShot(audioClip, _settings.defaultVolumeScale);
@@ -43,6 +48,7 @@ namespace Platformio.Music
         {
             [Range(0, 1)] public float defaultVolumeScale = 1;
             public AudioClip coinAcquiredSound;
+            public AudioClip jumpSound;
         }
     }
 }
