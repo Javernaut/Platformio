@@ -17,3 +17,4 @@ MonoBehaviour:
   roundedPlatformTile: {fileID: 11400000, guid: 86c2c5fdf570442b58737d7b62f86783, type: 2}
   cutPlatformTile: {fileID: 11400000, guid: d806432493d784151bc31cb5818da397, type: 2}
   blockPlatformTile: {fileID: 11400000, guid: eaddb89d914b8499b9e84d1ec80eefe4, type: 2}
+  stepsSounds: {fileID: 11400000, guid: a09bfdc7b6a194f9582832c2c4ea10ee, type: 2}

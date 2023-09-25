@@ -1774,6 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4c5553c384dfca959ab473f464134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepsSounds: {fileID: 11400000, guid: a09bfdc7b6a194f9582832c2c4ea10ee, type: 2}
 --- !u!114 &8969347564242129008
 MonoBehaviour:
   m_ObjectHideFlags: 3

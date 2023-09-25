@@ -1,3 +1,4 @@
+using Platformio.Music;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,5 +13,7 @@ namespace Platformio.Environment
         public TileBase roundedPlatformTile;
         public TileBase cutPlatformTile;
         public TileBase blockPlatformTile;
+        
+        public StepsSounds stepsSounds;
     }
 }

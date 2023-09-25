@@ -1,4 +1,5 @@
 using System;
+using Platformio.DI;
 using UnityEngine;
 using Zenject;
 
@@ -8,6 +9,7 @@ namespace Platformio.Music
     public class SoundManager : MonoBehaviour
     {
         [Inject] private Settings _settings;
+        [SerializeField] private StepsSounds stepsSounds;
 
         private AudioSource _audioSource;
 
@@ -16,9 +18,24 @@ namespace Platformio.Music
             _audioSource = gameObject.AddComponent<AudioSource>();
         }
 
+        public void OverrideStepsSounds(StepsSounds stepsSounds)
+        {
+            this.stepsSounds = stepsSounds;
+        }
+
         public void PlayCoinAcquiredSound()
         {
-            _audioSource.PlayOneShot(_settings.coinAcquiredSound, _settings.defaultVolumeScale);
+            PlaySound(_settings.coinAcquiredSound);
+        }
+
+        public void PlayStepSound()
+        {
+            PlaySound(stepsSounds.variations.GetRandomItem());
+        }
+
+        private void PlaySound(AudioClip audioClip)
+        {
+            _audioSource.PlayOneShot(audioClip, _settings.defaultVolumeScale);
         }
 
         [Serializable]
