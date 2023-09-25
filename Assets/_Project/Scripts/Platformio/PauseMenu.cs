@@ -1,11 +1,13 @@
-using System;
 using Platformio.Loop;
 using UnityEngine;
+using Zenject;
 
 namespace Platformio
 {
     public class PauseMenu : MonoBehaviour
     {
+        [Inject] private GameSession _gameSession;
+        
         [SerializeField] private GameObject pauseMenuUI;
 
         private PauseMenuInputActions _inputActions;
@@ -58,8 +60,7 @@ namespace Platformio
         public void QuitGame()
         {
             Time.timeScale = 1f;
-            // TODO Use injection here
-            FindObjectOfType<GameSession>().QuitToMainMenu();
+            _gameSession.QuitToMainMenu();
         }
     }
 }
