@@ -23,7 +23,7 @@ namespace Platformio.Music
             this.stepsSounds = stepsSounds;
         }
 
-        public void PlayCoinAcquiredSound()
+        public void PlayScorePickupAcquiredSound()
         {
             PlaySound(_settings.coinAcquiredSound);
         }

@@ -1,7 +1,7 @@
 using Platformio.Home.PlayerSelection;
 using Platformio.Music;
-using Platformio.Pickup;
 using Platformio.Player;
+using Platformio.Score;
 using UnityEngine;
 using Zenject;
 

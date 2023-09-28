@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2741346188918856594, guid: facde4f0afd21429aa69a04f206673d3, type: 3}
+      propertyPath: score
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: -2741346188918856594, guid: facde4f0afd21429aa69a04f206673d3, type: 3}
       propertyPath: pointsForCoinPickup
       value: 200
       objectReference: {fileID: 0}

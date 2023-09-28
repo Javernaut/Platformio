@@ -1,5 +1,5 @@
 using System;
-using Platformio.Pickup;
+using Platformio.Score;
 using UnityEngine;
 using Zenject;
 

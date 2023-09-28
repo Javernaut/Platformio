@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Platformio.Pickup
+namespace Platformio.Score
 {
     public class ScoreCounter
     {

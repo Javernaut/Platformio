@@ -1,7 +1,7 @@
 using System.Collections;
 using Platformio.Home.PlayerSelection;
 using Platformio.Music;
-using Platformio.Pickup;
+using Platformio.Score;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;

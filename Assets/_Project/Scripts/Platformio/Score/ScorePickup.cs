@@ -3,24 +3,26 @@ using Platformio.Music;
 using UnityEngine;
 using Zenject;
 
-namespace Platformio.Pickup
+namespace Platformio.Score
 {
-    public class Coin : MonoBehaviour
+    public class ScorePickup : MonoBehaviour
     {
-        [SerializeField] int pointsForCoinPickup = 100;
+        [Min(1)] [SerializeField] private int score = 100;
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private SoundManager _soundManager;
 
         private bool _wasCollected;
 
-        void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player") && !_wasCollected)
             {
                 _wasCollected = true;
-                _playerStats.AddScore(pointsForCoinPickup);
-                _soundManager.PlayCoinAcquiredSound();
+
+                _playerStats.AddScore(score);
+                _soundManager.PlayScorePickupAcquiredSound();
+
                 gameObject.SetActive(false);
                 Destroy(gameObject);
             }
