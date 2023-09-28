@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Platformio.Music
+namespace Platformio.Sound
 {
     // TODO Setup the attribute better
     [CreateAssetMenu]

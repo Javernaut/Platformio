@@ -1,5 +1,5 @@
 using Platformio.Loop;
-using Platformio.Music;
+using Platformio.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -10,7 +10,7 @@ namespace Platformio.Score
         [Min(1)] [SerializeField] private int score = 100;
 
         [Inject] private PlayerStats _playerStats;
-        [Inject] private SoundManager _soundManager;
+        [Inject] private SoundPlayer _soundPlayer;
 
         private bool _wasCollected;
 
@@ -21,7 +21,7 @@ namespace Platformio.Score
                 _wasCollected = true;
 
                 _playerStats.AddScore(score);
-                _soundManager.PlayScorePickupAcquiredSound();
+                _soundPlayer.PlayScorePickupAcquiredSound();
 
                 gameObject.SetActive(false);
                 Destroy(gameObject);

@@ -1,7 +1,7 @@
 using Platformio.Home.PlayerSelection;
 using Platformio.Loop;
-using Platformio.Music;
 using Platformio.Player;
+using Platformio.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -11,7 +11,7 @@ namespace Platformio.DI
     {
         [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _settings;
         [Inject] private PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
-        [Inject] private MusicManager.Settings _musicSettings;
+        [Inject] private MusicPlayer.Settings _musicSettings;
 
         [SerializeField] private PlayerAppearance fallbackPlayerAppearance;
         [SerializeField] private Transform levelRoot;
@@ -29,7 +29,7 @@ namespace Platformio.DI
                 .UnderTransform(levelRoot);
 
             Container.BindInstance(_musicSettings.gameLoopMusic.GetRandomItem())
-                .WhenInjectedInto<MusicManager>();
+                .WhenInjectedInto<MusicPlayer>();
         }
     }
 }

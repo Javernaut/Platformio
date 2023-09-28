@@ -1,7 +1,7 @@
 using System.Collections;
 using Platformio.Home.PlayerSelection;
-using Platformio.Music;
 using Platformio.Score;
+using Platformio.Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,7 +16,7 @@ namespace Platformio.Home
         [Inject] private Fader _fader;
         [Inject] private ScoreCounter _scoreCounter;
         [Inject] private PlayerSelectionWindowController.Factory _playerSelectionWindowFactory;
-        [Inject] private MusicManager _musicManager;
+        [Inject] private MusicPlayer _musicPlayer;
 
         private IEnumerator Start()
         {
@@ -46,7 +46,7 @@ namespace Platformio.Home
         private IEnumerator StartNewGameRoutine()
         {
             // TODO Extract the fade out/in settings
-            _musicManager.FadeOut(1);
+            _musicPlayer.FadeOut(1);
             yield return _fader.FadeOut(1);
             SceneManager.LoadScene(1);
         }

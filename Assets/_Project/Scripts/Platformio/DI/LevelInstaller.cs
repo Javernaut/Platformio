@@ -1,5 +1,5 @@
 using Platformio.Environment.Tile;
-using Platformio.Music;
+using Platformio.Sound;
 using Zenject;
 
 namespace Platformio.DI
@@ -7,13 +7,13 @@ namespace Platformio.DI
     public class LevelInstaller : Installer<LevelInstaller>
     {
         [Inject] private Level.Level.Settings _levelSettings;
-        [Inject] private SoundManager _soundManager;
+        [Inject] private SoundPlayer _soundPlayer;
 
         public override void InstallBindings()
         {
             Container.BindInstance(_levelSettings.theme).WhenInjectedInto<TilemapThemeProvider>();
             
-            _soundManager.OverrideStepsSounds(_levelSettings.theme.stepsSounds);
+            _soundPlayer.OverrideStepsSounds(_levelSettings.theme.stepsSounds);
         }
     }
 }

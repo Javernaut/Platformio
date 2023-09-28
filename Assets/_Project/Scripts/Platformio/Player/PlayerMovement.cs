@@ -1,5 +1,5 @@
 using Platformio.Loop;
-using Platformio.Music;
+using Platformio.Sound;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -26,7 +26,7 @@ namespace Platformio.Player
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private PlayerAppearance _playerAppearance;
-        [Inject] private SoundManager _soundManager;
+        [Inject] private SoundPlayer _soundPlayer;
 
         private void Awake()
         {
@@ -62,7 +62,7 @@ namespace Platformio.Player
         {
             if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
-                _soundManager.PlayStepSound();    
+                _soundPlayer.PlayStepSound();    
             }
         }
 
@@ -131,7 +131,7 @@ namespace Platformio.Player
             {
                 // TODO Shouldn't it be applyForce(impulse)?
                 _myRigidbody.velocity += new Vector2(0f, jumpSpeed);
-                _soundManager.PlayJumpSound();
+                _soundPlayer.PlayJumpSound();
             }
         }
 

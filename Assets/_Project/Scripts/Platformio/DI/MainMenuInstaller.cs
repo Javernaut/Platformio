@@ -1,5 +1,5 @@
 using Platformio.Home.PlayerSelection;
-using Platformio.Music;
+using Platformio.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -9,7 +9,7 @@ namespace Platformio.DI
     {
         [SerializeField] private PlayerSelectionWindowController playerSelectionWindowPrefab;
 
-        [Inject] private MusicManager.Settings _musicSettings;
+        [Inject] private MusicPlayer.Settings _musicSettings;
 
         public override void InstallBindings()
         {
@@ -17,7 +17,7 @@ namespace Platformio.DI
                 .FromComponentInNewPrefab(playerSelectionWindowPrefab);
             
             Container.BindInstance(_musicSettings.mainMenuMusic.GetRandomItem())
-                .WhenInjectedInto<MusicManager>();
+                .WhenInjectedInto<MusicPlayer>();
         }
     }
 }

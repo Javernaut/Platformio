@@ -3,20 +3,13 @@ using Platformio.DI;
 using UnityEngine;
 using Zenject;
 
-namespace Platformio.Music
+namespace Platformio.Sound
 {
-    [RequireComponent(typeof(AudioListener))]
-    public class SoundManager : MonoBehaviour
+    public class SoundPlayer : EarWhisperingPlayer
     {
-        [Inject] private Settings _settings;
         [SerializeField] private StepsSounds stepsSounds;
 
-        private AudioSource _audioSource;
-
-        private void Awake()
-        {
-            _audioSource = gameObject.AddComponent<AudioSource>();
-        }
+        [Inject] private Settings _settings;
 
         public void OverrideStepsSounds(StepsSounds stepsSounds)
         {
@@ -40,7 +33,7 @@ namespace Platformio.Music
 
         private void PlaySound(AudioClip audioClip)
         {
-            _audioSource.PlayOneShot(audioClip, _settings.defaultVolumeScale);
+            LocalAudioSource.PlayOneShot(audioClip, _settings.defaultVolumeScale);
         }
 
         [Serializable]

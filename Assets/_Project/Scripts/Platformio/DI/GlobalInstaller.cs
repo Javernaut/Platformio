@@ -1,7 +1,7 @@
 using Platformio.Home.PlayerSelection;
-using Platformio.Music;
 using Platformio.Player;
 using Platformio.Score;
+using Platformio.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -10,8 +10,8 @@ namespace Platformio.DI
     public class GlobalInstaller : MonoInstaller<GlobalInstaller>
     {
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
-        [SerializeField] private MusicManager.Settings musicSettings;
-        [SerializeField] private SoundManager.Settings soundSettings;
+        [SerializeField] private MusicPlayer.Settings musicSettings;
+        [SerializeField] private SoundPlayer.Settings soundSettings;
 
         public override void InstallBindings()
         {
