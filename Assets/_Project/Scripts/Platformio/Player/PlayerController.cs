@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Platformio.Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float runSpeed = 10f;
         [SerializeField] float jumpSpeed = 5f;
@@ -14,15 +14,17 @@ namespace Platformio.Player
         [SerializeField] private Vector2 deathKick = new Vector2(10f, 10f);
         [SerializeField] private GameObject bullet;
         [SerializeField] private Transform gun;
-
-        private Vector2 moveInput;
+        
         private Rigidbody2D _myRigidbody;
         private Animator _myAnimator;
         private CapsuleCollider2D _myBodyCollider;
         private BoxCollider2D _myFeetCollider;
 
+        private Vector2 _moveInput;
         private bool _isAlive = true;
-        private float _gravityScaleAtStart;
+        private float _initialGravityScale;
+        private Vector2 _initialLocalScale;
+        private Vector2 _initialPosition;
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private PlayerAppearance _playerAppearance;
@@ -36,7 +38,9 @@ namespace Platformio.Player
             _myBodyCollider = GetComponent<CapsuleCollider2D>();
             _myFeetCollider = GetComponent<BoxCollider2D>();
 
-            _gravityScaleAtStart = _myRigidbody.gravityScale;
+            _initialGravityScale = _myRigidbody.gravityScale;
+            _initialLocalScale = transform.localScale;
+            _initialPosition = transform.position;
         }
 
         private void Start()
@@ -62,13 +66,13 @@ namespace Platformio.Player
         {
             if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
-                _soundPlayer.PlayStepSound();    
+                _soundPlayer.PlayStepSound();
             }
         }
 
         private void Run()
         {
-            var playerVelocity = new Vector2(moveInput.x * runSpeed, _myRigidbody.velocity.y);
+            var playerVelocity = new Vector2(_moveInput.x * runSpeed, _myRigidbody.velocity.y);
             _myRigidbody.velocity = playerVelocity;
 
             var playerHasHorizontalSpeed = Mathf.Abs((_myRigidbody).velocity.x) > Mathf.Epsilon;
@@ -79,13 +83,13 @@ namespace Platformio.Player
         {
             if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
             {
-                _myRigidbody.gravityScale = _gravityScaleAtStart;
+                _myRigidbody.gravityScale = _initialGravityScale;
                 _myAnimator.SetBool("isClimbing", false);
                 return;
             }
 
 
-            var climbVelocity = new Vector2(_myRigidbody.velocity.x, moveInput.y * climbSpeed);
+            var climbVelocity = new Vector2(_myRigidbody.velocity.x, _moveInput.y * climbSpeed);
             _myRigidbody.velocity = climbVelocity;
             _myRigidbody.gravityScale = 0f;
 
@@ -100,7 +104,7 @@ namespace Platformio.Player
                 return;
             }
 
-            moveInput = inputValue.Get<Vector2>();
+            _moveInput = inputValue.Get<Vector2>();
         }
 
         private void OnFire(InputValue value)
@@ -148,13 +152,31 @@ namespace Platformio.Player
 
         private void Die()
         {
-            if (_myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+            if (_myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")) && _isAlive)
             {
                 _isAlive = false;
                 _myAnimator.SetTrigger("Dying");
                 _myRigidbody.velocity = deathKick;
                 _playerStats.TakeLife();
             }
+        }
+
+        public void Reload()
+        {
+            
+            gameObject.SetActive(false);
+            
+            _moveInput = Vector2.zero;
+            transform.position = _initialPosition;
+            transform.localScale = _initialLocalScale;
+            _myRigidbody.velocity = Vector2.zero;
+
+            _myAnimator.Rebind();
+            _myAnimator.Update(0f);
+            
+            _isAlive = true;
+            
+            gameObject.SetActive(true);
         }
     }
 }

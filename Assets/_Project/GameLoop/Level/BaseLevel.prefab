@@ -3179,8 +3179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraBoundingShape: {fileID: 6197161051106745482}
-  cameraFollowTarget: {fileID: 5487042118227444983}
   cameraAnimatorTarget: {fileID: 7888341265341215894}
+  playerController: {fileID: 3186068976360140199}
 --- !u!114 &9158460847129674567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3321,7 +3321,7 @@ PrefabInstance:
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1317604801264229276, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -5231467362661914987, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -3469,6 +3469,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd3234e06f9a4e109050805c30ed0e7, type: 3}
+--- !u!114 &3186068976360140199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8322018121757044840, guid: 6cd3234e06f9a4e109050805c30ed0e7, type: 3}
+  m_PrefabInstance: {fileID: 6866458609638153679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6abccb356d41ee9e0274415f97d35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5487042118227444983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1400456780297427256, guid: 6cd3234e06f9a4e109050805c30ed0e7, type: 3}

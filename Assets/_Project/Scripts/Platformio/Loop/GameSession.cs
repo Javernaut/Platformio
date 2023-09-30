@@ -52,8 +52,7 @@ namespace Platformio.Loop
 
         private void ResetLevelOnceLifeIsTaken()
         {
-            // TODO Restart the SAME level
-            SpawnNewLevel();
+            StartCoroutine(ReloadCurrentLevel());
         }
 
         public void QuitToMainMenu()
@@ -80,6 +79,15 @@ namespace Platformio.Loop
         private void SpawnNewLevel()
         {
             StartCoroutine(StartNewLevelAsCoroutine());
+        }
+
+        private IEnumerator ReloadCurrentLevel()
+        {
+            yield return _fader.FadeOut(1);
+
+            _currentLevel.Reload();
+            
+            yield return _fader.FadeIn(1);
         }
 
         private IEnumerator StartNewLevelAsCoroutine()

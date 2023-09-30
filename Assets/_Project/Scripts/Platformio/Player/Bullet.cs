@@ -7,13 +7,13 @@ namespace Platformio.Player
         [SerializeField] private float bulletSpeed = 20f;
 
         private Rigidbody2D myRigidbody;
-        private PlayerMovement player;
+        private PlayerController player;
         private float xSpeed;
 
         private void Start()
         {
             myRigidbody = GetComponent<Rigidbody2D>();
-            player = FindObjectOfType<PlayerMovement>();
+            player = FindObjectOfType<PlayerController>();
             xSpeed = player.transform.localScale.x * bulletSpeed;
         }
 

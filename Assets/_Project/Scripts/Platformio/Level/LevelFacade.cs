@@ -1,4 +1,5 @@
 using Cinemachine;
+using Platformio.Player;
 using UnityEngine;
 using Zenject;
 
@@ -7,8 +8,8 @@ namespace Platformio.Level
     public class LevelFacade : MonoBehaviour
     {
         [SerializeField] private Collider2D cameraBoundingShape;
-        [SerializeField] private Transform cameraFollowTarget;
         [SerializeField] private Animator cameraAnimatorTarget;
+        [SerializeField] private PlayerController playerController; 
 
         public void InitWith(
             CinemachineVirtualCamera[] cinemachineVirtualCameras,
@@ -23,13 +24,18 @@ namespace Platformio.Level
 
             foreach (var cinemachineVirtualCamera in cinemachineVirtualCameras)
             {
-                cinemachineVirtualCamera.Follow = cameraFollowTarget;
+                cinemachineVirtualCamera.Follow = playerController.transform;
             }
         }
 
         public void Destroy()
         {
             Destroy(gameObject);
+        }
+
+        public void Reload()
+        {
+            playerController.Reload();
         }
 
         public class Factory : PlaceholderFactory<LevelFacade>
