@@ -32,12 +32,12 @@ namespace Platformio.Sound
                 yield return null;
             }
         }
+    }
 
-        [Serializable]
-        public class Settings
-        {
-            public AudioClip[] mainMenuMusic;
-            public AudioClip[] gameLoopMusic;
-        }
+    [Serializable]
+    public class GlobalMusicSettings
+    {
+        public AudioClip[] mainMenuMusic;
+        public AudioClip[] gameLoopMusic;
     }
 }

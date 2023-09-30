@@ -11,7 +11,7 @@ namespace Platformio.DI
     {
         [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _settings;
         [Inject] private PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
-        [Inject] private MusicPlayer.Settings _musicSettings;
+        [Inject] private GlobalMusicSettings _musicSettings;
 
         [SerializeField] private PlayerAppearance fallbackPlayerAppearance;
         [SerializeField] private Transform levelRoot;

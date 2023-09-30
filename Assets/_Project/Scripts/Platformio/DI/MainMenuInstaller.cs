@@ -9,7 +9,7 @@ namespace Platformio.DI
     {
         [SerializeField] private PlayerSelectionWindowController playerSelectionWindowPrefab;
 
-        [Inject] private MusicPlayer.Settings _musicSettings;
+        [Inject] private GlobalMusicSettings _musicSettings;
 
         public override void InstallBindings()
         {

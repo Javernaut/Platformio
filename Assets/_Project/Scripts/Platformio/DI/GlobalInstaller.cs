@@ -10,7 +10,7 @@ namespace Platformio.DI
     public class GlobalInstaller : MonoInstaller<GlobalInstaller>
     {
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
-        [SerializeField] private MusicPlayer.Settings musicSettings;
+        [SerializeField] private GlobalMusicSettings musicSettings;
         [SerializeField] private SoundPlayer.Settings soundSettings;
 
         public override void InstallBindings()
