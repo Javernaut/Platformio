@@ -1,5 +1,4 @@
-using System;
-using Platformio.Environment;
+using Platformio.Level;
 using Platformio.Loop;
 using UnityEngine;
 using Zenject;
@@ -11,19 +10,14 @@ namespace Platformio.DI
     public class GameLoopSettingsInstaller : ScriptableObjectInstaller<GameLoopSettingsInstaller>
     {
         public PlayerStats.Settings playerStatsSettings;
-        public LevelConfigurationSettings levelConfigurationSettings;
+        public LevelGenerator.Settings levelConfigurationSettings;
 
         public override void InstallBindings()
         {
             Container.BindInstance(playerStatsSettings);
             Container.BindInstance(levelConfigurationSettings);
-        }
-
-        [Serializable]
-        public class LevelConfigurationSettings
-        {
-            public EnvironmentThemeConfiguration[] themes;
-            public GameObject[] levelPrefabs;
+            
+            Container.Bind<LevelGenerator>().AsSingle();
         }
     }
 }

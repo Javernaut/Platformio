@@ -1,6 +1,6 @@
 using System.Collections;
 using Cinemachine;
-using Platformio.DI;
+using Platformio.Level;
 using Platformio.Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,13 +15,11 @@ namespace Platformio.Loop
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
         [Inject] private PlayerStats _playerStats;
-        [Inject] private Level.Level.Factory _levelFactory;
-        [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _levelConfigurationSettings;
+        [Inject] private LevelFacade.Factory _levelFactory;
         [Inject] private MusicPlayer _musicPlayer;
         [Inject] private Fader _fader;
 
-        private Level.Level _currentLevel;
-        private int _currentThemeIndex;
+        private LevelFacade _currentLevel;
 
         void Start()
         {
@@ -71,6 +69,7 @@ namespace Platformio.Loop
             SceneManager.LoadScene(0);
             // TODO Cleanup
             // FindObjectOfType<ScenePersist>().ResetScenePersist();
+            // TODO Dispose current level
         }
 
         public void LoadNextLevel()
@@ -91,16 +90,8 @@ namespace Platformio.Loop
             }
 
             _currentLevel?.Destroy();
-
-            var settings = new Level.Level.Settings(_levelConfigurationSettings.themes[_currentThemeIndex]);
-            _currentLevel = _levelFactory.Create(settings);
+            _currentLevel = _levelFactory.Create();
             _currentLevel.InitWith(cameras, cameraConfiners, stateDrivenCamera);
-
-            _currentThemeIndex++;
-            if (_currentThemeIndex == _levelConfigurationSettings.themes.Length)
-            {
-                _currentThemeIndex = 0;
-            }
 
             yield return _fader.FadeIn(1);
         }

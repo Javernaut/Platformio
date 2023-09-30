@@ -1,11 +1,10 @@
 using Cinemachine;
-using Platformio.Environment;
 using UnityEngine;
 using Zenject;
 
 namespace Platformio.Level
 {
-    public class Level : MonoBehaviour
+    public class LevelFacade : MonoBehaviour
     {
         [SerializeField] private Collider2D cameraBoundingShape;
         [SerializeField] private Transform cameraFollowTarget;
@@ -33,18 +32,8 @@ namespace Platformio.Level
             Destroy(gameObject);
         }
 
-        public class Factory : PlaceholderFactory<Settings, Level>
+        public class Factory : PlaceholderFactory<LevelFacade>
         {
-        }
-
-        public class Settings
-        {
-            public EnvironmentThemeConfiguration theme;
-
-            public Settings(EnvironmentThemeConfiguration theme)
-            {
-                this.theme = theme;
-            }
         }
     }
 }

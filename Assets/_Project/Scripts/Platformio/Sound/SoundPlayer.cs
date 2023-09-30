@@ -11,6 +11,8 @@ namespace Platformio.Sound
 
         [Inject] private Settings _settings;
 
+        // TODO Create separate StepSoundPlayer, spawn it at the main camera's audio listener,
+        // don't forget to destroy it along with its audio source
         public void OverrideStepsSounds(StepsSounds stepsSounds)
         {
             this.stepsSounds = stepsSounds;
