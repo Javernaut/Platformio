@@ -22,7 +22,7 @@ namespace Platformio.Level
 
         public void InjectLevelGameObject(DiContainer container)
         {
-            var theme = _settings.themes[_currentThemeIndex];
+            var theme = _settings.themes[_currentThemeIndex++];
             container.BindInstance(theme);
             
             if (_currentThemeIndex >= _settings.themes.Length)
