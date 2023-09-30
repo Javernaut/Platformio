@@ -1,5 +1,4 @@
 using Cinemachine;
-using Platformio.DI;
 using Platformio.Environment;
 using UnityEngine;
 using Zenject;
@@ -27,6 +26,11 @@ namespace Platformio.Level
             {
                 cinemachineVirtualCamera.Follow = cameraFollowTarget;
             }
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
 
         public class Factory : PlaceholderFactory<Settings, Level>

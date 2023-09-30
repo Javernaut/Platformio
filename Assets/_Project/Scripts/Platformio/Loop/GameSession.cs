@@ -10,8 +10,6 @@ namespace Platformio.Loop
 {
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private Transform levelRoot;
-
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
         [SerializeField] private CinemachineVirtualCamera[] cameras;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
@@ -20,7 +18,6 @@ namespace Platformio.Loop
         [Inject] private Level.Level.Factory _levelFactory;
         [Inject] private GameLoopSettingsInstaller.LevelConfigurationSettings _levelConfigurationSettings;
         [Inject] private MusicPlayer _musicPlayer;
-
         [Inject] private Fader _fader;
 
         private Level.Level _currentLevel;
@@ -93,10 +90,7 @@ namespace Platformio.Loop
                 yield return _fader.FadeOut(1);
             }
 
-            foreach (Transform child in levelRoot)
-            {
-                Destroy(child.gameObject);
-            }
+            _currentLevel?.Destroy();
 
             var settings = new Level.Level.Settings(_levelConfigurationSettings.themes[_currentThemeIndex]);
             _currentLevel = _levelFactory.Create(settings);
