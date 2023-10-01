@@ -28,7 +28,9 @@ namespace Platformio.Player
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private PlayerAppearance _playerAppearance;
+        
         [Inject] private SoundPlayer _soundPlayer;
+        [Inject] private StepSoundPlayer _stepSoundPlayer;
 
         private void Awake()
         {
@@ -66,7 +68,7 @@ namespace Platformio.Player
         {
             if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
-                _soundPlayer.PlayStepSound();
+                _stepSoundPlayer.PlayStepSound();
             }
         }
 
@@ -163,8 +165,7 @@ namespace Platformio.Player
 
         public void Reload()
         {
-            
-            gameObject.SetActive(false);
+            enabled = false;
             
             _moveInput = Vector2.zero;
             transform.position = _initialPosition;
@@ -172,11 +173,10 @@ namespace Platformio.Player
             _myRigidbody.velocity = Vector2.zero;
 
             _myAnimator.Rebind();
-            _myAnimator.Update(0f);
             
             _isAlive = true;
-            
-            gameObject.SetActive(true);
+
+            enabled = true;
         }
     }
 }

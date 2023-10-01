@@ -10,7 +10,6 @@ namespace Platformio.Level
 {
     public class LevelGenerator
     {
-        [Inject] private readonly SoundPlayer _soundPlayer;
         [Inject] private readonly Settings _settings;
 
         private int _currentThemeIndex;
@@ -23,14 +22,15 @@ namespace Platformio.Level
         public void InjectLevelGameObject(DiContainer container)
         {
             var theme = _settings.themes[_currentThemeIndex++];
+            
             container.BindInstance(theme);
+            container.BindInstance(theme.stepsSounds);
+            container.BindInterfacesAndSelfTo<StepSoundPlayer>().AsSingle();
             
             if (_currentThemeIndex >= _settings.themes.Length)
             {
                 _currentThemeIndex = 0;
             }
-
-            _soundPlayer.OverrideStepsSounds(theme.stepsSounds);
         }
 
         [Serializable]

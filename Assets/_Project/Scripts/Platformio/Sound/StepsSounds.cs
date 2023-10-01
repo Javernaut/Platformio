@@ -6,6 +6,7 @@ namespace Platformio.Sound
     [CreateAssetMenu]
     public class StepsSounds : ScriptableObject
     {
+        [Range(0, 1)] public float volume = 1;
         public AudioClip[] variations;
     }
 }
