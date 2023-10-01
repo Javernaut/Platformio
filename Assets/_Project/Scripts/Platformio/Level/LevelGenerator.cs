@@ -26,7 +26,7 @@ namespace Platformio.Level
             container.BindInstance(theme);
             container.BindInstance(theme.stepsSounds);
             container.BindInterfacesAndSelfTo<StepSoundPlayer>().AsSingle();
-            
+
             if (_currentThemeIndex >= _settings.themes.Length)
             {
                 _currentThemeIndex = 0;

@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallbackPlayerAppearance: {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
   levelRoot: {fileID: 233239270}
+  levelAnnouncementPrefab: {fileID: 7694894760765115834, guid: 74c3150d2028949ecafe9a62cd9fe9ea, type: 3}
 --- !u!1 &630880443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 280762697159813980, guid: 6df863c29beac4db6b2200007b05a9f7, type: 3}

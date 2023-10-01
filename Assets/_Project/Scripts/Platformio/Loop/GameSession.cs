@@ -14,12 +14,14 @@ namespace Platformio.Loop
         [SerializeField] private CinemachineVirtualCamera[] cameras;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
 
-        [Inject] private PlayerStats _playerStats;
-        [Inject] private LevelFacade.Factory _levelFactory;
-        [Inject] private MusicPlayer _musicPlayer;
-        [Inject] private Fader _fader;
+        [Inject] private readonly PlayerStats _playerStats;
+        [Inject] private readonly LevelAnnouncement.Factory _levelAnnouncementFactory;
+        [Inject] private readonly LevelFacade.Factory _levelFactory;
+        [Inject] private readonly MusicPlayer _musicPlayer;
+        [Inject] private readonly Fader _fader;
 
         private LevelFacade _currentLevel;
+        private int _currentLevelNumber = 1;
 
         void Start()
         {
@@ -101,6 +103,8 @@ namespace Platformio.Loop
             _currentLevel = _levelFactory.Create();
             _currentLevel.InitWith(cameras, cameraConfiners, stateDrivenCamera);
 
+            _levelAnnouncementFactory.Create(_currentLevelNumber++);
+            
             yield return _fader.FadeIn(1);
         }
     }

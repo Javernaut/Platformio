@@ -16,6 +16,7 @@ namespace Platformio.DI
 
         [SerializeField] private PlayerAppearance fallbackPlayerAppearance;
         [SerializeField] private Transform levelRoot;
+        [SerializeField] private GameObject levelAnnouncementPrefab;
 
         public override void InstallBindings()
         {
@@ -30,6 +31,10 @@ namespace Platformio.DI
                 .ByNewPrefabMethod(_levelGenerator.GetLevelPrefab, _levelGenerator.InjectLevelGameObject)
                 .UnderTransform(levelRoot)
                 .AsSingle();
+
+            Container.Bind<LevelAnnouncement>().AsTransient();
+            Container.BindFactory<int, LevelAnnouncement, LevelAnnouncement.Factory>()
+                .FromComponentInNewPrefab(levelAnnouncementPrefab);
         }
     }
 }
