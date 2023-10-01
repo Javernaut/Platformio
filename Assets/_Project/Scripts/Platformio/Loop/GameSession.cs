@@ -64,7 +64,6 @@ namespace Platformio.Loop
 
         private IEnumerator QuitToMainMenuRoutine()
         {
-            // TODO Extract the fade out/in settings
             _musicPlayer.FadeOut();
             yield return _fader.FadeOut();
             SceneManager.LoadScene(0);
@@ -96,9 +95,9 @@ namespace Platformio.Loop
             if (_currentLevel != null)
             {
                 yield return _fader.FadeOut();
+                _currentLevel.Destroy();
             }
 
-            _currentLevel?.Destroy();
             _currentLevel = _levelFactory.Create();
             _currentLevel.InitWith(cameraConfiners, playerController);
 

@@ -48,7 +48,6 @@ namespace Platformio.Home
 
         private IEnumerator StartNewGameRoutine()
         {
-            // TODO Extract the fade out/in settings
             _musicPlayer.FadeOut();
             yield return _fader.FadeOut();
             SceneManager.LoadScene(1);
