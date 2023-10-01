@@ -22,7 +22,6 @@ namespace Platformio.Environment.Exit
         private IEnumerator LoadNextLevel()
         {
             yield return new WaitForSecondsRealtime(levelLoadDelay);
-            // FindObjectOfType<ScenePersist>().ResetScenePersist();
             _gameSession.LoadNextLevel();
         }
     }

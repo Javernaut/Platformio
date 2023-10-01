@@ -69,7 +69,6 @@ namespace Platformio.Loop
             yield return _fader.FadeOut(1);
             SceneManager.LoadScene(0);
             // TODO Cleanup
-            // FindObjectOfType<ScenePersist>().ResetScenePersist();
             // TODO Dispose current level
         }
 
