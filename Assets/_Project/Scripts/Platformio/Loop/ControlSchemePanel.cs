@@ -1,6 +1,6 @@
 using System;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Platformio.Loop
@@ -9,7 +9,11 @@ namespace Platformio.Loop
     {
         [Inject] private readonly PlayerInputDeviceTracker _playerInputDeviceTracker;
 
-        [SerializeField] private TextMeshProUGUI schemeText;
+        // Assume the order just as in PlayerInputDeviceType
+        [SerializeField] private ControlScheme[] controlSchemes;
+        [SerializeField] private Image jumpControlImage;
+        [SerializeField] private Image fireControlImage;
+        [SerializeField] private Image menuControlImage;
 
         private void Awake()
         {
@@ -24,7 +28,11 @@ namespace Platformio.Loop
 
         private void SetNewDeviceType(PlayerInputDeviceType newDeviceType)
         {
-            schemeText.text = GetDeviceNameBy(newDeviceType);
+            // schemeText.text = GetDeviceNameBy(newDeviceType);
+            var currentControlScheme = controlSchemes[(int)newDeviceType];
+            jumpControlImage.sprite = currentControlScheme.jumpButton;
+            fireControlImage.sprite = currentControlScheme.fireButton;
+            menuControlImage.sprite = currentControlScheme.menuButton;
         }
 
         private string GetDeviceNameBy(PlayerInputDeviceType type)
@@ -32,7 +40,7 @@ namespace Platformio.Loop
             return type switch
             {
                 PlayerInputDeviceType.Keyboard => "Keyboard",
-                PlayerInputDeviceType.PS => "Playstation",
+                PlayerInputDeviceType.Playstation => "Playstation",
                 PlayerInputDeviceType.Xbox => "Xbox",
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, "Unknown PlayerInputDeviceType")
             };

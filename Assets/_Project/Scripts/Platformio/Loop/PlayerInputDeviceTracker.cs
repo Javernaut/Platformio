@@ -47,7 +47,7 @@ namespace Platformio.Loop
                         item.name.Contains("DualShock")
                 ))
             {
-                return PlayerInputDeviceType.PS;
+                return PlayerInputDeviceType.Playstation;
             }
 
             if (devices.Any(
