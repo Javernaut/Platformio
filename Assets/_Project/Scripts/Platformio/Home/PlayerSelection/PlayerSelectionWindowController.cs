@@ -1,6 +1,7 @@
 using Platformio.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Zenject;
 
@@ -8,19 +9,20 @@ namespace Platformio.Home.PlayerSelection
 {
     public class PlayerSelectionWindowController : MonoBehaviour
     {
-        [Inject] private PlayerAppearance[] _playerAppearances;
-        [Inject] private PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
+        [Inject] private readonly PlayerAppearance[] _playerAppearances;
+        [Inject] private readonly PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
+        [Inject] private readonly InputActionAsset _globalInputActionAsset;
 
         [SerializeField] private ToggleGroup toggleGroup;
         [SerializeField] private SelectablePlayer selectablePlayerPrefab;
         [SerializeField] private GameObject confirmButton;
 
         private PreviousSelectionPreserver _selectionPreserver;
-        
+
         public delegate void SelectionConfirmed();
 
         public event SelectionConfirmed OnSelectionConfirmed;
-        
+
         private void Start()
         {
             _selectionPreserver = PreviousSelectionPreserver.ReplaceWith(confirmButton);
@@ -30,6 +32,18 @@ namespace Platformio.Home.PlayerSelection
                 selectablePlayer.SetToggleGroup(toggleGroup);
                 selectablePlayer.PlayerAppearance = playerAppearance;
             }
+
+            _globalInputActionAsset["UI/Cancel"].performed += onCancelActionPerformed;
+        }
+
+        private void OnDestroy()
+        {
+            _globalInputActionAsset["UI/Cancel"].performed -= onCancelActionPerformed;
+        }
+
+        private void onCancelActionPerformed(InputAction.CallbackContext _)
+        {
+            OnBackPressed();
         }
 
         public void OnBackPressed()

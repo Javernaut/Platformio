@@ -9,8 +9,8 @@ namespace Platformio
     public class PauseMenu : MonoBehaviour
     {
         [Inject] private GameSession _gameSession;
+        [Inject] private InputActionAsset _globalInputActionAsset;
         
-        [SerializeField] private InputActionAsset globalInputActionAsset;
         [SerializeField] private GameObject pauseMenuUI;
         [SerializeField] private GameObject resumeButton;
 
@@ -19,12 +19,18 @@ namespace Platformio
         private void Awake()
         {
             // Assume we are the only piece of UI on the screen and nothing can override us
-            globalInputActionAsset["UI/Cancel"].performed += _ => TogglePauseMenu();
+            _globalInputActionAsset["UI/Cancel"].performed += onCancelActionPerformed;
         }
 
         private void OnDestroy()
         {
+            _globalInputActionAsset["UI/Cancel"].performed -= onCancelActionPerformed;
             SetPlayerActionMapEnabled(true);
+        }
+
+        private void onCancelActionPerformed(InputAction.CallbackContext _)
+        {
+            TogglePauseMenu();
         }
 
         private void TogglePauseMenu()
@@ -65,7 +71,7 @@ namespace Platformio
 
         private void SetPlayerActionMapEnabled(bool isEnabled)
         {
-            var playerActionMap = globalInputActionAsset.FindActionMap("Player");
+            var playerActionMap = _globalInputActionAsset.FindActionMap("Player");
             if (isEnabled)
             {
                 playerActionMap.Enable();

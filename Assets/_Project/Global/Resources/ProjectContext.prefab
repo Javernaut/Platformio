@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d5182e8beb4460ac7065afa366f280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalInputActionAsset: {fileID: -944628639613478452, guid: 7dd3f456d09f446efafc81d886a7d1f8, type: 3}
   availablePlayerAppearances:
   - {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
   - {fileID: 11400000, guid: 9cf92aee6bd8c46239ac3079a5920800, type: 2}
