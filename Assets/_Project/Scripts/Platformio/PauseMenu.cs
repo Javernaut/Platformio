@@ -8,24 +8,21 @@ namespace Platformio
     public class PauseMenu : MonoBehaviour
     {
         [Inject] private GameSession _gameSession;
-        
+
         [SerializeField] private GameObject pauseMenuUI;
-        [SerializeField] private InputActionAsset playerInputActionAsset;
-        
-        private PauseMenuInputActions _inputActions;
+        [SerializeField] private InputActionAsset globalInputActionAsset;
 
         private bool _isGamePaused;
 
         private void Awake()
         {
-            _inputActions = new PauseMenuInputActions();
-            _inputActions.PauseMenu.TogglePauseMenu.performed += _ => TogglePauseMenu();
-            _inputActions.PauseMenu.ClosePauseMenu.performed += _ => ResumeGame();
+            // Assume we are the only piece of UI on the screen and nothing can override us
+            globalInputActionAsset["UI/Cancel"].performed += _ => TogglePauseMenu();
         }
 
         private void OnDestroy()
         {
-            playerInputActionAsset.FindActionMap("Player").Enable();
+            SetPlayerActionMapEnabled(true);
         }
 
         private void TogglePauseMenu()
@@ -40,36 +37,40 @@ namespace Platformio
             }
         }
 
-        private void OnEnable()
-        {
-            _inputActions.Enable();
-        }
-
-        private void OnDisable()
-        {
-            _inputActions.Disable();
-        }
-
         private void PauseGame()
         {
-            playerInputActionAsset.FindActionMap("Player").Disable();
             Time.timeScale = 0f;
             pauseMenuUI.SetActive(true);
             _isGamePaused = true;
+            SetPlayerActionMapEnabled(false);
         }
 
         public void ResumeGame()
         {
-            playerInputActionAsset.FindActionMap("Player").Enable();
             Time.timeScale = 1f;
             pauseMenuUI.SetActive(false);
             _isGamePaused = false;
+            SetPlayerActionMapEnabled(true);
         }
 
         public void QuitGame()
         {
+            // TODO Consider wrapping the time scale access
             Time.timeScale = 1f;
             _gameSession.QuitToMainMenu();
+        }
+
+        private void SetPlayerActionMapEnabled(bool isEnabled)
+        {
+            var playerActionMap = globalInputActionAsset.FindActionMap("Player");
+            if (isEnabled)
+            {
+                playerActionMap.Enable();
+            }
+            else
+            {
+                playerActionMap.Disable();
+            }
         }
     }
 }
