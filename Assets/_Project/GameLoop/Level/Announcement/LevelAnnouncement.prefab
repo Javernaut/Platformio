@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1260425198781936264}
   - component: {fileID: 6763225726011810197}
   - component: {fileID: 7062732008301514643}
+  - component: {fileID: 5050014697417483178}
   m_Layer: 5
   m_Name: LevelAnnouncement
   m_TagString: Untagged
@@ -116,6 +117,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 246864475271447809}
+  canvasGroup: {fileID: 5050014697417483178}
+--- !u!225 &5050014697417483178
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7694894760765115834}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2848700026525664714
 PrefabInstance:
   m_ObjectHideFlags: 0

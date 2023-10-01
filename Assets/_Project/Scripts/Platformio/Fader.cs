@@ -42,9 +42,14 @@ namespace Platformio
 
         private IEnumerator FadeRoutine(float target, float time)
         {
-            while (!Mathf.Approximately(_canvasGroup.alpha, target))
+            return FadeRoutine(_canvasGroup, target, time);
+        }
+
+        public static IEnumerator FadeRoutine(CanvasGroup canvasGroup, float target, float time)
+        {
+            while (!Mathf.Approximately(canvasGroup.alpha, target))
             {
-                _canvasGroup.alpha = Mathf.MoveTowards(_canvasGroup.alpha, target, Time.unscaledDeltaTime / time);
+                canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, target, Time.unscaledDeltaTime / time);
                 yield return null;
             }
         }

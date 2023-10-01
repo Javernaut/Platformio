@@ -10,11 +10,16 @@ namespace Platformio.Level
         [Inject] private readonly int _levelNumber;
 
         [SerializeField] private TextMeshProUGUI textLabel;
+        [SerializeField] private CanvasGroup canvasGroup;
+
+        [SerializeField] private float visibleTime = 1.5f;
+        [SerializeField] private float fadingTime = .5f;
 
         private IEnumerator Start()
         {
             textLabel.text = $"Level {_levelNumber}";
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(visibleTime);
+            yield return Fader.FadeRoutine(canvasGroup, 0, fadingTime);
             Destroy(gameObject);
         }
 
