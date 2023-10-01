@@ -1,5 +1,6 @@
 using Cinemachine;
 using Platformio.Player;
+using Platformio.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -7,25 +8,24 @@ namespace Platformio.Level
 {
     public class LevelFacade : MonoBehaviour
     {
+        [Inject] private StepSoundPlayer _stepSoundPlayer;
+        
         [SerializeField] private Collider2D cameraBoundingShape;
-        [SerializeField] private Animator cameraAnimatorTarget;
-        [SerializeField] private PlayerController playerController; 
+        [SerializeField] private Transform startPosition;
 
-        public void InitWith(
-            CinemachineVirtualCamera[] cinemachineVirtualCameras,
-            CinemachineConfiner2D[] cameraConfiners,
-            CinemachineStateDrivenCamera camera)
+        private PlayerController _playerController;
+
+        public void InitWith(CinemachineConfiner2D[] cameraConfiners, PlayerController controller)
         {
-            camera.m_AnimatedTarget = cameraAnimatorTarget;
             foreach (var confiner in cameraConfiners)
             {
                 confiner.m_BoundingShape2D = cameraBoundingShape;
             }
 
-            foreach (var cinemachineVirtualCamera in cinemachineVirtualCameras)
-            {
-                cinemachineVirtualCamera.Follow = playerController.transform;
-            }
+            _playerController = controller;
+            _playerController.transform.position = startPosition.position;
+            _playerController.transform.localScale = startPosition.localScale;
+            _playerController.OnStepMade = () => _stepSoundPlayer.PlayStepSound();
         }
 
         public void Destroy()
@@ -35,7 +35,7 @@ namespace Platformio.Level
 
         public void Reload()
         {
-            playerController.Reload();
+            _playerController.Reload(startPosition.position, startPosition.localScale);
         }
 
         public class Factory : PlaceholderFactory<LevelFacade>

@@ -1,3 +1,4 @@
+using System;
 using Platformio.Loop;
 using Platformio.Sound;
 using UnityEngine;
@@ -23,14 +24,14 @@ namespace Platformio.Player
         private Vector2 _moveInput;
         private bool _isAlive = true;
         private float _initialGravityScale;
-        private Vector2 _initialLocalScale;
-        private Vector2 _initialPosition;
 
         [Inject] private PlayerStats _playerStats;
         [Inject] private PlayerAppearance _playerAppearance;
         
         [Inject] private SoundPlayer _soundPlayer;
-        [Inject] private StepSoundPlayer _stepSoundPlayer;
+
+        // Only one consumer is enough
+        public Action OnStepMade;
 
         private void Awake()
         {
@@ -41,8 +42,6 @@ namespace Platformio.Player
             _myFeetCollider = GetComponent<BoxCollider2D>();
 
             _initialGravityScale = _myRigidbody.gravityScale;
-            _initialLocalScale = transform.localScale;
-            _initialPosition = transform.position;
         }
 
         private void Start()
@@ -68,7 +67,7 @@ namespace Platformio.Player
         {
             if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
-                _stepSoundPlayer.PlayStepSound();
+                OnStepMade?.Invoke();
             }
         }
 
@@ -163,13 +162,13 @@ namespace Platformio.Player
             }
         }
 
-        public void Reload()
+        public void Reload(Vector2 newPosition, Vector3 newLocalScale)
         {
             gameObject.SetActive(false);
             
             _moveInput = Vector2.zero;
-            transform.position = _initialPosition;
-            transform.localScale = _initialLocalScale;
+            transform.localScale = newLocalScale;
+            transform.position = newPosition;
             _myRigidbody.velocity = Vector2.zero;
 
             _myAnimator.Rebind();

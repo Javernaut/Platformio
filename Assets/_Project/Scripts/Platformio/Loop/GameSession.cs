@@ -1,6 +1,7 @@
 using System.Collections;
 using Cinemachine;
 using Platformio.Level;
+using Platformio.Player;
 using Platformio.Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,8 +12,7 @@ namespace Platformio.Loop
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
-        [SerializeField] private CinemachineVirtualCamera[] cameras;
-        [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
+        [SerializeField] private PlayerController playerController;
 
         [Inject] private readonly PlayerStats _playerStats;
         [Inject] private readonly LevelAnnouncement.Factory _levelAnnouncementFactory;
@@ -100,7 +100,7 @@ namespace Platformio.Loop
 
             _currentLevel?.Destroy();
             _currentLevel = _levelFactory.Create();
-            _currentLevel.InitWith(cameras, cameraConfiners, stateDrivenCamera);
+            _currentLevel.InitWith(cameraConfiners, playerController);
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);
             
