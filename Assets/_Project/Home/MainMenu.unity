@@ -201,6 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSelectionWindowPrefab: {fileID: 5003612918586071992, guid: bf4aecbf0944c4dc88c5aa90d33d5e06, type: 3}
+--- !u!1 &1327604686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3902778042737159262, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+  m_PrefabInstance: {fileID: 1780258733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1390053743
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highestScoreText: {fileID: 1410853505}
+  startNewGameButton: {fileID: 1327604686}
 --- !u!1 &2115503294
 GameObject:
   m_ObjectHideFlags: 0

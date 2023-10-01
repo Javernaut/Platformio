@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleGroup: {fileID: 4404073324367026689}
   selectablePlayerPrefab: {fileID: 8460946241809019794, guid: 00a9263743efa4257866754b4da6a29c, type: 3}
+  confirmButton: {fileID: 1526878084299713159}
 --- !u!1 &2828143145789582836
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +725,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+--- !u!1 &1526878084299713159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3902778042737159262, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+  m_PrefabInstance: {fileID: 2529330243517908697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8289923621559061826 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5769750936334125979, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}

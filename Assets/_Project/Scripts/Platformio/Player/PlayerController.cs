@@ -165,7 +165,7 @@ namespace Platformio.Player
 
         public void Reload()
         {
-            enabled = false;
+            gameObject.SetActive(false);
             
             _moveInput = Vector2.zero;
             transform.position = _initialPosition;
@@ -176,7 +176,7 @@ namespace Platformio.Player
             
             _isAlive = true;
 
-            enabled = true;
+            gameObject.SetActive(true);
         }
     }
 }

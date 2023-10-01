@@ -4,6 +4,7 @@ using Platformio.Score;
 using Platformio.Sound;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -12,6 +13,7 @@ namespace Platformio.Home
     public class MainMenuController : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI highestScoreText;
+        [SerializeField] private GameObject startNewGameButton;
 
         [Inject] private Fader _fader;
         [Inject] private ScoreCounter _scoreCounter;
@@ -20,6 +22,7 @@ namespace Platformio.Home
 
         private IEnumerator Start()
         {
+            EventSystem.current.SetSelectedGameObject(startNewGameButton);
             _fader.FadeOutImmediate();
             SetupMaxScoreLabel();
             yield return _fader.FadeIn(1);

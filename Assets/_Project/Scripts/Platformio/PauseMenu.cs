@@ -1,5 +1,6 @@
 using Platformio.Loop;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using Zenject;
 
@@ -8,9 +9,10 @@ namespace Platformio
     public class PauseMenu : MonoBehaviour
     {
         [Inject] private GameSession _gameSession;
-
-        [SerializeField] private GameObject pauseMenuUI;
+        
         [SerializeField] private InputActionAsset globalInputActionAsset;
+        [SerializeField] private GameObject pauseMenuUI;
+        [SerializeField] private GameObject resumeButton;
 
         private bool _isGamePaused;
 
@@ -43,6 +45,7 @@ namespace Platformio
             pauseMenuUI.SetActive(true);
             _isGamePaused = true;
             SetPlayerActionMapEnabled(false);
+            EventSystem.current.SetSelectedGameObject(resumeButton);
         }
 
         public void ResumeGame()

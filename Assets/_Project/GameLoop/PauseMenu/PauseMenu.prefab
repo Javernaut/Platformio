@@ -212,8 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d29031d8a96741529894740644f923b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 280762697159813980}
   globalInputActionAsset: {fileID: -944628639613478452, guid: 7dd3f456d09f446efafc81d886a7d1f8, type: 3}
+  pauseMenuUI: {fileID: 280762697159813980}
+  resumeButton: {fileID: 8164506002998486851}
 --- !u!1 &7140471233842396506
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +424,11 @@ PrefabInstance:
 --- !u!224 &1690275825030676614 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5769750936334125979, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
+  m_PrefabInstance: {fileID: 5145174559691770653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8164506002998486851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3902778042737159262, guid: 9a794c0f5aa2a4a61a10f324c1fd4e02, type: 3}
   m_PrefabInstance: {fileID: 5145174559691770653}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6357153992097687283
