@@ -35,6 +35,8 @@ namespace Platformio.DI
             Container.Bind<LevelAnnouncement>().AsTransient();
             Container.BindFactory<int, LevelAnnouncement, LevelAnnouncement.Factory>()
                 .FromComponentInNewPrefab(levelAnnouncementPrefab);
+
+            Container.BindInterfacesAndSelfTo<PlayerInputDeviceTracker>().AsSingle();
         }
     }
 }
