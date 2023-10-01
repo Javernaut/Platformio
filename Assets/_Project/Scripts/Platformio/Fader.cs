@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 namespace Platformio
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class Fader : MonoBehaviour
     {
+        [Inject] private readonly Settings _settings;
+
         private CanvasGroup _canvasGroup;
-        private Coroutine currentlyActiveFade;
+        private Coroutine _currentlyActiveFade;
 
         private void Awake()
         {
@@ -19,25 +23,25 @@ namespace Platformio
             _canvasGroup.alpha = 1f;
         }
 
-        public Coroutine FadeOut(float time)
+        public Coroutine FadeOut()
         {
-            return Fade(1, time);
+            return Fade(1, _settings.fadeOutTime);
         }
 
-        public Coroutine FadeIn(float time)
+        public Coroutine FadeIn()
         {
-            return Fade(0, time);
+            return Fade(0, _settings.fadeInTime);
         }
 
         private Coroutine Fade(float target, float time)
         {
-            if (currentlyActiveFade != null)
+            if (_currentlyActiveFade != null)
             {
-                StopCoroutine(currentlyActiveFade);
+                StopCoroutine(_currentlyActiveFade);
             }
 
-            currentlyActiveFade = StartCoroutine(FadeRoutine(target, time));
-            return currentlyActiveFade;
+            _currentlyActiveFade = StartCoroutine(FadeRoutine(target, time));
+            return _currentlyActiveFade;
         }
 
         private IEnumerator FadeRoutine(float target, float time)
@@ -52,6 +56,13 @@ namespace Platformio
                 canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, target, Time.unscaledDeltaTime / time);
                 yield return null;
             }
+        }
+
+        [Serializable]
+        public class Settings
+        {
+            public float fadeInTime = 1;
+            public float fadeOutTime = 1;
         }
     }
 }

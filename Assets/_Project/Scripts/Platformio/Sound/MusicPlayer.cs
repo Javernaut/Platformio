@@ -8,6 +8,7 @@ namespace Platformio.Sound
     public class MusicPlayer : EarWhisperingPlayer
     {
         [Inject] private AudioClip _audioClip;
+        [Inject] private float _fadeOutTime;
 
         protected override void Awake()
         {
@@ -18,9 +19,9 @@ namespace Platformio.Sound
             LocalAudioSource.Play();
         }
 
-        public void FadeOut(float time)
+        public void FadeOut()
         {
-            StartCoroutine(FadeRoutine(0, time));
+            StartCoroutine(FadeRoutine(0, _fadeOutTime));
         }
 
         private IEnumerator FadeRoutine(float target, float time)
@@ -37,6 +38,7 @@ namespace Platformio.Sound
     [Serializable]
     public class GlobalMusicSettings
     {
+        public float musicFadeOutTime = 1;
         public AudioClip[] mainMenuMusic;
         public AudioClip[] gameLoopMusic;
     }

@@ -65,8 +65,8 @@ namespace Platformio.Loop
         private IEnumerator QuitToMainMenuRoutine()
         {
             // TODO Extract the fade out/in settings
-            _musicPlayer.FadeOut(1);
-            yield return _fader.FadeOut(1);
+            _musicPlayer.FadeOut();
+            yield return _fader.FadeOut();
             SceneManager.LoadScene(0);
             // TODO Cleanup
             // TODO Dispose current level
@@ -84,18 +84,18 @@ namespace Platformio.Loop
 
         private IEnumerator ReloadCurrentLevel()
         {
-            yield return _fader.FadeOut(1);
+            yield return _fader.FadeOut();
 
             _currentLevel.Reload();
             
-            yield return _fader.FadeIn(1);
+            yield return _fader.FadeIn();
         }
 
         private IEnumerator StartNewLevelAsCoroutine()
         {
             if (_currentLevel != null)
             {
-                yield return _fader.FadeOut(1);
+                yield return _fader.FadeOut();
             }
 
             _currentLevel?.Destroy();
@@ -104,7 +104,7 @@ namespace Platformio.Loop
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);
             
-            yield return _fader.FadeIn(1);
+            yield return _fader.FadeIn();
         }
     }
 }

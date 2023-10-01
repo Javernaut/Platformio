@@ -14,6 +14,7 @@ namespace Platformio.DI
         [SerializeField] private PlayerAppearance[] availablePlayerAppearances;
         [SerializeField] private GlobalMusicSettings musicSettings;
         [SerializeField] private SoundPlayer.Settings soundSettings;
+        [SerializeField] private Fader.Settings faderSettings;
 
         public override void InstallBindings()
         {
@@ -24,6 +25,9 @@ namespace Platformio.DI
             Container.BindInstance(musicSettings);
             Container.BindInstance(soundSettings);
             Container.BindInstance(globalInputActionAsset);
+            Container.BindInstance(faderSettings);
+
+            Container.BindInstance(musicSettings.musicFadeOutTime).WhenInjectedInto<MusicPlayer>();
         }
     }
 

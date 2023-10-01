@@ -25,7 +25,7 @@ namespace Platformio.Home
             EventSystem.current.SetSelectedGameObject(startNewGameButton);
             _fader.FadeOutImmediate();
             SetupMaxScoreLabel();
-            yield return _fader.FadeIn(1);
+            yield return _fader.FadeIn();
         }
 
         private void SetupMaxScoreLabel()
@@ -49,8 +49,8 @@ namespace Platformio.Home
         private IEnumerator StartNewGameRoutine()
         {
             // TODO Extract the fade out/in settings
-            _musicPlayer.FadeOut(1);
-            yield return _fader.FadeOut(1);
+            _musicPlayer.FadeOut();
+            yield return _fader.FadeOut();
             SceneManager.LoadScene(1);
         }
     }
