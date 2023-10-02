@@ -13,7 +13,8 @@ namespace Platformio.Environment
         public TileBase roundedPlatformTile;
         public TileBase cutPlatformTile;
         public TileBase blockPlatformTile;
-        
+        public TileBase uncutBlockTile;
+
         public StepsSounds stepsSounds;
     }
 }

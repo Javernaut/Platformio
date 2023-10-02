@@ -52,6 +52,7 @@ namespace Platformio.Environment.Tile
                 Type.RoundedPlatform => configuration.roundedPlatformTile,
                 Type.CutPlatform => configuration.cutPlatformTile,
                 Type.BlockPlatform => configuration.blockPlatformTile,
+                Type.UncutBlockPlatform => configuration.uncutBlockTile,
                 // TODO Consider another fallback
                 _ => configuration.thinPlatformTile
             };
@@ -66,6 +67,7 @@ namespace Platformio.Environment.Tile
             RoundedPlatform,
             CutPlatform,
             BlockPlatform,
+            UncutBlockPlatform,
         }
 
         // TODO Make a cache of sort. Same Theme tile may be used in multiple Tilemaps, so the cache has to be done on a per-tilemap basis
