@@ -158,7 +158,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 6
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 7
-  jumpSpeed: 20
+  jumpSpeed: 16.5
   climbSpeed: 5
   deathKick: {x: 5, y: 10}
   bullet: {fileID: 2644717499874177101, guid: 0ce4661b770864f8084c03d93ed25cdd, type: 3}
