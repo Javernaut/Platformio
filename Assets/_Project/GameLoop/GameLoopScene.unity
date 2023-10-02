@@ -587,6 +587,7 @@ MonoBehaviour:
   cameraConfiners:
   - {fileID: 2830706200985592711}
   - {fileID: 766474962834858222}
+  _stateDrivenCamera: {fileID: 7781018449755936195}
   playerController: {fileID: 632174585}
 --- !u!114 &2271313677328828120
 MonoBehaviour:
@@ -1285,7 +1286,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 632174590}
   m_AnimatedTarget: {fileID: 632174589}
   m_LayerIndex: 0
   m_ShowDebugText: 0

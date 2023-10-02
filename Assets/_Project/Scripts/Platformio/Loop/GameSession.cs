@@ -12,6 +12,7 @@ namespace Platformio.Loop
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
+        [SerializeField] private CinemachineStateDrivenCamera _stateDrivenCamera;
         [SerializeField] private PlayerController playerController;
 
         [Inject] private readonly PlayerStats _playerStats;
@@ -86,6 +87,7 @@ namespace Platformio.Loop
             yield return _fader.FadeOut();
 
             _currentLevel.Reload();
+            ForceRepositionCameraToPlayer();
             
             yield return _fader.FadeIn();
         }
@@ -100,10 +102,16 @@ namespace Platformio.Loop
 
             _currentLevel = _levelFactory.Create();
             _currentLevel.InitWith(cameraConfiners, playerController);
+            ForceRepositionCameraToPlayer();
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);
             
             yield return _fader.FadeIn();
+        }
+
+        private void ForceRepositionCameraToPlayer()
+        {
+            _stateDrivenCamera.ForceCameraPosition(playerController.transform.position, Quaternion.identity);
         }
     }
 }
