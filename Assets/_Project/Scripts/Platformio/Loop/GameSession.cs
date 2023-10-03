@@ -19,6 +19,7 @@ namespace Platformio.Loop
         [Inject] private readonly LevelAnnouncement.Factory _levelAnnouncementFactory;
         [Inject] private readonly LevelFacade.Factory _levelFactory;
         [Inject] private readonly MusicPlayer _musicPlayer;
+        [Inject] private readonly SoundPlayer _soundPlayer;
         [Inject] private readonly Fader _fader;
 
         private LevelFacade _currentLevel;
@@ -44,11 +45,12 @@ namespace Platformio.Loop
         {
             if (newLives > 0)
             {
+                _soundPlayer.PlayPlayerHitSound();
                 ResetLevelOnceLifeIsTaken();
             }
             else
             {
-                // TODO Show modal Game over UI instead
+                _soundPlayer.PlayGameOverSound();
                 QuitToMainMenu();
             }
         }
@@ -74,6 +76,7 @@ namespace Platformio.Loop
 
         public void LoadNextLevel()
         {
+            _soundPlayer.PlayLevelCompletedSound();
             SpawnNewLevel();
         }
 
@@ -88,7 +91,7 @@ namespace Platformio.Loop
 
             _currentLevel.Reload();
             ForceRepositionCameraToPlayer();
-            
+
             yield return _fader.FadeIn();
         }
 
@@ -105,7 +108,7 @@ namespace Platformio.Loop
             ForceRepositionCameraToPlayer();
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);
-            
+
             yield return _fader.FadeIn();
         }
 

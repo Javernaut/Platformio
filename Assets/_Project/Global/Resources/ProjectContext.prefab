@@ -98,6 +98,8 @@ MonoBehaviour:
     playerHit: {fileID: 11400000, guid: 4d1362c112d87496f92fc884aca55959, type: 2}
     laserShot: {fileID: 11400000, guid: 2731a4c8f7e59404cbb03570888ad070, type: 2}
     laserHit: {fileID: 11400000, guid: 24ecbd77cde25473b8c7060bf068158f, type: 2}
+    gameOver: {fileID: 11400000, guid: e5f1ff01bd7fb4b2e912c4d5d491833d, type: 2}
+    levelCompleted: {fileID: 11400000, guid: 32c922dc036e944d3ae0252f747a19cf, type: 2}
   faderSettings:
     fadeInTime: 1
     fadeOutTime: 1

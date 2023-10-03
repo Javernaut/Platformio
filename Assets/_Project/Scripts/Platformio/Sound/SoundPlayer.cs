@@ -18,6 +18,11 @@ namespace Platformio.Sound
         public void PlayLaserHitSound() => PlaySound(_settings.laserHit);
 
         public void PlayLaserShotSound() => PlaySound(_settings.laserShot);
+        
+        
+        public void PlayGameOverSound() => PlaySound(_settings.gameOver);
+
+        public void PlayLevelCompletedSound() => PlaySound(_settings.levelCompleted);
 
         private void PlaySound(SoundBank soundBank)
         {
@@ -33,6 +38,8 @@ namespace Platformio.Sound
             public SoundBank playerHit;
             public SoundBank laserShot;
             public SoundBank laserHit;
+            public SoundBank gameOver;
+            public SoundBank levelCompleted;
         }
     }
 }
