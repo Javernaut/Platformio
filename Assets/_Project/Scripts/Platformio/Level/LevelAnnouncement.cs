@@ -17,7 +17,7 @@ namespace Platformio.Level
 
         private IEnumerator Start()
         {
-            textLabel.text = $"Level {_levelNumber}";
+            textLabel.text = $"Level\n{_levelNumber}";
             yield return new WaitForSeconds(visibleTime);
             yield return Fader.FadeRoutine(canvasGroup, 0, fadingTime);
             Destroy(gameObject);
