@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace Platformio.Player
 {
-    public class Bullet : MonoBehaviour
+    public class LaserProjectile : MonoBehaviour
     {
         // TODO Inject a soundPlayer here and play spawn and hit sounds
-        [SerializeField] private float bulletSpeed = 20f;
+        [SerializeField] private float startSpeed = 20f;
 
         private Rigidbody2D myRigidbody;
         private PlayerController player;
@@ -15,7 +15,7 @@ namespace Platformio.Player
         {
             myRigidbody = GetComponent<Rigidbody2D>();
             player = FindObjectOfType<PlayerController>();
-            xSpeed = player.transform.localScale.x * bulletSpeed;
+            xSpeed = player.transform.localScale.x * startSpeed;
         }
 
         private void Update()

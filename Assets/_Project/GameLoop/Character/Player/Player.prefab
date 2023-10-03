@@ -216,7 +216,7 @@ MonoBehaviour:
   jumpSpeed: 16.5
   climbSpeed: 5
   deathKick: {x: 5, y: 10}
-  bullet: {fileID: 2644717499874177101, guid: 0ce4661b770864f8084c03d93ed25cdd, type: 3}
+  laserProjectile: {fileID: 2644717499874177101, guid: 0ce4661b770864f8084c03d93ed25cdd, type: 3}
   gun: {fileID: 8561156490272723726}
 --- !u!70 &4287387909193779574
 CapsuleCollider2D:

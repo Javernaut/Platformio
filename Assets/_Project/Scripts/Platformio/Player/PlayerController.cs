@@ -13,7 +13,7 @@ namespace Platformio.Player
         [SerializeField] float jumpSpeed = 5f;
         [SerializeField] float climbSpeed = 5f;
         [SerializeField] private Vector2 deathKick = new Vector2(10f, 10f);
-        [SerializeField] private GameObject bullet;
+        [SerializeField] private GameObject laserProjectile;
         [SerializeField] private Transform gun;
         
         private Rigidbody2D _myRigidbody;
@@ -115,7 +115,7 @@ namespace Platformio.Player
                 return;
             }
 
-            Instantiate(bullet, gun.position, transform.rotation);
+            Instantiate(laserProjectile, gun.position, transform.rotation);
         }
 
 
