@@ -19,8 +19,11 @@ namespace Platformio.Player
 
         void OnTriggerExit2D(Collider2D other) 
         {
-            moveSpeed = -moveSpeed;
-            FlipEnemyFacing();
+            if (!other.CompareTag("Player"))
+            {
+                moveSpeed = -moveSpeed;
+                FlipEnemyFacing();    
+            }
         }
 
         void FlipEnemyFacing()
