@@ -19,6 +19,7 @@ namespace Platformio.Player
         {
             _myRigidbody = GetComponent<Rigidbody2D>();
             transform.position = _startPosition;
+            _soundPlayer.PlayLaserShotSound();
         }
 
         private void Start()
@@ -51,7 +52,7 @@ namespace Platformio.Player
 
         private void OnDestroy()
         {
-            // TODO Play laser hit sound
+            _soundPlayer.PlayLaserHitSound();
         }
 
         public class Factory : PlaceholderFactory<Vector3, float, LaserProjectile>

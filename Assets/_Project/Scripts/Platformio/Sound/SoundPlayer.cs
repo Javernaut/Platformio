@@ -15,6 +15,10 @@ namespace Platformio.Sound
 
         public void PlayPlayerHitSound() => PlaySound(_settings.playerHit);
 
+        public void PlayLaserHitSound() => PlaySound(_settings.laserHit);
+
+        public void PlayLaserShotSound() => PlaySound(_settings.laserShot);
+
         private void PlaySound(SoundBank soundBank)
         {
             LocalAudioSource.PlayOneShot(soundBank.GetRandomClip(), soundBank.Volume);
@@ -27,6 +31,8 @@ namespace Platformio.Sound
             public SoundBank jump;
             public SoundBank enemyHit;
             public SoundBank playerHit;
+            public SoundBank laserShot;
+            public SoundBank laserHit;
         }
     }
 }

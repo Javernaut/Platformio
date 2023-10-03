@@ -96,6 +96,8 @@ MonoBehaviour:
     jump: {fileID: 11400000, guid: eacf722f680284bd398a27c8502ffc91, type: 2}
     enemyHit: {fileID: 11400000, guid: c62aa5e8c839249be89164c0b9f5338e, type: 2}
     playerHit: {fileID: 11400000, guid: 4d1362c112d87496f92fc884aca55959, type: 2}
+    laserShot: {fileID: 11400000, guid: 2731a4c8f7e59404cbb03570888ad070, type: 2}
+    laserHit: {fileID: 11400000, guid: 24ecbd77cde25473b8c7060bf068158f, type: 2}
   faderSettings:
     fadeInTime: 1
     fadeOutTime: 1
