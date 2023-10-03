@@ -235,6 +235,7 @@ MonoBehaviour:
   fallbackPlayerAppearance: {fileID: 11400000, guid: a4e5f342786304d5c8e0ff735b27977d, type: 2}
   levelRoot: {fileID: 233239270}
   levelAnnouncementPrefab: {fileID: 7694894760765115834, guid: 74c3150d2028949ecafe9a62cd9fe9ea, type: 3}
+  laserProjectilePrefab: {fileID: 2644717499874177101, guid: 0ce4661b770864f8084c03d93ed25cdd, type: 3}
 --- !u!1001 &539813700
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,26 +1,36 @@
+using Platformio.Sound;
 using UnityEngine;
+using Zenject;
 
 namespace Platformio.Player
 {
     public class LaserProjectile : MonoBehaviour
     {
-        // TODO Inject a soundPlayer here and play spawn and hit sounds
         [SerializeField] private float startSpeed = 20f;
 
-        private Rigidbody2D myRigidbody;
-        private PlayerController player;
-        private float xSpeed;
+        [Inject] private readonly SoundPlayer _soundPlayer;
+        [Inject] private readonly float _playerXScale;
+        [Inject] private readonly Vector3 _startPosition;
+
+        private Rigidbody2D _myRigidbody;
+        private float _xSpeed;
+
+        private void Awake()
+        {
+            _myRigidbody = GetComponent<Rigidbody2D>();
+            transform.position = _startPosition;
+        }
 
         private void Start()
         {
-            myRigidbody = GetComponent<Rigidbody2D>();
-            player = FindObjectOfType<PlayerController>();
-            xSpeed = player.transform.localScale.x * startSpeed;
+            _xSpeed = _playerXScale * startSpeed;
         }
 
         private void Update()
         {
-            myRigidbody.velocity = new Vector2(xSpeed, 0f);
+            // TODO Let's make it constant, perhaps?
+            // Shall we have a kinematic rb in this case?
+            _myRigidbody.velocity = new Vector2(_xSpeed, 0f);
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -28,6 +38,7 @@ namespace Platformio.Player
             if (other.CompareTag("Enemy"))
             {
                 Destroy(other.gameObject);
+                _soundPlayer.PlayEnemyHitSound();
             }
 
             Destroy(gameObject);
@@ -36,6 +47,15 @@ namespace Platformio.Player
         void OnCollisionEnter2D(Collision2D other)
         {
             Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            // TODO Play laser hit sound
+        }
+
+        public class Factory : PlaceholderFactory<Vector3, float, LaserProjectile>
+        {
         }
     }
 }

@@ -13,7 +13,6 @@ namespace Platformio.Player
         [SerializeField] float jumpSpeed = 5f;
         [SerializeField] float climbSpeed = 5f;
         [SerializeField] private Vector2 deathKick = new Vector2(10f, 10f);
-        [SerializeField] private GameObject laserProjectile;
         [SerializeField] private Transform gun;
         
         private Rigidbody2D _myRigidbody;
@@ -29,6 +28,8 @@ namespace Platformio.Player
         [Inject] private PlayerAppearance _playerAppearance;
         
         [Inject] private SoundPlayer _soundPlayer;
+        
+        [Inject] private LaserProjectile.Factory _laserProjectileFactory;
 
         // Only one consumer is enough
         public Action OnStepMade;
@@ -115,7 +116,7 @@ namespace Platformio.Player
                 return;
             }
 
-            Instantiate(laserProjectile, gun.position, transform.rotation);
+            _laserProjectileFactory.Create(gun.position, transform.localScale.x);
         }
 
 

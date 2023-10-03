@@ -17,6 +17,7 @@ namespace Platformio.DI
         [SerializeField] private PlayerAppearance fallbackPlayerAppearance;
         [SerializeField] private Transform levelRoot;
         [SerializeField] private GameObject levelAnnouncementPrefab;
+        [SerializeField] private GameObject laserProjectilePrefab;
 
         public override void InstallBindings()
         {
@@ -37,6 +38,10 @@ namespace Platformio.DI
                 .FromComponentInNewPrefab(levelAnnouncementPrefab);
 
             Container.BindInterfacesAndSelfTo<PlayerInputDeviceTracker>().AsSingle();
+
+            Container.BindFactory<Vector3, float, LaserProjectile, LaserProjectile.Factory>()
+                .FromComponentInNewPrefab(laserProjectilePrefab)
+                .AsSingle();
         }
     }
 }
