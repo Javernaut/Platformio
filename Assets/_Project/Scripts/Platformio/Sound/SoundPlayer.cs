@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 using Zenject;
 
 namespace Platformio.Sound
@@ -8,27 +7,26 @@ namespace Platformio.Sound
     {
         [Inject] private Settings _settings;
 
-        public void PlayScorePickupAcquiredSound()
-        {
-            PlaySound(_settings.coinAcquiredSound);
-        }
+        public void PlayScorePickupAcquiredSound() => PlaySound(_settings.coinAcquired);
 
-        public void PlayJumpSound()
-        {
-            PlaySound(_settings.jumpSound);
-        }
+        public void PlayJumpSound() => PlaySound(_settings.jump);
 
-        private void PlaySound(AudioClip audioClip)
+        public void PlayEnemyHitSound() => PlaySound(_settings.enemyHit);
+
+        public void PlayPlayerHitSound() => PlaySound(_settings.playerHit);
+
+        private void PlaySound(SoundBank soundBank)
         {
-            LocalAudioSource.PlayOneShot(audioClip, _settings.defaultVolumeScale);
+            LocalAudioSource.PlayOneShot(soundBank.GetRandomClip(), soundBank.Volume);
         }
 
         [Serializable]
         public class Settings
         {
-            [Range(0, 1)] public float defaultVolumeScale = 1;
-            public AudioClip coinAcquiredSound;
-            public AudioClip jumpSound;
+            public SoundBank coinAcquired;
+            public SoundBank jump;
+            public SoundBank enemyHit;
+            public SoundBank playerHit;
         }
     }
 }

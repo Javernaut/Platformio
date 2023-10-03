@@ -1,5 +1,4 @@
 using System;
-using Platformio.DI;
 using UnityEngine;
 using Zenject;
 using Object = UnityEngine.Object;
@@ -8,7 +7,7 @@ namespace Platformio.Sound
 {
     public class StepSoundPlayer : IInitializable, IDisposable
     {
-        [Inject] private StepsSounds _stepsSounds;
+        [Inject] private SoundBank _stepsSounds;
         [Inject] private AudioListener _currentAudioListener;
 
         private AudioSource LocalAudioSource { get; set; }
@@ -26,8 +25,8 @@ namespace Platformio.Sound
         public void PlayStepSound()
         {
             LocalAudioSource.PlayOneShot(
-                _stepsSounds.variations.GetRandomItem(),
-                _stepsSounds.volume
+                _stepsSounds.GetRandomClip(),
+                _stepsSounds.Volume
             );
         }
     }

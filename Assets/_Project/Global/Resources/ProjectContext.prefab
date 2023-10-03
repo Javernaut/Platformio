@@ -84,6 +84,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ccfc8da55fda4239a997e9d6431f921, type: 2}
   - {fileID: 11400000, guid: 6f95ae3c3f8734b69bcaa063dcc3aec4, type: 2}
   musicSettings:
+    musicFadeOutTime: 1
     mainMenuMusic:
     - {fileID: 8300000, guid: f80bf2f0c124c49f1a09acd27ea504d7, type: 3}
     gameLoopMusic:
@@ -91,9 +92,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 29b8f2348f05646af94f085171e2138c, type: 3}
     - {fileID: 8300000, guid: 677238b20aab44a7d8452bc72e9b38d1, type: 3}
   soundSettings:
-    defaultVolumeScale: 0.35
-    coinAcquiredSound: {fileID: 8300000, guid: fa07008e1fda84182a136f194e6c96a4, type: 3}
-    jumpSound: {fileID: 8300000, guid: 6d3dc0c05ae004383a59f744a155e785, type: 3}
+    coinAcquired: {fileID: 11400000, guid: bce0a7f9cab484226bac59bcb0aae893, type: 2}
+    jump: {fileID: 11400000, guid: eacf722f680284bd398a27c8502ffc91, type: 2}
+    enemyHit: {fileID: 11400000, guid: c62aa5e8c839249be89164c0b9f5338e, type: 2}
+    playerHit: {fileID: 11400000, guid: 4d1362c112d87496f92fc884aca55959, type: 2}
+  faderSettings:
+    fadeInTime: 1
+    fadeOutTime: 1
 --- !u!1001 &5061255529290557846
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -159,6 +159,7 @@ namespace Platformio.Player
                 _myAnimator.SetTrigger("Dying");
                 _myRigidbody.velocity = deathKick;
                 _playerStats.TakeLife();
+                _soundPlayer.PlayPlayerHitSound();
             }
         }
 

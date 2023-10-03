@@ -4,6 +4,7 @@ namespace Platformio.Player
 {
     public class Bullet : MonoBehaviour
     {
+        // TODO Inject a soundPlayer here and play spawn and hit sounds
         [SerializeField] private float bulletSpeed = 20f;
 
         private Rigidbody2D myRigidbody;
