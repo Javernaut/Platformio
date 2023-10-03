@@ -24,7 +24,7 @@ namespace Platformio.DI
             Container.BindInterfacesAndSelfTo<PlayerStats>().AsSingle();
             Container.BindInstance(_playerAppearanceChoiceKeeper?.GetChoice() ?? fallbackPlayerAppearance);
 
-            Container.BindInstance(_musicSettings.gameLoopMusic.GetRandomItem())
+            Container.BindInstance(_musicSettings.gameLoopMusic)
                 .WhenInjectedInto<MusicPlayer>();
 
             Container.BindFactory<LevelFacade, LevelFacade.Factory>()

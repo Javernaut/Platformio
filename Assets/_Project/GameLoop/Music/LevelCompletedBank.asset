@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
+  m_Script: {fileID: 0}
   m_Name: LevelCompletedBank
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp:Platformio.Sound:ExclusiveSoundBank
   volume: 1
-  variations:
-  - {fileID: 8300000, guid: 9117f9df989214a84b08d8aa3bd4837b, type: 3}
+  audioClip: {fileID: 8300000, guid: 9117f9df989214a84b08d8aa3bd4837b, type: 3}

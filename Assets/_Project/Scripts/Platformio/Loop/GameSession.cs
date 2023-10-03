@@ -12,7 +12,7 @@ namespace Platformio.Loop
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
-        [SerializeField] private CinemachineStateDrivenCamera _stateDrivenCamera;
+        [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
         [SerializeField] private PlayerController playerController;
 
         [Inject] private readonly PlayerStats _playerStats;
@@ -114,7 +114,7 @@ namespace Platformio.Loop
 
         private void ForceRepositionCameraToPlayer()
         {
-            _stateDrivenCamera.ForceCameraPosition(playerController.transform.position, Quaternion.identity);
+            stateDrivenCamera.ForceCameraPosition(playerController.transform.position, Quaternion.identity);
         }
     }
 }

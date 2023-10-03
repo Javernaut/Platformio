@@ -25,7 +25,7 @@ namespace Platformio.Sound
         public void PlayStepSound()
         {
             LocalAudioSource.PlayOneShot(
-                _stepsSounds.GetRandomClip(),
+                _stepsSounds.GetClip(),
                 _stepsSounds.Volume
             );
         }

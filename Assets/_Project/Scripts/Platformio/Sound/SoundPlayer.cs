@@ -26,7 +26,7 @@ namespace Platformio.Sound
 
         private void PlaySound(SoundBank soundBank)
         {
-            LocalAudioSource.PlayOneShot(soundBank.GetRandomClip(), soundBank.Volume);
+            LocalAudioSource.PlayOneShot(soundBank.GetClip(), soundBank.Volume);
         }
 
         [Serializable]
