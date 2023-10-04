@@ -7,6 +7,10 @@ using Zenject;
 
 namespace Platformio.Home.PlayerSelection
 {
+    /// <summary>
+    /// The UI controller for the Player Selection Window
+    /// where user selects the <see cref="PlayerAppearance"/> to use during the Game Loop.
+    /// </summary>
     public class PlayerSelectionWindowController : MonoBehaviour
     {
         public delegate void SelectionConfirmed();

@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace Platformio.Home.PlayerSelection
 {
+    /// <summary>
+    /// Script for a Toggle that represents a single Player Appearance tile on the Player Selection Window.
+    /// </summary>
     public class SelectablePlayer : MonoBehaviour
     {
         [SerializeField] private Image playerImage;

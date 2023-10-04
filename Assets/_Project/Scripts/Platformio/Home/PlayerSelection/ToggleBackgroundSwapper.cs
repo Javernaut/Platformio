@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace Platformio.Home.PlayerSelection
 {
+    /// <summary>
+    /// Primitive swapper of the Toggle's background sprite depending on the 'isChecked' state. 
+    /// </summary>
     public class ToggleBackgroundSwapper : MonoBehaviour
     {
         [SerializeField] private Toggle toggle;

@@ -11,6 +11,9 @@ using Zenject;
 
 namespace Platformio.Home
 {
+    /// <summary>
+    /// The UI controller for the Main Menu.
+    /// </summary>
     public class MainMenuController : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI highestScoreText;
@@ -35,7 +38,6 @@ namespace Platformio.Home
             if (lastMaxScore > 0)
             {
                 highestScoreText.gameObject.SetActive(true);
-                // TODO Consider basic localization mechanism
                 highestScoreText.text = $"Highest Score:\n{lastMaxScore}";
             }
         }
