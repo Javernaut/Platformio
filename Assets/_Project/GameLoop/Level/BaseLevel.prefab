@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca60a59e266747ddaaaf12482b83b2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentThemeConfiguration: {fileID: 11400000, guid: 374f19155769a4b429a3ea5bbb26cc7b, type: 2}
+  themeConfiguration: {fileID: 11400000, guid: 374f19155769a4b429a3ea5bbb26cc7b, type: 2}
 --- !u!1839735485 &5922276251456188703
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3912,7 +3912,7 @@ PrefabInstance:
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 9009132279534518907, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: 805300897711346969, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 919801968713536385, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -3932,7 +3932,7 @@ PrefabInstance:
     - target: {fileID: 4425962865897301238, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7215729604588931793, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: -3486508852453330101, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 4425962865897301238, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -3988,7 +3988,7 @@ PrefabInstance:
     - target: {fileID: 6769899249856565490, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6561006780711760842, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
+      objectReference: {fileID: 2569439597660113546, guid: 8ca5c9d211e584349b6139636cb82f51, type: 3}
     - target: {fileID: 6769899249856565490, guid: d05eb2349a3344887bc9d71f540eb6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

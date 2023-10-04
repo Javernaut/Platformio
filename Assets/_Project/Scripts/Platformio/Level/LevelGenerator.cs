@@ -10,7 +10,7 @@ namespace Platformio.Level
 {
     /// <summary>
     /// Class for being picked up by Extenject in order to properly spawn and to inject levels from different prefabs and
-    /// with different injected <see cref="EnvironmentThemeConfiguration"/>s into them.
+    /// with different injected <see cref="ThemeConfiguration"/>s into them.
     /// </summary>
     public class LevelGenerator
     {
@@ -33,7 +33,7 @@ namespace Platformio.Level
         [Serializable]
         public class Settings
         {
-            public EnvironmentThemeConfiguration[] themes;
+            public ThemeConfiguration[] themes;
             public GameObject[] levelPrefabs;
         }
     }

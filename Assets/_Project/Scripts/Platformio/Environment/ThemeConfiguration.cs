@@ -4,9 +4,15 @@ using UnityEngine.Tilemaps;
 
 namespace Platformio.Environment
 {
-    [CreateAssetMenu(fileName = "EnvironmentThemeConfiguration", menuName = "Environment Theme Configuration",
+    /// <summary>
+    /// Aggregates a theme-specific values like
+    /// the exact <see cref="TileBase"/> objects, sounds of steps and the background image used on Main Menu.
+    /// </summary>
+    [CreateAssetMenu(
+        fileName = "NewThemeConfiguration",
+        menuName = "Theme/Theme Configuration",
         order = 0)]
-    public class EnvironmentThemeConfiguration : ScriptableObject
+    public class ThemeConfiguration : ScriptableObject
     {
         public TileBase thinPlatformTile;
         public TileBase thickPlatformTile;

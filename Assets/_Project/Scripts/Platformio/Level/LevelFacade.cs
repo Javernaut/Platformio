@@ -16,11 +16,12 @@ namespace Platformio.Level
     {
         [SerializeField] private Collider2D cameraBoundingShape;
         [SerializeField] private Transform startPosition;
-        private CinemachineConfiner2D[] _cameraConfiners;
 
+        private CinemachineConfiner2D[] _cameraConfiners;
         private PlayerController _playerController;
+
         [Inject] private StepSoundPlayer _stepSoundPlayer;
-        [Inject] private EnvironmentThemeConfiguration _theme;
+        [Inject] private ThemeConfiguration _theme;
 
         public void InitWith(
             Image backgroundImage,

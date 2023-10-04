@@ -7,9 +7,9 @@ namespace Platformio.Environment.Tile
 {
     [ExecuteAlways]
     [RequireComponent(typeof(Tilemap))]
-    public class TilemapThemeProvider : MonoBehaviour, IProvider<EnvironmentThemeConfiguration>
+    public class TilemapThemeProvider : MonoBehaviour, IProvider<ThemeConfiguration>
     {
-        [InjectOptional] [SerializeField] private EnvironmentThemeConfiguration environmentThemeConfiguration;
+        [InjectOptional] [SerializeField] private ThemeConfiguration themeConfiguration;
 
         private Tilemap _tilemap;
 
@@ -28,9 +28,9 @@ namespace Platformio.Environment.Tile
             if (!Application.IsPlaying(gameObject)) _tilemap.RefreshAllTiles();
         }
 
-        public EnvironmentThemeConfiguration GetCurrentValue()
+        public ThemeConfiguration GetCurrentValue()
         {
-            return environmentThemeConfiguration;
+            return themeConfiguration;
         }
     }
 }

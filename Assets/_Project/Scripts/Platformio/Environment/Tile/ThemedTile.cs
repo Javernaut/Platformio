@@ -28,7 +28,7 @@ namespace Platformio.Environment.Tile
         {
             // TODO Consider caching of the providers, perhaps along with ProxyTilemap
             // Can't cache the provider as is, because the ThemedTile is shared across multiple tilemaps with potentially different themes
-            var themeConfigurationProvider = tilemap.GetComponent<IProvider<EnvironmentThemeConfiguration>>();
+            var themeConfigurationProvider = tilemap.GetComponent<IProvider<ThemeConfiguration>>();
             if (themeConfigurationProvider == null)
                 // TODO The themeConfigurationProvider may be null in case the method is called via
                 // Platformio.Environment.Tile.ThemedTile.GetTileData (UnityEngine.Vector3Int position, UnityEngine.Tilemaps.ITilemap tilemap, UnityEngine.Tilemaps.TileData& tileData) (at Assets/_Project/Scripts/Platformio/Environment/Tile/ThemedTile.cs:14)
