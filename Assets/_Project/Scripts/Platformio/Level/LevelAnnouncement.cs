@@ -6,6 +6,9 @@ using Zenject;
 
 namespace Platformio.Level
 {
+    /// <summary>
+    /// Script for announcing the level by its number. Fades out and destroys itself after a delay.
+    /// </summary>
     public class LevelAnnouncement : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI textLabel;

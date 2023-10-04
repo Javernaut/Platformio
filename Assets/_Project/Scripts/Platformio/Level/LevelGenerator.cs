@@ -8,6 +8,10 @@ using Object = UnityEngine.Object;
 
 namespace Platformio.Level
 {
+    /// <summary>
+    /// Class for being picked up by Extenject in order to properly spawn and to inject levels from different prefabs and
+    /// with different injected <see cref="EnvironmentThemeConfiguration"/>s into them.
+    /// </summary>
     public class LevelGenerator
     {
         [Inject] private readonly Settings _settings;

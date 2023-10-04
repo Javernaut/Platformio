@@ -8,6 +8,10 @@ using Zenject;
 
 namespace Platformio.Level
 {
+    /// <summary>
+    /// Entry point for some adjustments in a Level prefab.
+    /// It is used for camera confining and reloading once player gets hit.
+    /// </summary>
     public class LevelFacade : MonoBehaviour
     {
         [SerializeField] private Collider2D cameraBoundingShape;
