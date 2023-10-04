@@ -97,6 +97,8 @@ namespace Platformio.Loop
 
         private IEnumerator StartNewLevelAsCoroutine()
         {
+            playerController.enabled = false;
+            
             if (_currentLevel != null)
             {
                 yield return _fader.FadeOut();
@@ -108,7 +110,8 @@ namespace Platformio.Loop
             ForceRepositionCameraToPlayer();
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);
-
+            
+            playerController.enabled = true;
             yield return _fader.FadeIn();
         }
 

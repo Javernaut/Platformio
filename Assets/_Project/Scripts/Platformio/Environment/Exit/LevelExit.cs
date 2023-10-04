@@ -1,4 +1,3 @@
-using System.Collections;
 using Platformio.Loop;
 using UnityEngine;
 using Zenject;
@@ -8,21 +7,16 @@ namespace Platformio.Environment.Exit
     public class LevelExit : MonoBehaviour
     {
         [Inject] private GameSession _gameSession;
-        
-        [SerializeField] private float levelLoadDelay = 1f;
+
+        private bool _isTriggered;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && !_isTriggered)
             {
-                StartCoroutine(LoadNextLevel());
+                _isTriggered = true;
+                _gameSession.LoadNextLevel();
             }
-        }
-
-        private IEnumerator LoadNextLevel()
-        {
-            yield return new WaitForSecondsRealtime(levelLoadDelay);
-            _gameSession.LoadNextLevel();
         }
     }
 }

@@ -63,6 +63,13 @@ namespace Platformio.Player
             Die();
         }
 
+        private void OnDisable()
+        {
+            // Stopping the player's movement
+            _moveInput = Vector2.zero;
+            Run();
+        }
+
         // Animation event
         private void OnStep()
         {

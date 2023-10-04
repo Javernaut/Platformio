@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24cc3f145a44b8384fe9e4e5a221805, type: 3}
+  m_Name: TestGameLoopSettingsInstaller
+  m_EditorClassIdentifier: 
+  playerStatsSettings:
+    initialLives: 3
+    initialScore: 0
+  levelConfigurationSettings:
+    themes:
+    - {fileID: 11400000, guid: 374f19155769a4b429a3ea5bbb26cc7b, type: 2}
+    - {fileID: 11400000, guid: 38cc2ad520c1b4ac1a76aad6bbaf2d26, type: 2}
+    - {fileID: 11400000, guid: 8859ad89a85134a0f8bd6f32e64a6289, type: 2}
+    - {fileID: 11400000, guid: e01cd490e39334109b0885df138d54ef, type: 2}
+    - {fileID: 11400000, guid: 96e9fbd7b37ba4306ad7e5ed3b14ec30, type: 2}
+    - {fileID: 11400000, guid: f7cec8194c81943248bfa3909481bdf9, type: 2}
+    levelPrefabs:
+    - {fileID: 7978774234669139146, guid: c0cb3ae39a7a34770804c13e3f346703, type: 3}
+    - {fileID: 5406986643316267083, guid: 082695a31e795432eb43d52a58c86eca, type: 3}
+    - {fileID: 4875209162352682475, guid: a495f19181e524831a5884982ce9466e, type: 3}
