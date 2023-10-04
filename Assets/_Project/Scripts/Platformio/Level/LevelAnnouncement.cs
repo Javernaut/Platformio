@@ -7,13 +7,12 @@ namespace Platformio.Level
 {
     public class LevelAnnouncement : MonoBehaviour
     {
-        [Inject] private readonly int _levelNumber;
-
         [SerializeField] private TextMeshProUGUI textLabel;
         [SerializeField] private CanvasGroup canvasGroup;
 
         [SerializeField] private float visibleTime = 1.5f;
         [SerializeField] private float fadingTime = .5f;
+        [Inject] private readonly int _levelNumber;
 
         private IEnumerator Start()
         {

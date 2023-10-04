@@ -10,26 +10,26 @@ namespace Platformio.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float runSpeed = 10f;
-        [SerializeField] float jumpSpeed = 5f;
-        [SerializeField] float climbSpeed = 5f;
-        [SerializeField] private Vector2 deathKick = new Vector2(10f, 10f);
+        [SerializeField] private float jumpSpeed = 5f;
+        [SerializeField] private float climbSpeed = 5f;
+        [SerializeField] private Vector2 deathKick = new(10f, 10f);
         [SerializeField] private Transform gun;
-        
-        private Rigidbody2D _myRigidbody;
+        private float _initialGravityScale;
+        private bool _isAlive = true;
+
+        [Inject] private LaserProjectile.Factory _laserProjectileFactory;
+
+        private Vector2 _moveInput;
         private Animator _myAnimator;
         private CapsuleCollider2D _myBodyCollider;
         private BoxCollider2D _myFeetCollider;
 
-        private Vector2 _moveInput;
-        private bool _isAlive = true;
-        private float _initialGravityScale;
+        private Rigidbody2D _myRigidbody;
+        [Inject] private PlayerAppearance _playerAppearance;
 
         [Inject] private PlayerStats _playerStats;
-        [Inject] private PlayerAppearance _playerAppearance;
-        
+
         [Inject] private SoundPlayer _soundPlayer;
-        
-        [Inject] private LaserProjectile.Factory _laserProjectileFactory;
 
         // Only one consumer is enough
         public Action OnStepMade;
@@ -52,10 +52,7 @@ namespace Platformio.Player
 
         private void Update()
         {
-            if (!_isAlive)
-            {
-                return;
-            }
+            if (!_isAlive) return;
 
             Run();
             FlipSprite();
@@ -70,13 +67,15 @@ namespace Platformio.Player
             Run();
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Bouncing")) _soundPlayer.PlayJumpSound();
+        }
+
         // Animation event
         private void OnStep()
         {
-            if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            {
-                OnStepMade?.Invoke();
-            }
+            if (_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) OnStepMade?.Invoke();
         }
 
         private void Run()
@@ -84,7 +83,7 @@ namespace Platformio.Player
             var playerVelocity = new Vector2(_moveInput.x * runSpeed, _myRigidbody.velocity.y);
             _myRigidbody.velocity = playerVelocity;
 
-            var playerHasHorizontalSpeed = Mathf.Abs((_myRigidbody).velocity.x) > Mathf.Epsilon;
+            var playerHasHorizontalSpeed = Mathf.Abs(_myRigidbody.velocity.x) > Mathf.Epsilon;
             _myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
         }
 
@@ -108,20 +107,14 @@ namespace Platformio.Player
 
         private void OnMove(InputValue inputValue)
         {
-            if (!_isAlive)
-            {
-                return;
-            }
+            if (!_isAlive) return;
 
             _moveInput = inputValue.Get<Vector2>();
         }
 
         private void OnFire(InputValue value)
         {
-            if (!_isAlive)
-            {
-                return;
-            }
+            if (!_isAlive) return;
 
             _laserProjectileFactory.Create(gun.position, transform.localScale.x);
         }
@@ -129,15 +122,9 @@ namespace Platformio.Player
 
         private void OnJump(InputValue value)
         {
-            if (!_isAlive)
-            {
-                return;
-            }
+            if (!_isAlive) return;
 
-            if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            {
-                return;
-            }
+            if (!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) return;
 
 
             if (value.isPressed)
@@ -151,12 +138,9 @@ namespace Platformio.Player
 
         private void FlipSprite()
         {
-            var playerHasHorizontalSpeed = Mathf.Abs((_myRigidbody).velocity.x) > Mathf.Epsilon;
+            var playerHasHorizontalSpeed = Mathf.Abs(_myRigidbody.velocity.x) > Mathf.Epsilon;
 
-            if (playerHasHorizontalSpeed)
-            {
-                transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.velocity.x), 1f);
-            }
+            if (playerHasHorizontalSpeed) transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.velocity.x), 1f);
         }
 
         private void Die()
@@ -173,25 +157,17 @@ namespace Platformio.Player
         public void Reload(Vector2 newPosition, Vector3 newLocalScale)
         {
             gameObject.SetActive(false);
-            
+
             _moveInput = Vector2.zero;
             transform.localScale = newLocalScale;
             transform.position = newPosition;
             _myRigidbody.velocity = Vector2.zero;
 
             _myAnimator.Rebind();
-            
+
             _isAlive = true;
 
             gameObject.SetActive(true);
-        }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Bouncing"))
-            {
-                _soundPlayer.PlayJumpSound();    
-            }
         }
     }
 }

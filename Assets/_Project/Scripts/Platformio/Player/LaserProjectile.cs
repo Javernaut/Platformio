@@ -7,9 +7,9 @@ namespace Platformio.Player
     public class LaserProjectile : MonoBehaviour
     {
         [SerializeField] private float startSpeed = 20f;
+        [Inject] private readonly float _playerXScale;
 
         [Inject] private readonly SoundPlayer _soundPlayer;
-        [Inject] private readonly float _playerXScale;
         [Inject] private readonly Vector3 _startPosition;
 
         private Rigidbody2D _myRigidbody;
@@ -34,7 +34,17 @@ namespace Platformio.Player
             _myRigidbody.velocity = new Vector2(_xSpeed, 0f);
         }
 
-        void OnTriggerEnter2D(Collider2D other)
+        private void OnDestroy()
+        {
+            _soundPlayer.PlayLaserHitSound();
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            Destroy(gameObject);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
             {
@@ -43,16 +53,6 @@ namespace Platformio.Player
             }
 
             Destroy(gameObject);
-        }
-
-        void OnCollisionEnter2D(Collision2D other)
-        {
-            Destroy(gameObject);
-        }
-
-        private void OnDestroy()
-        {
-            _soundPlayer.PlayLaserHitSound();
         }
 
         public class Factory : PlaceholderFactory<Vector3, float, LaserProjectile>

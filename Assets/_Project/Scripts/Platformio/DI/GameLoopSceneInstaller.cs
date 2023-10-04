@@ -10,14 +10,13 @@ namespace Platformio.DI
 {
     public class GameLoopSceneInstaller : MonoInstaller
     {
-        [Inject] private readonly PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
-        [Inject] private readonly GlobalMusicSettings _musicSettings;
-        [Inject] private readonly LevelGenerator _levelGenerator;
-
         [SerializeField] private PlayerAppearance fallbackPlayerAppearance;
         [SerializeField] private Transform levelRoot;
         [SerializeField] private GameObject levelAnnouncementPrefab;
         [SerializeField] private GameObject laserProjectilePrefab;
+        [Inject] private readonly LevelGenerator _levelGenerator;
+        [Inject] private readonly GlobalMusicSettings _musicSettings;
+        [Inject] private readonly PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
 
         public override void InstallBindings()
         {

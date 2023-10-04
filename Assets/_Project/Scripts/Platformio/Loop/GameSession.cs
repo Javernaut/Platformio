@@ -16,18 +16,18 @@ namespace Platformio.Loop
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
         [SerializeField] private PlayerController playerController;
-
-        [Inject] private readonly PlayerStats _playerStats;
+        [Inject] private readonly Fader _fader;
         [Inject] private readonly LevelAnnouncement.Factory _levelAnnouncementFactory;
         [Inject] private readonly LevelFacade.Factory _levelFactory;
         [Inject] private readonly MusicPlayer _musicPlayer;
+
+        [Inject] private readonly PlayerStats _playerStats;
         [Inject] private readonly SoundPlayer _soundPlayer;
-        [Inject] private readonly Fader _fader;
 
         private LevelFacade _currentLevel;
         private int _currentLevelNumber = 1;
 
-        void Start()
+        private void Start()
         {
             _fader.FadeOutImmediate();
             SpawnNewLevel();
@@ -100,7 +100,7 @@ namespace Platformio.Loop
         private IEnumerator StartNewLevelAsCoroutine()
         {
             playerController.enabled = false;
-            
+
             if (_currentLevel != null)
             {
                 yield return _fader.FadeOut();
@@ -112,7 +112,7 @@ namespace Platformio.Loop
             ForceRepositionCameraToPlayer();
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);
-            
+
             playerController.enabled = true;
             yield return _fader.FadeIn();
         }

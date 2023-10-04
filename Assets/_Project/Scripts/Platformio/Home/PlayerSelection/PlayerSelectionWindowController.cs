@@ -9,19 +9,16 @@ namespace Platformio.Home.PlayerSelection
 {
     public class PlayerSelectionWindowController : MonoBehaviour
     {
-        [Inject] private readonly PlayerAppearance[] _playerAppearances;
-        [Inject] private readonly PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
-        [Inject] private readonly InputActionAsset _globalInputActionAsset;
+        public delegate void SelectionConfirmed();
 
         [SerializeField] private ToggleGroup toggleGroup;
         [SerializeField] private SelectablePlayer selectablePlayerPrefab;
         [SerializeField] private GameObject confirmButton;
+        [Inject] private readonly InputActionAsset _globalInputActionAsset;
+        [Inject] private readonly PlayerAppearanceChoiceKeeper _playerAppearanceChoiceKeeper;
+        [Inject] private readonly PlayerAppearance[] _playerAppearances;
 
         private PreviousSelectionPreserver _selectionPreserver;
-
-        public delegate void SelectionConfirmed();
-
-        public event SelectionConfirmed OnSelectionConfirmed;
 
         private void Start()
         {
@@ -40,6 +37,8 @@ namespace Platformio.Home.PlayerSelection
         {
             _globalInputActionAsset["UI/Cancel"].performed -= onCancelActionPerformed;
         }
+
+        public event SelectionConfirmed OnSelectionConfirmed;
 
         private void onCancelActionPerformed(InputAction.CallbackContext _)
         {
@@ -66,7 +65,7 @@ namespace Platformio.Home.PlayerSelection
         }
     }
 
-    class PreviousSelectionPreserver
+    internal class PreviousSelectionPreserver
     {
         private readonly GameObject _lastSelectedGameObject;
 

@@ -15,7 +15,7 @@ namespace Platformio.DI
         {
             Container.BindFactory<PlayerSelectionWindowController, PlayerSelectionWindowController.Factory>()
                 .FromComponentInNewPrefab(playerSelectionWindowPrefab);
-            
+
             Container.BindInstance(_musicSettings.mainMenuMusic)
                 .WhenInjectedInto<MusicPlayer>();
         }

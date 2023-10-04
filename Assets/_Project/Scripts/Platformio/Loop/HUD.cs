@@ -11,9 +11,9 @@ namespace Platformio.Loop
         [SerializeField] private Image playerAvatar;
         [SerializeField] private TextMeshProUGUI livesText;
         [SerializeField] private TextMeshProUGUI scoreText;
+        [Inject] private PlayerAppearance _playerAppearance;
 
         [Inject] private PlayerStats _playerStats;
-        [Inject] private PlayerAppearance _playerAppearance;
 
         private void Start()
         {

@@ -8,33 +8,32 @@ namespace Platformio.Loop
 {
     public class PlayerInputDeviceTracker : IInitializable, IDisposable
     {
-        [Inject] private readonly PlayerInput _playerInput;
-
-        private PlayerInputDeviceType _currentDevice;
-
-        public PlayerInputDeviceType CurrentDevice => _currentDevice;
-
         public delegate void PlayerInputDeviceTypeChanged(PlayerInputDeviceType newDeviceType);
 
-        public event PlayerInputDeviceTypeChanged OnPlayerInputDeviceType;
+        [Inject] private readonly PlayerInput _playerInput;
 
-        public void Initialize()
-        {
-            _currentDevice = GetDeviceByUser(_playerInput.user);
-            InputUser.onChange += OnInputUserChange;
-        }
-
-        private void OnInputUserChange(InputUser user, InputUserChange change, InputDevice device)
-        {
-            if (change == InputUserChange.ControlSchemeChanged) {
-                _currentDevice = GetDeviceByUser(user);
-                OnPlayerInputDeviceType?.Invoke(_currentDevice);
-            }
-        }
+        public PlayerInputDeviceType CurrentDevice { get; private set; }
 
         public void Dispose()
         {
             InputUser.onChange -= OnInputUserChange;
+        }
+
+        public void Initialize()
+        {
+            CurrentDevice = GetDeviceByUser(_playerInput.user);
+            InputUser.onChange += OnInputUserChange;
+        }
+
+        public event PlayerInputDeviceTypeChanged OnPlayerInputDeviceType;
+
+        private void OnInputUserChange(InputUser user, InputUserChange change, InputDevice device)
+        {
+            if (change == InputUserChange.ControlSchemeChanged)
+            {
+                CurrentDevice = GetDeviceByUser(user);
+                OnPlayerInputDeviceType?.Invoke(CurrentDevice);
+            }
         }
 
         private PlayerInputDeviceType GetDeviceByUser(InputUser inputUser)
@@ -46,16 +45,12 @@ namespace Platformio.Loop
                         item.name.Contains("DualSense") ||
                         item.name.Contains("DualShock")
                 ))
-            {
                 return PlayerInputDeviceType.Playstation;
-            }
 
             if (devices.Any(
                     item => item.name.Contains("Xbox"))
                )
-            {
                 return PlayerInputDeviceType.Xbox;
-            }
 
             // The fallback value is the keyboard
             return PlayerInputDeviceType.Keyboard;

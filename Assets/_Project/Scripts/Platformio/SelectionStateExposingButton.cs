@@ -4,9 +4,9 @@ namespace Platformio
 {
     public class SelectionStateExposingButton : Button
     {
-        public PublicSelectionState CurrentPublicSelectionState => From(currentSelectionState);
-
         public delegate void NewPublicSelectionStateHandler(PublicSelectionState newState);
+
+        public PublicSelectionState CurrentPublicSelectionState => From(currentSelectionState);
 
         public event NewPublicSelectionStateHandler OnNewPublicSelectionState;
 
@@ -25,18 +25,17 @@ namespace Platformio
                 SelectionState.Pressed => PublicSelectionState.Pressed,
                 SelectionState.Selected => PublicSelectionState.Selected,
                 // The rest is treated as Normal
-                _ => PublicSelectionState.Normal,
+                _ => PublicSelectionState.Normal
             };
         }
     }
-    
+
     public enum PublicSelectionState
     {
         Normal,
         Highlighted,
         Pressed,
         Selected,
-        Disabled,
+        Disabled
     }
-
 }

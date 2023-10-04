@@ -15,7 +15,7 @@ namespace Platformio.Environment.Exit
         [SerializeField] private Sprite[] doughTypes;
         [SerializeField] private Sprite[] creamTypes;
         [SerializeField] private Sprite[] toppingTypes;
-        
+
         private Rigidbody2D _rigidbody;
 
         private void Awake()
@@ -29,10 +29,7 @@ namespace Platformio.Environment.Exit
 
         private void Start()
         {
-            if (Application.IsPlaying(gameObject))
-            {
-                _rigidbody.AddTorque(torque);
-            }
+            if (Application.IsPlaying(gameObject)) _rigidbody.AddTorque(torque);
         }
 
         private void SetRandomSprite(SpriteRenderer renderer, Sprite[] sprites)

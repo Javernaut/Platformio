@@ -7,8 +7,8 @@ namespace Platformio.Sound
 {
     public class MusicPlayer : EarWhisperingPlayer
     {
-        [Inject] private SoundBank _soundBank;
         [Inject] private float _fadeOutTime;
+        [Inject] private SoundBank _soundBank;
 
         protected override void Awake()
         {

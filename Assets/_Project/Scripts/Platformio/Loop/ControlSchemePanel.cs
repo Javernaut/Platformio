@@ -7,13 +7,12 @@ namespace Platformio.Loop
 {
     public class ControlSchemePanel : MonoBehaviour
     {
-        [Inject] private readonly PlayerInputDeviceTracker _playerInputDeviceTracker;
-
         // Assume the order just as in PlayerInputDeviceType
         [SerializeField] private ControlScheme[] controlSchemes;
         [SerializeField] private Image jumpControlImage;
         [SerializeField] private Image fireControlImage;
         [SerializeField] private Image menuControlImage;
+        [Inject] private readonly PlayerInputDeviceTracker _playerInputDeviceTracker;
 
         private void Awake()
         {

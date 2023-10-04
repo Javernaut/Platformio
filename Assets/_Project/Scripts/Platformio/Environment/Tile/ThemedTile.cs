@@ -30,21 +30,17 @@ namespace Platformio.Environment.Tile
             // Can't cache the provider as is, because the ThemedTile is shared across multiple tilemaps with potentially different themes
             var themeConfigurationProvider = tilemap.GetComponent<IProvider<EnvironmentThemeConfiguration>>();
             if (themeConfigurationProvider == null)
-            {
                 // TODO The themeConfigurationProvider may be null in case the method is called via
                 // Platformio.Environment.Tile.ThemedTile.GetTileData (UnityEngine.Vector3Int position, UnityEngine.Tilemaps.ITilemap tilemap, UnityEngine.Tilemaps.TileData& tileData) (at Assets/_Project/Scripts/Platformio/Environment/Tile/ThemedTile.cs:14)
                 // Platformio.Environment.Tile.ThemedTile.GetTileDelegate (UnityEngine.Tilemaps.ITilemap tilemap) (at Assets/_Project/Scripts/Platformio/Environment/Tile/ThemedTile.cs:28)
                 // UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset(Object, Object[], String) (at /Users/bokken/build/output/unity/unity/Editor/Mono/AssetPreviewUpdater.cs:14)
                 // The preview of a tile is crippled (returned as null, so no preview for this type of tile will be drawn)
                 return null;
-            }
 
             var configuration = themeConfigurationProvider.GetCurrentValue();
             if (configuration == null)
-            {
                 // TODO In Editor tiles want to be rendered even before TilemapThemeProvider.Awake.
                 return null;
-            }
             return type switch
             {
                 Type.ThinPlatform => configuration.thinPlatformTile,
@@ -60,14 +56,14 @@ namespace Platformio.Environment.Tile
 
         // TODO Consider using something like this instead of an enum
         // https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
-        enum Type
+        private enum Type
         {
             ThinPlatform,
             ThickPlatform,
             RoundedPlatform,
             CutPlatform,
             BlockPlatform,
-            UncutBlockPlatform,
+            UncutBlockPlatform
         }
 
         // TODO Make a cache of sort. Same Theme tile may be used in multiple Tilemaps, so the cache has to be done on a per-tilemap basis

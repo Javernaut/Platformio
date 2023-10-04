@@ -10,14 +10,13 @@ namespace Platformio.Level
 {
     public class LevelFacade : MonoBehaviour
     {
-        [Inject] private StepSoundPlayer _stepSoundPlayer;
-        [Inject] private EnvironmentThemeConfiguration _theme;
-
         [SerializeField] private Collider2D cameraBoundingShape;
         [SerializeField] private Transform startPosition;
+        private CinemachineConfiner2D[] _cameraConfiners;
 
         private PlayerController _playerController;
-        private CinemachineConfiner2D[] _cameraConfiners;
+        [Inject] private StepSoundPlayer _stepSoundPlayer;
+        [Inject] private EnvironmentThemeConfiguration _theme;
 
         public void InitWith(
             Image backgroundImage,

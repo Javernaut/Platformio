@@ -35,10 +35,7 @@ namespace Platformio
 
         private Coroutine Fade(float target, float time)
         {
-            if (_currentlyActiveFade != null)
-            {
-                StopCoroutine(_currentlyActiveFade);
-            }
+            if (_currentlyActiveFade != null) StopCoroutine(_currentlyActiveFade);
 
             _currentlyActiveFade = StartCoroutine(FadeRoutine(target, time));
             return _currentlyActiveFade;

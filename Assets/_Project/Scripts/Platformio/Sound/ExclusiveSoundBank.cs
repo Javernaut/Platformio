@@ -7,6 +7,9 @@ namespace Platformio.Sound
     {
         [SerializeField] private AudioClip audioClip;
 
-        public override AudioClip GetClip() => audioClip;
+        public override AudioClip GetClip()
+        {
+            return audioClip;
+        }
     }
 }

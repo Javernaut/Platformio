@@ -20,7 +20,7 @@ namespace Platformio.Level
         public void InjectLevelGameObject(DiContainer container)
         {
             var theme = _settings.themes.GetRandomItem();
-            
+
             container.BindInstance(theme);
             container.BindInstance(theme.stepsSounds).WhenInjectedInto<StepSoundPlayer>();
             container.BindInterfacesAndSelfTo<StepSoundPlayer>().AsSingle();

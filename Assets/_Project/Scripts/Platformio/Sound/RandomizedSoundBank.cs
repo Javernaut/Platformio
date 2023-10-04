@@ -8,6 +8,9 @@ namespace Platformio.Sound
     {
         [SerializeField] private AudioClip[] variations;
 
-        public override AudioClip GetClip() => variations.GetRandomItem();
+        public override AudioClip GetClip()
+        {
+            return variations.GetRandomItem();
+        }
     }
 }

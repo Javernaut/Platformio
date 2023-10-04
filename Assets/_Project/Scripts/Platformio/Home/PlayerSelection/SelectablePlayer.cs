@@ -20,7 +20,7 @@ namespace Platformio.Home.PlayerSelection
                 playerImage.sprite = _playerAppearance.Avatar;
             }
         }
-        
+
         public void SetToggleGroup(ToggleGroup toggleGroup)
         {
             toggle.group = toggleGroup;

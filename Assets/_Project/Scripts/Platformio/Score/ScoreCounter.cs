@@ -10,10 +10,7 @@ namespace Platformio.Score
 
         public void OfferNewMaxScore(int newMaxScore)
         {
-            if (newMaxScore > MaxScore)
-            {
-                PlayerPrefs.SetInt(KeyLastMaxScore, newMaxScore);
-            }            
+            if (newMaxScore > MaxScore) PlayerPrefs.SetInt(KeyLastMaxScore, newMaxScore);
         }
     }
 }

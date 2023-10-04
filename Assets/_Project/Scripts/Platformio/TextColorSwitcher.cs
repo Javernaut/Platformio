@@ -56,16 +56,13 @@ namespace Platformio
                 PublicSelectionState.Selected => selectedColor,
                 PublicSelectionState.Disabled => disabledColor,
                 // The rest is treated as Normal
-                _ => normalColor,
+                _ => normalColor
             };
         }
 
         private void FallbackIfClear(ref Color color)
         {
-            if (color == Color.clear)
-            {
-                color = normalColor;
-            }
+            if (color == Color.clear) color = normalColor;
         }
     }
 }

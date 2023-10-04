@@ -16,9 +16,9 @@ namespace Platformio.Home
         [SerializeField] private GameObject startNewGameButton;
 
         [Inject] private Fader _fader;
-        [Inject] private ScoreCounter _scoreCounter;
-        [Inject] private PlayerSelectionWindowController.Factory _playerSelectionWindowFactory;
         [Inject] private MusicPlayer _musicPlayer;
+        [Inject] private PlayerSelectionWindowController.Factory _playerSelectionWindowFactory;
+        [Inject] private ScoreCounter _scoreCounter;
 
         private IEnumerator Start()
         {

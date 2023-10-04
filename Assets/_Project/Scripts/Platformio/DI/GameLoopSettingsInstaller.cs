@@ -16,7 +16,7 @@ namespace Platformio.DI
         {
             Container.BindInstance(playerStatsSettings);
             Container.BindInstance(levelConfigurationSettings);
-            
+
             Container.Bind<LevelGenerator>().AsSingle();
         }
     }

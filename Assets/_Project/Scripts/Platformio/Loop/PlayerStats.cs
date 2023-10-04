@@ -7,27 +7,45 @@ namespace Platformio.Loop
 {
     public class PlayerStats : IDisposable
     {
-        private int _playerLives;
-        private int _score;
-
-        public int PlayerLives => _playerLives;
-        public int Score => _score;
-
-        [Inject] private ScoreCounter _scoreCounter;
-
         public delegate void LivesNumberChanged(int newLives);
-
-        public event LivesNumberChanged OnLivesNumberChanged;
 
         public delegate void ScoreChanged(int newLives);
 
-        public event ScoreChanged OnScoreChanged;
+        [Inject] private ScoreCounter _scoreCounter;
 
         [Inject]
         public PlayerStats(Settings settings)
         {
-            _playerLives = settings.initialLives;
-            _score = settings.initialScore;
+            PlayerLives = settings.initialLives;
+            Score = settings.initialScore;
+        }
+
+        public int PlayerLives { get; private set; }
+
+        public int Score { get; private set; }
+
+        public void Dispose()
+        {
+            _scoreCounter.OfferNewMaxScore(Score);
+        }
+
+        public event LivesNumberChanged OnLivesNumberChanged;
+
+        public event ScoreChanged OnScoreChanged;
+
+        public void TakeLife()
+        {
+            if (PlayerLives > 0)
+            {
+                PlayerLives--;
+                OnLivesNumberChanged?.Invoke(PlayerLives);
+            }
+        }
+
+        public void AddScore(int score)
+        {
+            Score += score;
+            OnScoreChanged?.Invoke(Score);
         }
 
         [Serializable]
@@ -35,26 +53,6 @@ namespace Platformio.Loop
         {
             [Min(1)] public int initialLives;
             [Min(0)] public int initialScore;
-        }
-
-        public void TakeLife()
-        {
-            if (_playerLives > 0)
-            {
-                _playerLives--;
-                OnLivesNumberChanged?.Invoke(_playerLives);
-            }
-        }
-
-        public void AddScore(int score)
-        {
-            _score += score;
-            OnScoreChanged?.Invoke(_score);
-        }
-
-        public void Dispose()
-        {
-            _scoreCounter.OfferNewMaxScore(_score);
         }
     }
 }

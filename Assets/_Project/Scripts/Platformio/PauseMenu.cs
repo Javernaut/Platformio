@@ -8,11 +8,10 @@ namespace Platformio
 {
     public class PauseMenu : MonoBehaviour
     {
-        [Inject] private GameSession _gameSession;
-        [Inject] private InputActionAsset _globalInputActionAsset;
-        
         [SerializeField] private GameObject pauseMenuUI;
         [SerializeField] private GameObject resumeButton;
+        [Inject] private GameSession _gameSession;
+        [Inject] private InputActionAsset _globalInputActionAsset;
 
         private bool _isGamePaused;
 
@@ -36,13 +35,9 @@ namespace Platformio
         private void TogglePauseMenu()
         {
             if (_isGamePaused)
-            {
                 ResumeGame();
-            }
             else
-            {
                 PauseGame();
-            }
         }
 
         private void PauseGame()
@@ -73,13 +68,9 @@ namespace Platformio
         {
             var playerActionMap = _globalInputActionAsset.FindActionMap("Player");
             if (isEnabled)
-            {
                 playerActionMap.Enable();
-            }
             else
-            {
                 playerActionMap.Disable();
-            }
         }
     }
 }
