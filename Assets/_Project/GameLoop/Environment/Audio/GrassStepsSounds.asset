@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
   m_Name: GrassStepsSounds
   m_EditorClassIdentifier: 
+  volume: 0.7
   variations:
   - {fileID: 8300000, guid: 91a5e292352b2453d87b3818b41c1ed9, type: 3}
   - {fileID: 8300000, guid: 0ea25c7b52c9c40ab97b78c1b7e31ce9, type: 3}

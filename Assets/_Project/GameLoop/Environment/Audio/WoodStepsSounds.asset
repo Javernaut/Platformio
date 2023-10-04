@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
   m_Name: WoodStepsSounds
   m_EditorClassIdentifier: 
-  volume: 1
+  volume: 0.7
   variations:
   - {fileID: 8300000, guid: 15b49e1350e1a4281898b3a7e4f911de, type: 3}
   - {fileID: 8300000, guid: 031dc4ebba1b545a8adc3ef6d118110e, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
   m_Name: CarpetStepsSounds
   m_EditorClassIdentifier: 
-  volume: 1
+  volume: 0.7
   variations:
   - {fileID: 8300000, guid: 0fbae930479e64727b6582f199732763, type: 3}
   - {fileID: 8300000, guid: f946258d4d07a4a8e982646c8df15205, type: 3}

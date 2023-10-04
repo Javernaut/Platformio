@@ -14,14 +14,12 @@ namespace Platformio.Level
         [SerializeField] private Transform startPosition;
 
         private PlayerController _playerController;
+        private CinemachineConfiner2D[] _cameraConfiners;
 
         public void InitWith(CinemachineConfiner2D[] cameraConfiners, PlayerController controller)
         {
-            foreach (var confiner in cameraConfiners)
-            {
-                confiner.BoundingShape2D = cameraBoundingShape;
-                confiner.InvalidateBoundingShapeCache();
-            }
+            _cameraConfiners = cameraConfiners;
+            UpdateConfiners(cameraBoundingShape);
 
             _playerController = controller;
             _playerController.transform.position = startPosition.position;
@@ -31,7 +29,17 @@ namespace Platformio.Level
 
         public void Destroy()
         {
+            UpdateConfiners(null);
             Destroy(gameObject);
+        }
+
+        private void UpdateConfiners(Collider2D confinerCollider2D)
+        {
+            foreach (var confiner in _cameraConfiners)
+            {
+                confiner.BoundingShape2D = confinerCollider2D;
+                confiner.InvalidateBoundingShapeCache();
+            }
         }
 
         public void Reload()

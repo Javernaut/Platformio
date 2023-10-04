@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26df35e5c82f40b59f190b92e0b3353b, type: 3}
   m_Name: EnemyHitSound
   m_EditorClassIdentifier: Assembly-CSharp:Platformio.Sound:ExclusiveSoundBank
-  volume: 1
+  volume: 0.6
   audioClip: {fileID: 8300000, guid: 86b59812a68ca4599aacfe5dd51fd247, type: 3}

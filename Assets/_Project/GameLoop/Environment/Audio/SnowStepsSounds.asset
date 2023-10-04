@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
   m_Name: SnowStepsSounds
   m_EditorClassIdentifier: 
+  volume: 0.7
   variations:
   - {fileID: 8300000, guid: 4edd6ef74bd1a4ab5bd1679fde347832, type: 3}
   - {fileID: 8300000, guid: 1a87928e664b24fb687326512a0c192d, type: 3}
