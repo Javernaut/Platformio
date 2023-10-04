@@ -1,8 +1,8 @@
 using System.Collections;
-using Cinemachine;
 using Platformio.Level;
 using Platformio.Player;
 using Platformio.Sound;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;

@@ -1,6 +1,6 @@
-using Cinemachine;
 using Platformio.Player;
 using Platformio.Sound;
+using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
 
@@ -19,7 +19,8 @@ namespace Platformio.Level
         {
             foreach (var confiner in cameraConfiners)
             {
-                confiner.m_BoundingShape2D = cameraBoundingShape;
+                confiner.BoundingShape2D = cameraBoundingShape;
+                confiner.InvalidateBoundingShapeCache();
             }
 
             _playerController = controller;
