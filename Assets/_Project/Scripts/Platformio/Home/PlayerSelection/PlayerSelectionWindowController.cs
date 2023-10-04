@@ -1,4 +1,4 @@
-using Platformio.Player;
+using Platformio.Character;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;

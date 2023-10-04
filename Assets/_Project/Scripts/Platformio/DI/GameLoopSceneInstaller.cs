@@ -1,7 +1,7 @@
+using Platformio.Character;
 using Platformio.Home.PlayerSelection;
 using Platformio.Level;
 using Platformio.Loop;
-using Platformio.Player;
 using Platformio.Sound;
 using UnityEngine;
 using Zenject;

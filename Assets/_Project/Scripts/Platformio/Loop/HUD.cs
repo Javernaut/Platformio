@@ -1,4 +1,4 @@
-using Platformio.Player;
+using Platformio.Character;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

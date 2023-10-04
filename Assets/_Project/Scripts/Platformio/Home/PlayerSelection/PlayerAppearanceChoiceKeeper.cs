@@ -1,4 +1,4 @@
-using Platformio.Player;
+using Platformio.Character;
 
 namespace Platformio.Home.PlayerSelection
 {

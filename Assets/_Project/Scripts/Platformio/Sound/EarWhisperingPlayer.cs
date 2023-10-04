@@ -4,7 +4,7 @@ namespace Platformio.Sound
 {
     /// <summary>
     /// Base class for spawning a local audio source at the current location,
-    /// so all sounds will be heard fine even when player or camera move
+    /// so all sounds will be heard fine even when player or camera move.
     /// </summary>
     [RequireComponent(typeof(AudioListener))]
     public abstract class EarWhisperingPlayer : MonoBehaviour

@@ -1,5 +1,5 @@
+using Platformio.Character;
 using Platformio.Home.PlayerSelection;
-using Platformio.Player;
 using Platformio.Score;
 using Platformio.Sound;
 using Platformio.UI;

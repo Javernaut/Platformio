@@ -1,7 +1,10 @@
 using UnityEngine;
 
-namespace Platformio.Player
+namespace Platformio.Character
 {
+    /// <summary>
+    /// Main controller for an enemy.
+    /// </summary>
     public class EnemyMovement : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 1f;

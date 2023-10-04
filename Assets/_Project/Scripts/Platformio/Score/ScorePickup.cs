@@ -5,6 +5,10 @@ using Zenject;
 
 namespace Platformio.Score
 {
+    /// <summary>
+    /// Encapsulates a score number that will be added to <see cref="PlayerStats"/> once
+    /// the Player enters the adjacent collider-trigger.
+    /// </summary>
     public class ScorePickup : MonoBehaviour
     {
         [Min(1)] [SerializeField] private int score = 100;

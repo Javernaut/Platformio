@@ -2,8 +2,11 @@ using Platformio.Sound;
 using UnityEngine;
 using Zenject;
 
-namespace Platformio.Player
+namespace Platformio.Character
 {
+    /// <summary>
+    /// Main controller for a laser projectile that Player shoots.
+    /// </summary>
     public class LaserProjectile : MonoBehaviour
     {
         [SerializeField] private float startSpeed = 20f;
@@ -29,8 +32,6 @@ namespace Platformio.Player
 
         private void Update()
         {
-            // TODO Let's make it constant, perhaps?
-            // Shall we have a kinematic rb in this case?
             _myRigidbody.velocity = new Vector2(_xSpeed, 0f);
         }
 

@@ -1,9 +1,12 @@
 using UnityEngine;
 
-namespace Platformio.Player
+namespace Platformio.Character
 {
-    // TODO Make better menu item settings
-    [CreateAssetMenu]
+    /// <summary>
+    /// Aggregates a player avatar (that is shown along with the 'lives' counter)
+    /// and the animation controller for various states of the player character.
+    /// </summary>
+    [CreateAssetMenu(fileName = "NewPlayerAppearance", menuName = "Theming/Player Appearance", order = 0)]
     public class PlayerAppearance : ScriptableObject
     {
         [SerializeField] private Sprite avatar;

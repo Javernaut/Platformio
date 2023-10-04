@@ -5,8 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Platformio.Player
+namespace Platformio.Character
 {
+    /// <summary>
+    /// Main controller class for the Player character.
+    /// </summary>
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float runSpeed = 10f;
@@ -129,7 +132,6 @@ namespace Platformio.Player
 
             if (value.isPressed)
             {
-                // TODO Shouldn't it be applyForce(impulse)?
                 _myRigidbody.velocity += new Vector2(0f, jumpSpeed);
                 _soundPlayer.PlayJumpSound();
             }
