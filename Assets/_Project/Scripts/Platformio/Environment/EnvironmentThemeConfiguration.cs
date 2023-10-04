@@ -16,5 +16,7 @@ namespace Platformio.Environment
         public TileBase uncutBlockTile;
 
         public SoundBank stepsSounds;
+
+        public Sprite background;
     }
 }

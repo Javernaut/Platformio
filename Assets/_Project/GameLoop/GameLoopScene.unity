@@ -579,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ea3916d7e04eb2a0d992b0799471c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 1357235774533884204}
   cameraConfiners:
   - {fileID: 7781018449755936196}
   stateDrivenCamera: {fileID: 7781018449755936195}

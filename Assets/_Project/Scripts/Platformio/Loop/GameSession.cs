@@ -5,12 +5,14 @@ using Platformio.Sound;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Platformio.Loop
 {
     public class GameSession : MonoBehaviour
     {
+        [SerializeField] private Image backgroundImage;
         [SerializeField] private CinemachineConfiner2D[] cameraConfiners;
         [SerializeField] private CinemachineStateDrivenCamera stateDrivenCamera;
         [SerializeField] private PlayerController playerController;
@@ -106,7 +108,7 @@ namespace Platformio.Loop
             }
 
             _currentLevel = _levelFactory.Create();
-            _currentLevel.InitWith(cameraConfiners, playerController);
+            _currentLevel.InitWith(backgroundImage, cameraConfiners, playerController);
             ForceRepositionCameraToPlayer();
 
             _levelAnnouncementFactory.Create(_currentLevelNumber++);

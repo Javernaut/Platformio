@@ -1,7 +1,9 @@
+using Platformio.Environment;
 using Platformio.Player;
 using Platformio.Sound;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Platformio.Level
@@ -9,15 +11,20 @@ namespace Platformio.Level
     public class LevelFacade : MonoBehaviour
     {
         [Inject] private StepSoundPlayer _stepSoundPlayer;
-        
+        [Inject] private EnvironmentThemeConfiguration _theme;
+
         [SerializeField] private Collider2D cameraBoundingShape;
         [SerializeField] private Transform startPosition;
 
         private PlayerController _playerController;
         private CinemachineConfiner2D[] _cameraConfiners;
 
-        public void InitWith(CinemachineConfiner2D[] cameraConfiners, PlayerController controller)
+        public void InitWith(
+            Image backgroundImage,
+            CinemachineConfiner2D[] cameraConfiners,
+            PlayerController controller)
         {
+            backgroundImage.sprite = _theme.background;
             _cameraConfiners = cameraConfiners;
             UpdateConfiners(cameraBoundingShape);
 

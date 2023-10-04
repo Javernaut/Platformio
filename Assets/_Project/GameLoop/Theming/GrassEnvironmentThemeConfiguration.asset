@@ -19,3 +19,4 @@ MonoBehaviour:
   blockPlatformTile: {fileID: 11400000, guid: 4c6c358afc9e644bf95130c34943dc2e, type: 2}
   uncutBlockTile: {fileID: 11400000, guid: a5c9428cb634b43cda35b52811407643, type: 2}
   stepsSounds: {fileID: 11400000, guid: a09bfdc7b6a194f9582832c2c4ea10ee, type: 2}
+  background: {fileID: 21300000, guid: 6ea37cffe980549038220829c1e09c88, type: 3}
