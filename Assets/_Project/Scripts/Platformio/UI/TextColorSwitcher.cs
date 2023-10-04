@@ -1,8 +1,11 @@
 using TMPro;
 using UnityEngine;
 
-namespace Platformio
+namespace Platformio.UI
 {
+    /// <summary>
+    /// TextMeshPro label that can change its color based on the enclosing <see cref="SelectionStateExposingButton"/>
+    /// </summary>
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextColorSwitcher : MonoBehaviour
     {

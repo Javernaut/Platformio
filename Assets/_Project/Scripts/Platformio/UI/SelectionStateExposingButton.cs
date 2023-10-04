@@ -1,7 +1,10 @@
 using UnityEngine.UI;
 
-namespace Platformio
+namespace Platformio.UI
 {
+    /// <summary>
+    /// uGUI Button that exposes its selection state via <see cref="PublicSelectionState"/>.
+    /// </summary>
     public class SelectionStateExposingButton : Button
     {
         public delegate void NewPublicSelectionStateHandler(PublicSelectionState newState);
@@ -30,6 +33,9 @@ namespace Platformio
         }
     }
 
+    /// <summary>
+    /// Enum-duplicate of the SelectionState enum which is internal to <see cref="Selectable"/> class.
+    /// </summary>
     public enum PublicSelectionState
     {
         Normal,

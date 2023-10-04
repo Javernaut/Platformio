@@ -1,10 +1,9 @@
-using Platformio.Loop;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Platformio
+namespace Platformio.Loop
 {
     public class PauseMenu : MonoBehaviour
     {
@@ -18,16 +17,16 @@ namespace Platformio
         private void Awake()
         {
             // Assume we are the only piece of UI on the screen and nothing can override us
-            _globalInputActionAsset["UI/Cancel"].performed += onCancelActionPerformed;
+            _globalInputActionAsset["UI/Cancel"].performed += OnCancelActionPerformed;
         }
 
         private void OnDestroy()
         {
-            _globalInputActionAsset["UI/Cancel"].performed -= onCancelActionPerformed;
+            _globalInputActionAsset["UI/Cancel"].performed -= OnCancelActionPerformed;
             SetPlayerActionMapEnabled(true);
         }
 
-        private void onCancelActionPerformed(InputAction.CallbackContext _)
+        private void OnCancelActionPerformed(InputAction.CallbackContext _)
         {
             TogglePauseMenu();
         }
@@ -59,7 +58,6 @@ namespace Platformio
 
         public void QuitGame()
         {
-            // TODO Consider wrapping the time scale access
             Time.timeScale = 1f;
             _gameSession.QuitToMainMenu();
         }

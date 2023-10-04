@@ -2,6 +2,7 @@ using System.Collections;
 using Platformio.Level;
 using Platformio.Player;
 using Platformio.Sound;
+using Platformio.UI;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;

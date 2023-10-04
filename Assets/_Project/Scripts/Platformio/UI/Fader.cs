@@ -3,8 +3,11 @@ using System.Collections;
 using UnityEngine;
 using Zenject;
 
-namespace Platformio
+namespace Platformio.UI
 {
+    /// <summary>
+    /// Global overlay's alpha channel controller. Used for scene transitions.
+    /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
     public class Fader : MonoBehaviour
     {

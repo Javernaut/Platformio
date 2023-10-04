@@ -2,6 +2,7 @@ using System.Collections;
 using Platformio.Home.PlayerSelection;
 using Platformio.Score;
 using Platformio.Sound;
+using Platformio.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
