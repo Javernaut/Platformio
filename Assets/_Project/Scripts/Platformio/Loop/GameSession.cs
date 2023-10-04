@@ -11,6 +11,9 @@ using Zenject;
 
 namespace Platformio.Loop
 {
+    /// <summary>
+    /// Main Game Loop orchestrator. Swaps levels in an infinite loop.
+    /// </summary>
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private Image backgroundImage;
@@ -73,8 +76,6 @@ namespace Platformio.Loop
             _musicPlayer.FadeOut();
             yield return _fader.FadeOut();
             SceneManager.LoadScene(0);
-            // TODO Cleanup
-            // TODO Dispose current level
         }
 
         public void LoadNextLevel()

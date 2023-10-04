@@ -5,6 +5,9 @@ using Zenject;
 
 namespace Platformio.Loop
 {
+    /// <summary>
+    /// Keeps track of the Player's lives and score during the Game Loop.
+    /// </summary>
     public class PlayerStats : IDisposable
     {
         public delegate void LivesNumberChanged(int newLives);

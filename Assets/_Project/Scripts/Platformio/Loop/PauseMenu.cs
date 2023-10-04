@@ -5,6 +5,9 @@ using Zenject;
 
 namespace Platformio.Loop
 {
+    /// <summary>
+    /// The UI controller for the pause menu during the Game Loop.
+    /// </summary>
     public class PauseMenu : MonoBehaviour
     {
         [SerializeField] private GameObject pauseMenuUI;

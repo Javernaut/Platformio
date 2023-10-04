@@ -6,6 +6,10 @@ using Zenject;
 
 namespace Platformio.Loop
 {
+    /// <summary>
+    /// Keeps track of the current Control Scheme used for controlling the Player character.
+    /// Exposes the <see cref="PlayerInputDeviceType"/>.
+    /// </summary>
     public class PlayerInputDeviceTracker : IInitializable, IDisposable
     {
         public delegate void PlayerInputDeviceTypeChanged(PlayerInputDeviceType newDeviceType);

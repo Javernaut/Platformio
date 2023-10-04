@@ -1,10 +1,12 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
 namespace Platformio.Loop
 {
+    /// <summary>
+    /// The UI controller for a Control Scheme overlay during the Game Loop.
+    /// </summary>
     public class ControlSchemePanel : MonoBehaviour
     {
         // Assume the order just as in PlayerInputDeviceType
@@ -27,22 +29,10 @@ namespace Platformio.Loop
 
         private void SetNewDeviceType(PlayerInputDeviceType newDeviceType)
         {
-            // schemeText.text = GetDeviceNameBy(newDeviceType);
             var currentControlScheme = controlSchemes[(int)newDeviceType];
             jumpControlImage.sprite = currentControlScheme.jumpButton;
             fireControlImage.sprite = currentControlScheme.fireButton;
             menuControlImage.sprite = currentControlScheme.menuButton;
-        }
-
-        private string GetDeviceNameBy(PlayerInputDeviceType type)
-        {
-            return type switch
-            {
-                PlayerInputDeviceType.Keyboard => "Keyboard",
-                PlayerInputDeviceType.Playstation => "Playstation",
-                PlayerInputDeviceType.Xbox => "Xbox",
-                _ => throw new ArgumentOutOfRangeException(nameof(type), type, "Unknown PlayerInputDeviceType")
-            };
         }
     }
 }

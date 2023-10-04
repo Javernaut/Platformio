@@ -6,6 +6,9 @@ using Zenject;
 
 namespace Platformio.Loop
 {
+    /// <summary>
+    /// The UI controller for displaying current lives and score number.
+    /// </summary>
     public class HUD : MonoBehaviour
     {
         [SerializeField] private Image playerAvatar;
