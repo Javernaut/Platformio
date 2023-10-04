@@ -8,6 +8,9 @@ using Zenject;
 
 namespace Platformio.DI
 {
+    /// <summary>
+    /// DI injection rules for the Game Loop scene context.
+    /// </summary>
     public class GameLoopSceneInstaller : MonoInstaller
     {
         [SerializeField] private PlayerAppearance fallbackPlayerAppearance;

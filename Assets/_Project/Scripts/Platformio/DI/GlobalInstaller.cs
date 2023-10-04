@@ -9,6 +9,9 @@ using Zenject;
 
 namespace Platformio.DI
 {
+    /// <summary>
+    /// DI injection rules for the Project Context prefab.
+    /// </summary>
     public class GlobalInstaller : MonoInstaller<GlobalInstaller>
     {
         [SerializeField] private InputActionAsset globalInputActionAsset;
