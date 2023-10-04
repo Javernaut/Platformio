@@ -185,5 +185,13 @@ namespace Platformio.Player
 
             gameObject.SetActive(true);
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Bouncing"))
+            {
+                _soundPlayer.PlayJumpSound();    
+            }
+        }
     }
 }
