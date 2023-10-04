@@ -46,13 +46,13 @@ namespace Platformio.Loop
 
             if (devices.Any(
                     item =>
-                        item.name.Contains("DualSense") ||
-                        item.name.Contains("DualShock")
+                        item.displayName.Contains("DualSense") ||
+                        item.displayName.Contains("DualShock")
                 ))
                 return PlayerInputDeviceType.Playstation;
 
             if (devices.Any(
-                    item => item.name.Contains("Xbox"))
+                    item => item.displayName.Contains("Xbox"))
                )
                 return PlayerInputDeviceType.Xbox;
 
