@@ -4,6 +4,9 @@ using Zenject;
 
 namespace Platformio.Environment.Exit
 {
+    /// <summary>
+    /// Represents and exit point of a level and initiates the loading of a next level.
+    /// </summary>
     public class LevelExit : MonoBehaviour
     {
         [Inject] private GameSession _gameSession;

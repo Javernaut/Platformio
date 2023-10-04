@@ -5,8 +5,14 @@ using UnityEngine.Tilemaps;
 
 namespace Platformio.Environment.Tile
 {
-    // TODO Add better menu name and file name
-    [CreateAssetMenu]
+    /// <summary>
+    /// A custom <see cref="TileBase"/> for accessing the enclosing <see cref="ThemeConfiguration"/> object in order
+    /// to get actual sprites for drawing.
+    /// </summary>
+    [CreateAssetMenu(
+        fileName = "NewThemedTile",
+        menuName = "Theme/Themed Tile",
+        order = 0)]
     public class ThemedTile : TileBase
     {
         [SerializeField] private Type type;

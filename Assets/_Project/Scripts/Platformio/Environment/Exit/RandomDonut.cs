@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Platformio.Environment.Exit
 {
+    /// <summary>
+    /// Basic script for picking 3 random images to combine a random donut.
+    /// </summary>
     [ExecuteAlways]
     public class RandomDonut : MonoBehaviour
     {

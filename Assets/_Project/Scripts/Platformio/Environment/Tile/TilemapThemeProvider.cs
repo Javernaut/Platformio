@@ -5,6 +5,12 @@ using Zenject;
 
 namespace Platformio.Environment.Tile
 {
+    /// <summary>
+    /// A component that is used to provide <see cref="ThemeConfiguration"/> to the <see cref="ThemedTile"/>
+    /// in the adjacent Tilemap. This component is used instead of Extenject, because the <see cref="ThemedTile"/>
+    /// are (1) being heavily reused and (2) are serialized in prefab where the <see cref="ThemeConfiguration"/> is
+    /// intended to be overridden during the runtime. 
+    /// </summary>
     [ExecuteAlways]
     [RequireComponent(typeof(Tilemap))]
     public class TilemapThemeProvider : MonoBehaviour, IProvider<ThemeConfiguration>
