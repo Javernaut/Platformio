@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e046bbe1ed04c479febcbc9d28ea5c2, type: 3}
+  m_Name: StoneStepsSounds
+  m_EditorClassIdentifier: 
+  volume: 1
+  variations:
+  - {fileID: 8300000, guid: a63b5538670ef495fb053b2452f96ce7, type: 3}
+  - {fileID: 8300000, guid: 0d9a068ab37494a87bc12639256280f9, type: 3}
+  - {fileID: 8300000, guid: 0dc9f0ac15f344cb4a54891e83eecd90, type: 3}
+  - {fileID: 8300000, guid: 6cdd68ef11cbf49f9bb2848bcf270b21, type: 3}
+  - {fileID: 8300000, guid: ec763bd4f430c409d832f39a567b9412, type: 3}
