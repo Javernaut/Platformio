@@ -3,6 +3,9 @@ using Zenject;
 
 namespace Platformio.Sound
 {
+    /// <summary>
+    /// Plays specific sounds like 'jump' or 'fire'.
+    /// </summary>
     public class SoundPlayer : EarWhisperingPlayer
     {
         [Inject] private Settings _settings;

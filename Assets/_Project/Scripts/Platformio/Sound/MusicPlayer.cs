@@ -5,6 +5,10 @@ using Zenject;
 
 namespace Platformio.Sound
 {
+    /// <summary>
+    /// Plays a single track out of the injected <see cref="SoundBank"/> in a loop.
+    /// Can be faded out. 
+    /// </summary>
     public class MusicPlayer : EarWhisperingPlayer
     {
         [Inject] private float _fadeOutTime;

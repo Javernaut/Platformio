@@ -2,7 +2,10 @@ using UnityEngine;
 
 namespace Platformio.Sound
 {
-    // Assume the listener is right where we are
+    /// <summary>
+    /// Base class for spawning a local audio source at the current location,
+    /// so all sounds will be heard fine even when player or camera move
+    /// </summary>
     [RequireComponent(typeof(AudioListener))]
     public abstract class EarWhisperingPlayer : MonoBehaviour
     {

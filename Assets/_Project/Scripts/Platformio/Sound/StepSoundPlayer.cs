@@ -5,6 +5,9 @@ using Object = UnityEngine.Object;
 
 namespace Platformio.Sound
 {
+    /// <summary>
+    /// Plays a random sound of a step according to the current <see cref="SoundBank"/> that comes from the current theme.
+    /// </summary>
     public class StepSoundPlayer : IInitializable, IDisposable
     {
         [Inject] private AudioListener _currentAudioListener;
