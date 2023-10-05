@@ -10,7 +10,7 @@ The infinite loop combines predefined level structures and several visual/sound 
 It supports both Keyboard/Mouse and Gamepads for control. 
 Music and basic SFX is also available.
 
-### Core mechanics:
+### Core mechanics
 
 - Platforming
 - Collecting coins
@@ -35,6 +35,12 @@ The game uses some well known packages:
  - [InputSystem](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html) is used with a single InputActionAsset for everything. 
 The package is also used to determine the type of Control Scheme that is currently used in order to adjust icon prompts on UI (like Keyboard/Playstation/Xbox icons).
  - [Cinemachine](https://docs.unity3d.com/Packages/com.unity.cinemachine@3.0/manual/index.html) is used for setting up the camera rules and switching between multiple virtual cameras.
+
+## Screenshots
+
+| <img src="Images/screens/main_menu.png">  | <img src="Images/screens/gameplay_1.png"> |
+|-------------------------------------------|-------------------------------------------|
+| <img src="Images/screens/gameplay_2.png"> | <img src="Images/screens/gameplay_3.png"> |
 
 ## Acknowledgments
 This project uses a set of music, sound and graphical assets made by [Kenney](https://kenney.nl/) in order to make a coherent gameplay.
