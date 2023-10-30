@@ -8,7 +8,7 @@ on:
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 #  TODO Read the value from ProjectVersion.txt
-  UNITY_VERSION: 2022.3.11f1
+  UNITY_VERSION: 2022.3.12f1
 
 jobs:
   buildWebGL:
