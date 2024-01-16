@@ -45,7 +45,7 @@ jobs:
             Library-build-
             Library-
 
-      - uses: game-ci/unity-builder@v4.0.0
+      - uses: game-ci/unity-builder@v4.1.3
         with:
           unityVersion: ${{ env.UNITY_VERSION }}
           targetPlatform: WebGL
