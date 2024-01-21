@@ -437,8 +437,8 @@ MonoBehaviour:
     m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 20170927
-  m_LegacyPriority: 10
+  m_StreamingVersion: 20230301
+  m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 632174590}
     LookAtTarget: {fileID: 0}
@@ -1062,8 +1062,8 @@ MonoBehaviour:
     m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 20170927
-  m_LegacyPriority: 10
+  m_StreamingVersion: 20230301
+  m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 632174590}
     LookAtTarget: {fileID: 0}
@@ -1101,18 +1101,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 20170927
-  m_LegacyPriority: 10
+  m_StreamingVersion: 20230301
+  m_LegacyPriority: 0
   DefaultTarget:
-    Enabled: 0
+    Enabled: 1
     Target:
-      TrackingTarget: {fileID: 0}
+      TrackingTarget: {fileID: 632174590}
       LookAtTarget: {fileID: 0}
-      CustomLookAtTarget: 0
+      CustomLookAtTarget: 1
   DefaultBlend:
     Style: 1
     Time: 2
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   - Hash: -1546996312
     HashOfParent: 756556552
   m_LegacyLookAt: {fileID: 0}
-  m_LegacyFollow: {fileID: 632174590}
+  m_LegacyFollow: {fileID: 0}
 --- !u!114 &7781018449755936196
 MonoBehaviour:
   m_ObjectHideFlags: 0
