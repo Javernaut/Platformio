@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f5768cd153430fa525b2128b8a500a, type: 3}
   m_Name: Xbox
   m_EditorClassIdentifier: 
-  jumpButton: {fileID: 21300000, guid: 50904b69e87b24d26b80e5b7d780c60c, type: 3}
-  fireButton: {fileID: 21300000, guid: 54fde0645c57f42f0bba7a9e7e2bcd22, type: 3}
-  menuButton: {fileID: 21300000, guid: 18152f9259a7b4755aa05e27f6fb95f7, type: 3}
+  jumpButton: {fileID: 3286163911610860551, guid: dc2d616a150d94bcd9c26ea8862327ab, type: 3}
+  fireButton: {fileID: 3286163911610860551, guid: ac4b418e0071442ca8b162fe1b05d07b, type: 3}
+  menuButton: {fileID: 3286163911610860551, guid: e16b6aa6b354f474299a2d1e372604b2, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f5768cd153430fa525b2128b8a500a, type: 3}
   m_Name: Playstation
   m_EditorClassIdentifier: 
-  jumpButton: {fileID: 21300000, guid: ca90f365ec54b43c480e21550942a259, type: 3}
-  fireButton: {fileID: 21300000, guid: e3adf583b663d43d6be717c53844cb8a, type: 3}
-  menuButton: {fileID: 21300000, guid: df14dbe93f4094fd8a6c052848db9ba0, type: 3}
+  jumpButton: {fileID: 3286163911610860551, guid: 0145588e7946c413c88fe3f42b709f62, type: 3}
+  fireButton: {fileID: 3286163911610860551, guid: fa5b563d9428249fe834db9e29323f7c, type: 3}
+  menuButton: {fileID: 3286163911610860551, guid: af46a25f227ea47bb993b062402238e6, type: 3}
