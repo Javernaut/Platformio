@@ -50,7 +50,7 @@ jobs:
           unityVersion: ${{ env.UNITY_VERSION }}
           targetPlatform: WebGL
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: build-WebGL
           path: build/WebGL
