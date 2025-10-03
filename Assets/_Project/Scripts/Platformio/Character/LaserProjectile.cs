@@ -32,7 +32,7 @@ namespace Platformio.Character
 
         private void Update()
         {
-            _myRigidbody.velocity = new Vector2(_xSpeed, 0f);
+            _myRigidbody.linearVelocity = new Vector2(_xSpeed, 0f);
         }
 
         private void OnDestroy()

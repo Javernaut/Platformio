@@ -83,10 +83,10 @@ namespace Platformio.Character
 
         private void Run()
         {
-            var playerVelocity = new Vector2(_moveInput.x * runSpeed, _myRigidbody.velocity.y);
-            _myRigidbody.velocity = playerVelocity;
+            var playerVelocity = new Vector2(_moveInput.x * runSpeed, _myRigidbody.linearVelocity.y);
+            _myRigidbody.linearVelocity = playerVelocity;
 
-            var playerHasHorizontalSpeed = Mathf.Abs(_myRigidbody.velocity.x) > Mathf.Epsilon;
+            var playerHasHorizontalSpeed = Mathf.Abs(_myRigidbody.linearVelocity.x) > Mathf.Epsilon;
             _myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
         }
 
@@ -100,11 +100,11 @@ namespace Platformio.Character
             }
 
 
-            var climbVelocity = new Vector2(_myRigidbody.velocity.x, _moveInput.y * climbSpeed);
-            _myRigidbody.velocity = climbVelocity;
+            var climbVelocity = new Vector2(_myRigidbody.linearVelocity.x, _moveInput.y * climbSpeed);
+            _myRigidbody.linearVelocity = climbVelocity;
             _myRigidbody.gravityScale = 0f;
 
-            var playerHasVerticalSpeed = Mathf.Abs(_myRigidbody.velocity.y) > Mathf.Epsilon;
+            var playerHasVerticalSpeed = Mathf.Abs(_myRigidbody.linearVelocity.y) > Mathf.Epsilon;
             _myAnimator.SetBool("isClimbing", playerHasVerticalSpeed);
         }
 
@@ -132,7 +132,7 @@ namespace Platformio.Character
 
             if (value.isPressed)
             {
-                _myRigidbody.velocity += new Vector2(0f, jumpSpeed);
+                _myRigidbody.linearVelocity += new Vector2(0f, jumpSpeed);
                 _soundPlayer.PlayJumpSound();
             }
         }
@@ -140,9 +140,9 @@ namespace Platformio.Character
 
         private void FlipSprite()
         {
-            var playerHasHorizontalSpeed = Mathf.Abs(_myRigidbody.velocity.x) > Mathf.Epsilon;
+            var playerHasHorizontalSpeed = Mathf.Abs(_myRigidbody.linearVelocity.x) > Mathf.Epsilon;
 
-            if (playerHasHorizontalSpeed) transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.velocity.x), 1f);
+            if (playerHasHorizontalSpeed) transform.localScale = new Vector2(Mathf.Sign(_myRigidbody.linearVelocity.x), 1f);
         }
 
         private void Die()
@@ -151,7 +151,7 @@ namespace Platformio.Character
             {
                 _isAlive = false;
                 _myAnimator.SetTrigger("Dying");
-                _myRigidbody.velocity = deathKick;
+                _myRigidbody.linearVelocity = deathKick;
                 _playerStats.TakeLife();
             }
         }
@@ -163,7 +163,7 @@ namespace Platformio.Character
             _moveInput = Vector2.zero;
             transform.localScale = newLocalScale;
             transform.position = newPosition;
-            _myRigidbody.velocity = Vector2.zero;
+            _myRigidbody.linearVelocity = Vector2.zero;
 
             _myAnimator.Rebind();
 
