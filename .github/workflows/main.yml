@@ -76,7 +76,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - uses: actions/download-artifact@v6
+      - uses: actions/download-artifact@v7
         with:
           name: build-WebGL
           path: build
