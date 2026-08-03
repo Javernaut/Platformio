@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         
       - name: Free up disk space
         uses: jlumbroso/free-disk-space@v1.3.1
@@ -35,7 +35,7 @@ jobs:
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 
       - name: Restore LFS cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         id: lfs-cache
         with:
           path: .git/lfs
@@ -48,7 +48,7 @@ jobs:
           git reset --hard
 
       - name: Restore Library cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: Library
           key: Library-build-WebGL
@@ -56,12 +56,12 @@ jobs:
             Library-build-
             Library-
 
-      - uses: game-ci/unity-builder@v4
+      - uses: game-ci/unity-builder@v5
         with:
           unityVersion: ${{ env.UNITY_VERSION }}
           targetPlatform: WebGL
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: build-WebGL
           path: build/WebGL
@@ -74,9 +74,9 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v8
         with:
           name: build-WebGL
           path: build
